@@ -1,0 +1,27 @@
+baseURL = "www.in30days.org"
+languageCode = "en-us"
+title = "From zero to hero in 30 days"
+theme = "kube"
+description = "Get a headstart and learn anything in 30 days."
+Paginate = 4
+[Params]
+  RSSLink = "/index.xml"
+  author = "in30daysOrg"
+  github = "in30daysOrg"
+  twitter = "in30daysOrg"
+  email = "in30days@avichaganti.com"
+
+[[menu.main]]
+    name = "Topics"
+    weight = -200
+    url = "/topics/"
+
+#[[menu.main]]
+#    name = "About"
+#    weight = -100
+#    url = "/about/"
+
+#[[menu.main]]
+#    name = "Faq"
+#    weight = -100
+#    url = "/faq/"

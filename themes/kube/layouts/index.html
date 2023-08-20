@@ -1,0 +1,60 @@
+{{ define "title"}} {{ .Site.Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+{{ define "main"}}
+
+<div id="main">
+  <div id="hero">
+    <!--
+    <h1>{{.Title}}</h1>
+    -->
+    <figure>
+      <img alt="Logo" height="150" src="{{ "/img/kube/in30days.png" | relURL }}" width="150">
+    </figure>
+    <p>{{.Description}}</p>
+  </div>
+  
+  <div id="action-buttons">
+    <a class="button primary big" href="/topics" onclick="_gaq.push(['_trackEvent', 'kube', 'download']);">Become a Master</a> 
+  </div>
+<!--
+  <div class="message focus" data-component="message"> <span class="close small"></span>
+    <a class="button inverted small " href="https://imperavi.com/kube/" >Kube </a> from <a href="https://imperavi.com/">imperavi</a> is an awesome <mark>CSS & JS Framework</mark> and i designed this template for <a href="https://gohugo.io">hugo</a> with the same original philosophy !
+  </div>  
+-->
+  
+  <div id="kube-features">
+    <div class="row gutters">
+      <div class="col col-4 item">
+        <h3>In-depth content</h3>
+        <p>This is not just about getting you started, but about helping you master a technology.</p>
+      </div>
+      <div class="col col-4 item">
+        <h3>Applied Learning</h3>
+        <p>Help you understand complex concepts by applying knowledge you gain throughout your journey.</p>
+      </div>
+      <div class="col col-4 item">
+        <h3>Up-to-date</h3>
+        <p>Technology changes fast. It is almost impossible to keep up. Over here, you need not worry. We keep the content always up-to-date.</p>
+      </div>
+    </div>
+    <div class="row gutters">
+      <div class="col col-4 item">
+        <h4>Self-paced Learning</h4>
+        <p>There is no course expiry date or no deadlines. You can learn at your own pace.</p>
+      </div>
+      <div class="col col-4 item">
+        <h4>Hands-on Exercises</h4>
+        <p>Learning isn't just about reading. It is about practice. The hands-on exercises at the end of each day make you think and practice what you learn.</p>
+      </div>
+      <div class="col col-4 item">
+        <h4>Free and Open Source</h4>
+        <p>This is totally free and the content of each learning path is licensed under <a href="https://opensource.org/licenses/MIT">MIT</a>.<br>
+      As an expert in these technologies, you are free to send your contributions.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+{{ end }}
+{{ define "footer"}} {{ partial "footer" .}} 
+{{end}}
