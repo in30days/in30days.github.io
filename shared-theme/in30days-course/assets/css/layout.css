@@ -53,25 +53,21 @@
 .site-logo {
   display: flex;
   align-items: center;
-  gap: var(--spacing-2);
-}
-
-.logo-image {
-  width: 32px;
-  height: 32px;
 }
 
 .logo-text {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-lg);
   color: var(--text-primary);
-  display: none;
 }
 
-@media (min-width: 640px) {
-  .logo-text {
-    display: block;
-  }
+.sync-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-secondary);
 }
 
 .header-center {
@@ -131,7 +127,7 @@
 .header-actions {
   display: flex;
   align-items: center;
-  gap: var(--spacing-1);
+  gap: var(--spacing-2);
 }
 
 .header-btn {
