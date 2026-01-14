@@ -1,5 +1,6 @@
 <!-- Mermaid.js for diagrams -->
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+{{ $mermaid := resources.GetRemote "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $mermaid.RelPermalink }}"></script>
 <script>
   mermaid.initialize({ 
     startOnLoad: true,
@@ -9,13 +10,13 @@
 
 <!-- Firebase SDK (loaded conditionally) -->
 {{ if .Site.Params.firebase.enabled }}
-<script src="{{ "/firebase-config.js" | relURL }}"></script>
+<script src="{{ "firebase-config.js" | relURL }}"></script>
 <script type="module">
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
-  import { getAuth, signInAnonymously, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
-  import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
+  import { getAuth, signInAnonymously, onAuthStateChanged, GoogleAuthProvider, linkWithPopup } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
+  import { getFirestore, doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
   
-  window.firebaseModules = { initializeApp, getAuth, signInAnonymously, onAuthStateChanged, getFirestore };
+  window.firebaseModules = { initializeApp, getAuth, signInAnonymously, onAuthStateChanged, GoogleAuthProvider, linkWithPopup, getFirestore, doc, getDoc, setDoc };
 </script>
 {{ end }}
 

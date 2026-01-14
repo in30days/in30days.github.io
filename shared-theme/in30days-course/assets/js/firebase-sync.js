@@ -8,6 +8,13 @@
   let currentUser = null;
   let isInitialized = false;
 
+  // Get course base URL from meta tag
+  function getCourseBaseUrl() {
+    const metaBase = document.querySelector('meta[name="course-base-url"]');
+    if (metaBase && metaBase.content) return metaBase.content;
+    return '/';
+  }
+
   // Firebase configuration - loaded from external file
   async function loadConfig() {
     // Return from window if already loaded
@@ -16,17 +23,26 @@
     }
 
     try {
-      // Try fetching it if not in window (fallback)
-      const response = await fetch('/firebase-config.js');
+      // Try fetching it if not in window (fallback) using correct path
+      const baseUrl = getCourseBaseUrl();
+      const configUrl = baseUrl.endsWith('/') ? `${baseUrl}firebase-config.js` : `${baseUrl}/firebase-config.js`;
+      const response = await fetch(configUrl);
       if (response.ok) {
         const text = await response.text();
-        const match = text.match(/const firebaseConfig = ({[\s\S]*?});/);
+        // Extract the object from firebaseConfig = { ... }
+        const match = text.match(/const\s+firebaseConfig\s*=\s*({[\s\S]*?});/);
         if (match) {
-          return JSON.parse(match[1].replace(/\/\/.*/g, '').replace(/'/g, '"').replace(/(\w+):/g, '"$1":').replace(/,(\s*})/g, '$1'));
+          // Clean up the string to make it JSON-parseable
+          let configStr = match[1]
+            .replace(/\/\/.*/g, '') // remove comments
+            .replace(/'/g, '"')    // replace single quotes with double quotes
+            .replace(/(\w+):/g, '"$1":') // quote keys
+            .replace(/,(\s*})/g, '$1');  // remove trailing commas
+          return JSON.parse(configStr);
         }
       }
     } catch (e) {
-      console.warn('Firebase config loading failed');
+      console.warn('Firebase config loading failed', e);
     }
     return null;
   }
@@ -116,7 +132,7 @@
       const data = progress || window.progressTracker?.load();
       if (!data) return;
 
-      const { doc, setDoc } = await import('https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js');
+      const { doc, setDoc } = window.firebaseModules;
       
       const courseId = data.courseId || 'default';
       const docRef = doc(db, 'users', currentUser.uid, 'courses', courseId);
@@ -139,7 +155,7 @@
     updateSyncStatus('syncing');
     
     try {
-      const { doc, getDoc } = await import('https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js');
+      const { doc, getDoc } = window.firebaseModules;
       
       const courseId = getCourseId();
       const docRef = doc(db, 'users', currentUser.uid, 'courses', courseId);
@@ -241,14 +257,8 @@
     
     try {
       const { GoogleAuthProvider, linkWithPopup } = window.firebaseModules;
-      if (!linkWithPopup) {
-         // If not pre-loaded, try importing
-         const authMod = await import('https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js');
-         await authMod.linkWithPopup(currentUser, new authMod.GoogleAuthProvider());
-      } else {
-         const provider = new GoogleAuthProvider();
-         await linkWithPopup(currentUser, provider);
-      }
+      const provider = new GoogleAuthProvider();
+      await linkWithPopup(currentUser, provider);
       
       window.showToast?.('success', 'Account Linked', 'Your progress is now permanently saved to your Google account.');
       updateSettingsUI();
