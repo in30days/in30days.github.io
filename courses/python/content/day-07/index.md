@@ -1,30 +1,83 @@
 ---
-title: "Day 7: Coming Soon"
+title: "Data Structures - Dictionaries and Sets"
 date: 2024-01-07
 day: 7
 weight: 7
 draft: false
 duration: "45 min"
 difficulty: "beginner"
-description: "Content for Day 7 is coming soon"
+description: "Learn how to store key-value pairs and unique collections of data"
 objectives:
-  - Objective 1
-  - Objective 2
-  - Objective 3
+  - Create and use Python dictionaries
+  - Access, add, and remove dictionary items
+  - Understand dictionary keys and values
+  - Learn how to use Python sets for unique items
+  - Perform basic set operations (union, intersection)
 prerequisites: [6]
-tags: ["placeholder"]
+tags: ["basics", "data-structures", "dictionaries", "sets"]
 ---
 
-## Coming Soon
+## Key-Value Storage
 
-This lesson is currently being developed. Check back soon!
+Sometimes, you don't want to store items in a numbered list. Instead, you want to label them. For example, a "user" has a "name", an "email", and an "age". In Python, we use **Dictionaries** for this.
 
-The full Python in 30 Days curriculum includes:
+## Python Dictionaries
 
-- **Days 1-7**: Python Basics (Setup, Variables, Operators, Control Flow)
-- **Days 8-14**: Functions and Data Structures
-- **Days 15-21**: File Handling and Modules
-- **Days 22-28**: Object-Oriented Programming
-- **Days 29-30**: Final Project
+A **Dictionary** is a collection which is ordered (as of Python 3.7), changeable, and does not allow duplicates. Dictionaries are written with curly braces `{}` and have **keys** and **values**.
 
-Stay tuned for more content!
+{{< code-file filename="dict_example.py" lang="python" >}}
+user = {
+  "name": "Alice",
+  "age": 25,
+  "email": "alice@example.com"
+}
+
+print(user["name"]) # Output: Alice
+{{< /code-file >}}
+
+### Modifying Dictionaries
+
+{{< code-file filename="dict_mod.py" lang="python" >}}
+user = {"name": "Alice"}
+
+# Add or update
+user["age"] = 26
+user.update({"email": "alice@new.com"})
+
+# Remove
+user.pop("age")
+del user["name"]
+{{< /code-file >}}
+
+## Python Sets
+
+A **Set** is an unordered collection with **no duplicate elements**. Sets are useful for removing duplicates from other collections and performing mathematical operations.
+
+{{< code-file filename="sets.py" lang="python" >}}
+colors = {"red", "green", "blue", "red"}
+print(colors) # Output: {"green", "blue", "red"} (duplicates removed!)
+
+# Basic Operations
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a.union(b))        # {1, 2, 3, 4, 5}
+print(a.intersection(b)) # {3}
+{{< /code-file >}}
+
+---
+
+## Interactive Practice
+
+Try creating a dictionary representing your favorite car (brand, model, year).
+
+{{< interactive-table >}}
+| Feature | Dictionary `{k:v}` | Set `{}` |
+| :--- | :--- | :--- |
+| Access | via Key | No index/key |
+| Mutable | Yes | Yes |
+| Duplicates | Keys: No, Values: Yes | No |
+| Order | Ordered (3.7+) | Unordered |
+{{< /interactive-table >}}
+
+{{< quiz >}}

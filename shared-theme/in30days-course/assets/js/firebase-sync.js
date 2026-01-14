@@ -249,6 +249,27 @@
     }
   }
 
+  async function signInWithGoogle() {
+    if (!auth) return;
+    
+    try {
+      const { GoogleAuthProvider, signInWithPopup } = window.firebaseModules;
+      const provider = new GoogleAuthProvider();
+      
+      // Before signing in, save local progress in case we need to merge
+      const localData = window.progressTracker?.load();
+      
+      await signInWithPopup(auth, provider);
+      
+      window.showToast?.('success', 'Signed In', 'You are now signed in with your Google account.');
+      
+      // onAuthStateChanged will handle the rest
+    } catch (e) {
+      console.error('Sign in failed:', e);
+      window.showToast?.('error', 'Sign In Failed', `Error: ${e.message}`);
+    }
+  }
+
   async function linkGoogleAccount() {
     if (!auth || !currentUser) {
       window.showToast?.('warning', 'Not Ready', 'Please wait for the sync system to initialize.');
@@ -264,7 +285,8 @@
       updateSettingsUI();
     } catch (e) {
       if (e.code === 'auth/credential-already-in-use') {
-        window.showToast?.('warning', 'Account Already Linked', 'This Google account is already linked to another profile.');
+        // Show a more helpful message with a button if possible, but for now just explain they can sign in
+        window.showToast?.('warning', 'Account Already Exists', 'This Google account is already linked to another profile. You can sign in directly using the "Sign In with Google" button below.', 10000);
       } else if (e.code === 'auth/popup-closed-by-user') {
         // Do nothing
       } else if (e.code === 'auth/unauthorized-domain') {
@@ -285,6 +307,9 @@
     
     // Bind link account button
     document.getElementById('link-google-btn')?.addEventListener('click', linkGoogleAccount);
+    
+    // Bind sign in button
+    document.getElementById('sign-in-google-btn')?.addEventListener('click', signInWithGoogle);
     
     // Bind manual sync button
     document.getElementById('manual-sync-btn')?.addEventListener('click', () => {

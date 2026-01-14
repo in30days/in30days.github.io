@@ -13,10 +13,10 @@
 <script src="{{ "firebase-config.js" | relURL }}"></script>
 <script type="module">
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
-  import { getAuth, signInAnonymously, onAuthStateChanged, GoogleAuthProvider, linkWithPopup } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
+  import { getAuth, signInAnonymously, onAuthStateChanged, GoogleAuthProvider, linkWithPopup, signInWithPopup } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
   import { getFirestore, doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
   
-  window.firebaseModules = { initializeApp, getAuth, signInAnonymously, onAuthStateChanged, GoogleAuthProvider, linkWithPopup, getFirestore, doc, getDoc, setDoc };
+  window.firebaseModules = { initializeApp, getAuth, signInAnonymously, onAuthStateChanged, GoogleAuthProvider, linkWithPopup, signInWithPopup, getFirestore, doc, getDoc, setDoc };
 </script>
 {{ end }}
 

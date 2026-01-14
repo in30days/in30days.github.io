@@ -1,0 +1,52 @@
+{
+  "dayId": 6,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "Which of the following creates a valid list in Python?",
+      "options": [
+        { "id": "a", "text": "my_list = [1, 2, 3]", "correct": true },
+        { "id": "b", "text": "my_list = (1, 2, 3)", "correct": false },
+        { "id": "c", "text": "my_list = list(1, 2, 3)", "correct": false },
+        { "id": "d", "text": "my_list = [\"apple\", 10, True]", "correct": true }
+      ],
+      "explanation": "Lists use square brackets [] and can contain mixed data types."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "What happens if you try to change an item in a Tuple?",
+      "options": [
+        { "id": "a", "text": "The item is changed successfully", "correct": false },
+        { "id": "b", "text": "Python ignores the command", "correct": false },
+        { "id": "c", "text": "It raises a TypeError", "correct": true }
+      ],
+      "explanation": "Tuples are immutable. Any attempt to modify them will result in a TypeError."
+    },
+    {
+      "id": "q3",
+      "type": "drag-order",
+      "question": "Arrange these list methods by their function (Append, Insert, Pop):",
+      "items": [
+        { "id": "app", "text": "Add to end" },
+        { "id": "ins", "text": "Add at index" },
+        { "id": "pop", "text": "Remove last" }
+      ],
+      "correctOrder": ["app", "ins", "pop"],
+      "explanation": "append() adds to the end, insert() adds at a specific position, and pop() removes the last item."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "question": "What is the index of the first item in a Python list?",
+      "options": [
+        { "id": "a", "text": "1", "correct": false },
+        { "id": "b", "text": "0", "correct": true },
+        { "id": "c", "text": "-1", "correct": false }
+      ],
+      "explanation": "Python uses zero-based indexing. The first item is at index 0."
+    }
+  ]
+}
