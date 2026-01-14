@@ -267,9 +267,14 @@
         window.showToast?.('warning', 'Account Already Linked', 'This Google account is already linked to another profile.');
       } else if (e.code === 'auth/popup-closed-by-user') {
         // Do nothing
+      } else if (e.code === 'auth/unauthorized-domain') {
+        window.showToast?.('error', 'Domain Not Authorized', 'Please add "in30days.org" to the Authorized Domains in your Firebase Console.');
+      } else if (e.code === 'auth/operation-not-allowed') {
+        window.showToast?.('error', 'Auth Not Enabled', 'Please enable Google Auth in your Firebase Console.');
       } else {
         console.error('Link account failed:', e);
-        window.showToast?.('error', 'Link Failed', 'Unable to link Google account. Please try again.');
+        const errorMsg = e.message || 'Please try again.';
+        window.showToast?.('error', 'Link Failed', `Error: ${errorMsg}`);
       }
     }
   }
