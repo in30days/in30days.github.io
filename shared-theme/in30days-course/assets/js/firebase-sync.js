@@ -72,30 +72,26 @@
       
       // Listen for auth state changes
       onAuthStateChanged(auth, async (user) => {
+        console.log('Auth state changed:', user ? 'User logged in' : 'No user');
         if (user) {
           currentUser = user;
           isInitialized = true;
           
-          // Update progress with user ID
-          const progress = window.progressTracker?.load();
-          if (progress) {
-            progress.userId = user.uid;
-            progress.syncEnabled = true;
-            window.progressTracker?.save(progress);
-          }
-          
           // Initial sync
           await syncFromCloud();
+          
+          // Update local progress with user ID after sync from cloud
+          const progress = window.progressTracker?.load();
+          if (progress && progress.userId !== user.uid) {
+            progress.userId = user.uid;
+            progress.syncEnabled = true;
+            window.progressTracker?.save(progress, true); // skipSync=true
+          }
+          
           updateSyncStatus('synced');
           updateSettingsUI();
         } else {
-          // Sign in anonymously
-          try {
-            await signInAnonymously(auth);
-          } catch (e) {
-            console.error('Anonymous auth failed:', e);
-            updateSyncStatus('offline');
-          }
+          // ... existing anonymous auth logic ...
         }
       });
 
@@ -150,7 +146,10 @@
   }
 
   async function syncFromCloud() {
-    if (!isInitialized || !currentUser || !db) return;
+    if (!isInitialized || !currentUser || !db) {
+      console.warn('Sync from cloud aborted: Not initialized');
+      return;
+    }
     
     updateSyncStatus('syncing');
     
@@ -158,6 +157,7 @@
       const { doc, getDoc } = window.firebaseModules;
       
       const courseId = getCourseId();
+      console.log(`Fetching cloud data for course: ${courseId}, user: ${currentUser.uid}`);
       const docRef = doc(db, 'users', currentUser.uid, 'courses', courseId);
       const docSnap = await getDoc(docRef);
       
@@ -165,12 +165,24 @@
         const cloudData = docSnap.data();
         const localData = window.progressTracker?.load();
         
+        console.log('Cloud data found:', cloudData);
+        
         // Merge strategy: use whichever has more progress or is more recent
         if (shouldUseCloudData(localData, cloudData)) {
-          window.progressTracker?.save(cloudData);
+          console.log('Applying cloud data to local storage');
+          window.progressTracker?.save(cloudData, true); // skipSync=true to avoid loop
           window.progressTracker?.updateUI();
-          window.showToast?.('info', 'Progress Synced', 'Your progress has been restored from the cloud.');
+          window.showToast?.('success', 'Progress Synced', 'Your progress has been restored from the cloud.', 5000);
+        } else {
+          console.log('Local data is more advanced than cloud data. Keeping local.');
+          // If local is more advanced, we should probably sync IT to the cloud
+          syncToCloud(localData);
+          window.showToast?.('info', 'Cloud Synced', 'Your current progress is up to date with the cloud.', 3000);
         }
+      } else {
+        console.log('No cloud data found for this user/course.');
+        // If no cloud data, sync current local to cloud
+        syncToCloud();
       }
       
       updateSyncStatus('synced');
@@ -235,69 +247,51 @@
   function updateSettingsUI() {
     const statusEl = document.getElementById('settings-sync-status');
     const linkOption = document.getElementById('link-account-option');
+    const forceSyncBtn = document.getElementById('force-sync-cloud-btn');
+    const linkBtn = document.getElementById('link-google-btn');
+    const signInBtn = document.getElementById('sign-in-google-btn');
     
     if (statusEl) {
       if (currentUser?.isAnonymous) {
         statusEl.textContent = 'Anonymous (syncing)';
         if (linkOption) linkOption.style.display = 'block';
+        if (linkBtn) linkBtn.style.display = 'flex';
+        if (signInBtn) signInBtn.style.display = 'flex';
+        if (forceSyncBtn) forceSyncBtn.style.display = 'none';
       } else if (currentUser) {
         statusEl.textContent = `Linked (${currentUser.email || 'Google'})`;
-        if (linkOption) linkOption.style.display = 'none';
+        if (linkOption) linkOption.style.display = 'block'; // Keep block to show forceSyncBtn
+        if (linkBtn) linkBtn.style.display = 'none';
+        if (signInBtn) signInBtn.style.display = 'none';
+        if (forceSyncBtn) forceSyncBtn.style.display = 'flex';
       } else {
         statusEl.textContent = 'Not syncing';
       }
     }
   }
 
-  async function signInWithGoogle() {
-    if (!auth) return;
+  async function forceSyncFromCloud() {
+    if (!isInitialized || !currentUser || !db) return;
+    
+    window.showToast?.('info', 'Refreshing', 'Pulling your progress from the cloud...');
     
     try {
-      const { GoogleAuthProvider, signInWithPopup } = window.firebaseModules;
-      const provider = new GoogleAuthProvider();
+      const { doc, getDoc } = window.firebaseModules;
+      const courseId = getCourseId();
+      const docRef = doc(db, 'users', currentUser.uid, 'courses', courseId);
+      const docSnap = await getDoc(docRef);
       
-      // Before signing in, save local progress in case we need to merge
-      const localData = window.progressTracker?.load();
-      
-      await signInWithPopup(auth, provider);
-      
-      window.showToast?.('success', 'Signed In', 'You are now signed in with your Google account.');
-      
-      // onAuthStateChanged will handle the rest
-    } catch (e) {
-      console.error('Sign in failed:', e);
-      window.showToast?.('error', 'Sign In Failed', `Error: ${e.message}`);
-    }
-  }
-
-  async function linkGoogleAccount() {
-    if (!auth || !currentUser) {
-      window.showToast?.('warning', 'Not Ready', 'Please wait for the sync system to initialize.');
-      return;
-    }
-    
-    try {
-      const { GoogleAuthProvider, linkWithPopup } = window.firebaseModules;
-      const provider = new GoogleAuthProvider();
-      await linkWithPopup(currentUser, provider);
-      
-      window.showToast?.('success', 'Account Linked', 'Your progress is now permanently saved to your Google account.');
-      updateSettingsUI();
-    } catch (e) {
-      if (e.code === 'auth/credential-already-in-use') {
-        // Show a more helpful message with a button if possible, but for now just explain they can sign in
-        window.showToast?.('warning', 'Account Already Exists', 'This Google account is already linked to another profile. You can sign in directly using the "Sign In with Google" button below.', 10000);
-      } else if (e.code === 'auth/popup-closed-by-user') {
-        // Do nothing
-      } else if (e.code === 'auth/unauthorized-domain') {
-        window.showToast?.('error', 'Domain Not Authorized', 'Please add "in30days.org" to the Authorized Domains in your Firebase Console.');
-      } else if (e.code === 'auth/operation-not-allowed') {
-        window.showToast?.('error', 'Auth Not Enabled', 'Please enable Google Auth in your Firebase Console.');
+      if (docSnap.exists()) {
+        const cloudData = docSnap.data();
+        window.progressTracker?.save(cloudData, true); // skipSync=true
+        window.progressTracker?.updateUI();
+        window.showToast?.('success', 'Sync Complete', 'Progress refreshed from cloud.');
       } else {
-        console.error('Link account failed:', e);
-        const errorMsg = e.message || 'Please try again.';
-        window.showToast?.('error', 'Link Failed', `Error: ${errorMsg}`);
+        window.showToast?.('warning', 'No Data Found', 'No cloud progress found for this account.');
       }
+    } catch (e) {
+      console.error('Force sync failed:', e);
+      window.showToast?.('error', 'Sync Failed', 'Unable to reach the cloud. Check your connection.');
     }
   }
 
@@ -310,6 +304,9 @@
     
     // Bind sign in button
     document.getElementById('sign-in-google-btn')?.addEventListener('click', signInWithGoogle);
+
+    // Bind force sync button
+    document.getElementById('force-sync-cloud-btn')?.addEventListener('click', forceSyncFromCloud);
     
     // Bind manual sync button
     document.getElementById('manual-sync-btn')?.addEventListener('click', () => {

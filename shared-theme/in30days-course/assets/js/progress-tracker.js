@@ -66,14 +66,14 @@
   }
 
   // Save progress to localStorage
-  function saveProgress(progress) {
+  function saveProgress(progress, skipSync = false) {
     progress.lastUpdated = new Date().toISOString();
     try {
       localStorage.setItem(getStorageKey(), JSON.stringify(progress));
-      if (window.firebaseSync && progress.syncEnabled) {
+      if (!skipSync && window.firebaseSync && progress.syncEnabled) {
         window.firebaseSync.sync(progress);
       }
-      window.dispatchEvent(new CustomEvent('progressUpdated', { detail: progress }));
+      window.dispatchEvent(new CustomEvent('progressUpdated', { detail: { progress, skipSync } }));
     } catch (e) {
       console.error('Failed to save progress:', e);
     }
@@ -258,9 +258,7 @@
       if (getDayStatus(dayNum) === 'available') startDay(dayNum);
     }
     updateUI();
-    window.addEventListener('progressUpdated', updateUI);
-    
-    // Sidebar actions
+    window.addEventListener('progressUpdated', () => updateUI());
     document.getElementById('export-progress-btn')?.addEventListener('click', exportProgress);
     const importInput = document.getElementById('import-file-input');
     document.getElementById('import-progress-btn')?.addEventListener('click', () => importInput?.click());
