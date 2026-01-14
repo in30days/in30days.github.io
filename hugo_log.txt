@@ -1,0 +1,22 @@
+Watching for changes in C:\dev\in30days\{courses,shared-theme}
+Watching for config changes in C:\dev\in30days\courses\python\hugo.toml
+Start building sites … 
+hugo v0.148.2-40c3d8233d4b123eff74725e5766fc6272f0a84d+extended windows/amd64 BuildDate=2025-07-27T12:43:24Z VendorInfo=gohugoio
+
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 64 
+ Paginator pages  │  0 
+ Non-page files   │  5 
+ Static files     │  2 
+ Processed images │  0 
+ Aliases          │  0 
+ Cleaned          │  0 
+
+Built in 531 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1314/ (bind address 127.0.0.1) 
+Press Ctrl+C to stop

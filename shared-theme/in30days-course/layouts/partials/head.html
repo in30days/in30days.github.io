@@ -30,7 +30,7 @@
 
 <!-- Open Graph -->
 <meta name="course-id" content="{{ .Site.Params.courseId }}">
-<meta name="course-base-url" content="{{ "/" | relURL }}">
+<meta name="course-base-url" content="{{ .Site.Home.RelPermalink }}">
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
