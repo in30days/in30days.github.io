@@ -1,6 +1,6 @@
 # in30days
 
-Master any skill in 30 days with interactive learning paths.
+Master any skill in 30 days with interactive learning paths. Go from zero to hero!
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Hugo](https://img.shields.io/badge/hugo-%3E%3D0.112-ff4088)
