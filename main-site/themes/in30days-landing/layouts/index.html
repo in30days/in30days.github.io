@@ -1,0 +1,97 @@
+{{ define "main" }}
+{{- partial "hero.html" . -}}
+{{- partial "courses-grid.html" . -}}
+
+<section class="features-section">
+  <div class="container">
+    <h2 class="section-title">Why Learn with in30days?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </div>
+        <h3 class="feature-title">30-Day Structure</h3>
+        <p class="feature-description">Bite-sized daily lessons designed to build skills progressively without overwhelming you.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3 class="feature-title">Interactive Quizzes</h3>
+        <p class="feature-description">Test your knowledge with engaging quizzes. Achieve 80% to unlock the next day.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 20V10"></path>
+            <path d="M18 20V4"></path>
+            <path d="M6 20v-4"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">Track Progress</h3>
+        <p class="feature-description">Your progress is saved locally and can sync across devices with optional cloud backup.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">Community Discussions</h3>
+        <p class="feature-description">Connect with fellow learners through integrated discussions powered by GitHub.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </div>
+        <h3 class="feature-title">Focus Mode</h3>
+        <p class="feature-description">Distraction-free reading with customizable fonts, sepia mode, and line highlighting.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">Dark Mode</h3>
+        <p class="feature-description">Easy on the eyes with automatic dark mode support based on your system preferences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Start Learning?</h2>
+      <p class="cta-description">Choose a learning path and begin your 30-day journey today. No account required.</p>
+      <a href="#courses" class="cta-button">
+        Browse Courses
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+{{ end }}

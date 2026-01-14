@@ -1,0 +1,59 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Python in 30 Days"
+theme = "in30days-course"
+themesDir = "../../shared-theme"
+
+[params]
+  courseId = "python"
+  courseName = "Python"
+  courseFullName = "Python in 30 Days"
+  courseDescription = "Master Python programming from zero to hero in 30 days"
+  courseColor = "#3b82f6"
+  courseIcon = "python"
+  totalDays = 30
+  quizPassScore = 80
+  difficulty = "beginner"
+  landingPageUrl = "http://localhost:1313" # Used for Home icon in local dev
+
+  [[params.weeks]]
+    id = 1
+    title = "Python Basics"
+    days = [1, 7]
+  [[params.weeks]]
+    id = 2
+    title = "Control Flow"
+    days = [8, 14]
+  [[params.weeks]]
+    id = 3
+    title = "Data Structures"
+    days = [15, 21]
+  [[params.weeks]]
+    id = 4
+    title = "Advanced & Projects"
+    days = [22, 30]
+  
+  [params.giscus]
+    enabled = true
+    repo = "in30days/website"
+    repoId = "R_kgDOQ5u0wQ"
+    category = "Q&A"
+    categoryId = "DIC_kwDOQ5u0wc4C08ta"
+    mapping = "pathname"
+    reactionsEnabled = true
+    theme = "preferred_color_scheme"
+    
+  [params.firebase]
+    enabled = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "dracula"
+    lineNos = true
+    lineNumbersInTable = true
+    
+[build]
+  writeStats = true

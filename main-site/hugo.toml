@@ -1,0 +1,16 @@
+baseURL = "https://in30days.org/"
+languageCode = "en-us"
+title = "in30days - Master Any Skill in 30 Days"
+theme = "in30days-landing"
+
+[params]
+  description = "Interactive learning paths to master programming languages and technologies in just 30 days"
+  author = "in30days"
+  
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[build]
+  writeStats = true

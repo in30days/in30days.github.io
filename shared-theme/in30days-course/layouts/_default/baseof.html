@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}" data-theme="light">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body>
+  <div class="app-container" data-focus-mode="false" data-sepia="false">
+    {{- partial "header.html" . -}}
+    
+    <div class="main-layout">
+      {{- partial "sidebar.html" . -}}
+      
+      <main class="main-content">
+        <div class="content-wrapper">
+          {{- block "main" . }}{{- end }}
+        </div>
+        
+        {{- partial "day-navigation.html" . -}}
+        {{- partial "giscus.html" . -}}
+        {{- partial "footer.html" . -}}
+      </main>
+    </div>
+    
+    {{- partial "focus-mode-toggle.html" . -}}
+    {{- partial "export-import.html" . -}}
+  </div>
+  
+  {{- partial "scripts.html" . -}}
+</body>
+</html>

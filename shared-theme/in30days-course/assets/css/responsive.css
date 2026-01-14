@@ -1,0 +1,312 @@
+/* Responsive Styles - Mobile First */
+
+/* Extra small devices (phones, less than 640px) */
+/* Base styles are mobile-first, so this is the default */
+
+/* Hide desktop-only elements on mobile */
+@media (max-width: 639px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .day-nav-content {
+    display: none;
+  }
+  
+  .day-nav-btn--prev,
+  .day-nav-btn--next {
+    padding: var(--spacing-3);
+  }
+  
+  .quiz-progress {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+  }
+  
+  .quiz-results-actions {
+    flex-direction: column;
+  }
+  
+  .quiz-results-actions button,
+  .quiz-results-actions a {
+    width: 100%;
+  }
+}
+
+/* Small devices (landscape phones, 640px and up) */
+@media (min-width: 640px) {
+  .hide-sm {
+    display: none !important;
+  }
+  
+  .show-sm {
+    display: block !important;
+  }
+  
+  .content-wrapper {
+    padding: var(--spacing-6);
+  }
+  
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .days-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .hide-md {
+    display: none !important;
+  }
+  
+  .show-md {
+    display: block !important;
+  }
+  
+  .header-center {
+    display: flex;
+  }
+  
+  .content-wrapper {
+    padding: var(--spacing-8) var(--spacing-6);
+  }
+  
+  .day-title {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .course-title {
+    font-size: calc(var(--font-size-4xl) * 1.25);
+  }
+  
+  .days-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .quiz-container {
+    padding: var(--spacing-8);
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .hide-lg {
+    display: none !important;
+  }
+  
+  .show-lg {
+    display: block !important;
+  }
+  
+  /* Sidebar is visible on large screens */
+  .sidebar {
+    transform: translateX(0);
+    position: sticky;
+  }
+  
+  .sidebar-toggle {
+    display: none;
+  }
+  
+  .sidebar-overlay {
+    display: none;
+  }
+  
+  .days-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .progress-stats {
+    gap: var(--spacing-8);
+  }
+  
+  /* Two-column layout for objectives on larger screens */
+  .course-objectives-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Extra large devices (large desktops, 1280px and up) */
+@media (min-width: 1280px) {
+  .hide-xl {
+    display: none !important;
+  }
+  
+  .show-xl {
+    display: block !important;
+  }
+  
+  .days-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .header-container {
+    padding: 0 var(--spacing-8);
+  }
+}
+
+/* Print styles */
+@media print {
+  .site-header,
+  .sidebar,
+  .sidebar-overlay,
+  .day-navigation,
+  .comments-section,
+  .site-footer,
+  .focus-mode-controls,
+  .quiz-section,
+  .copy-btn,
+  .header-actions {
+    display: none !important;
+  }
+  
+  .main-content {
+    margin: 0;
+  }
+  
+  .content-wrapper {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .prose {
+    font-size: 12pt;
+  }
+  
+  .prose a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .prose a::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+  
+  .prose pre {
+    white-space: pre-wrap;
+    border: 1px solid #ccc;
+  }
+  
+  .callout {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000;
+    --border-color-strong: #000;
+  }
+  
+  [data-theme="dark"] {
+    --border-color: #fff;
+    --border-color-strong: #fff;
+  }
+  
+  .btn--primary,
+  .day-badge,
+  .course-badge {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  .header-btn,
+  .sidebar-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .calendar-day {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .question-option {
+    padding: var(--spacing-4);
+  }
+  
+  .drag-drop-item {
+    padding: var(--spacing-4);
+  }
+  
+  /* Disable hover effects that don't work on touch */
+  .copy-btn {
+    opacity: 1;
+  }
+  
+  .day-card:hover {
+    transform: none;
+  }
+  
+  .calendar-day:hover {
+    transform: none;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .site-header {
+    height: 48px;
+  }
+  
+  .sidebar {
+    top: 48px;
+    height: calc(100vh - 48px);
+  }
+  
+  .focus-mode-controls {
+    bottom: var(--spacing-2);
+  }
+}
+
+/* Safe area insets for notched devices */
+@supports (padding: max(0px)) {
+  .site-header {
+    padding-left: max(var(--spacing-4), env(safe-area-inset-left));
+    padding-right: max(var(--spacing-4), env(safe-area-inset-right));
+  }
+  
+  .sidebar {
+    padding-left: max(0px, env(safe-area-inset-left));
+  }
+  
+  .content-wrapper {
+    padding-left: max(var(--spacing-4), env(safe-area-inset-left));
+    padding-right: max(var(--spacing-4), env(safe-area-inset-right));
+  }
+  
+  .site-footer {
+    padding-bottom: max(var(--spacing-8), env(safe-area-inset-bottom));
+  }
+  
+  .focus-mode-controls {
+    bottom: max(var(--spacing-6), env(safe-area-inset-bottom));
+  }
+}

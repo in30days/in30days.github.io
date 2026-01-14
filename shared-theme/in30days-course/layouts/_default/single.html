@@ -1,0 +1,49 @@
+{{ define "main" }}
+<article class="day-content">
+  <header class="day-header">
+    <div class="day-meta">
+      <span class="day-badge">Day {{ .Params.day }}</span>
+      <span class="day-duration">{{ .Params.duration | default "30 min" }}</span>
+      {{ if .Params.difficulty }}
+      <span class="day-difficulty day-difficulty--{{ .Params.difficulty }}">{{ .Params.difficulty }}</span>
+      {{ end }}
+    </div>
+    <h1 class="day-title">{{ .Title }}</h1>
+    {{ with .Params.description }}
+    <p class="day-description">{{ . }}</p>
+    {{ end }}
+  </header>
+
+  {{ if .Params.objectives }}
+  <section class="objectives-section">
+    <h2 class="objectives-title">Learning Objectives</h2>
+    <ul class="objectives-list">
+      {{ range .Params.objectives }}
+      <li class="objective-item">
+        <span class="objective-checkbox" data-checked="false"></span>
+        <span class="objective-text">{{ . }}</span>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+  <div class="day-body prose">
+    {{ .Content }}
+  </div>
+
+  {{ $quizPath := printf "%s/quiz.json" .File.Dir }}
+  {{ if fileExists $quizPath }}
+  <section class="quiz-section" id="quiz">
+    <h2 class="quiz-title">Quiz</h2>
+    <p class="quiz-description">Complete this quiz with a minimum score of {{ .Site.Params.quizPassScore | default 80 }}% to mark Day {{ .Params.day }} as complete.</p>
+    <div class="quiz-container" 
+         data-quiz-path="{{ .RelPermalink }}quiz.json"
+         data-day="{{ .Params.day }}"
+         data-pass-score="{{ .Site.Params.quizPassScore | default 80 }}">
+      <div class="quiz-loading">Loading quiz...</div>
+    </div>
+  </section>
+  {{ end }}
+</article>
+{{ end }}

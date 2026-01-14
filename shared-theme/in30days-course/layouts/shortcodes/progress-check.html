@@ -1,0 +1,28 @@
+{{/* Progress Check Shortcode - Inline checkbox for marking progress
+    Usage: {{< progress-check id="unique-id" >}}I understand this concept{{< /progress-check >}}
+*/}}
+{{ $id := .Get "id" | default (printf "check-%s" (now.UnixNano)) }}
+
+<label class="progress-check" data-check-id="{{ $id }}">
+  <span class="progress-check-box"></span>
+  <span class="progress-check-label">{{ .Inner }}</span>
+</label>
+
+<script>
+(function() {
+  const el = document.querySelector('[data-check-id="{{ $id }}"]');
+  if (!el) return;
+  
+  const storageKey = 'in30days_check_{{ $id }}';
+  
+  // Load saved state
+  if (localStorage.getItem(storageKey) === 'true') {
+    el.classList.add('is-checked');
+  }
+  
+  el.addEventListener('click', function() {
+    const isChecked = el.classList.toggle('is-checked');
+    localStorage.setItem(storageKey, isChecked);
+  });
+})();
+</script>

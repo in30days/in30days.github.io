@@ -1,0 +1,38 @@
+<footer class="landing-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <img src="{{ "images/logo.svg" | relURL }}" alt="in30days" class="footer-logo-image">
+          <span>in30days</span>
+        </a>
+        <p class="footer-tagline">Master any skill in 30 days with structured learning paths and interactive content.</p>
+      </div>
+      
+      <div class="footer-links-group">
+        <h4 class="footer-links-title">Courses</h4>
+        <ul class="footer-links">
+          {{ range $.Site.Data.courses }}
+          {{ if not .comingSoon }}
+          <li><a href="{{ .url }}">{{ .name }}</a></li>
+          {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+      
+      <div class="footer-links-group">
+        <h4 class="footer-links-title">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="https://github.com/in30days" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/in30days/in30days/issues" target="_blank" rel="noopener">Report Issue</a></li>
+          <li><a href="https://github.com/in30days/in30days/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; {{ now.Year }} in30days. Open source under MIT License.</p>
+      <p class="footer-credits">Made with <span aria-label="love">&#x2764;</span> for learners everywhere</p>
+    </div>
+  </div>
+</footer>

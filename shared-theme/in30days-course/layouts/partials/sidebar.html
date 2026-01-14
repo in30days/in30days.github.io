@@ -1,0 +1,99 @@
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="{{ .Site.BaseURL }}" class="sidebar-course-link">
+      <span class="sidebar-course-badge" style="background-color: {{ .Site.Params.courseColor }}">
+        {{ .Site.Params.courseName }}
+      </span>
+      <span class="sidebar-course-title">{{ .Site.Params.courseFullName }}</span>
+    </a>
+  </div>
+  
+  <div class="sidebar-progress">
+    <div class="sidebar-progress-header">
+      <span class="sidebar-progress-label">Your Progress</span>
+      <span class="sidebar-progress-value" id="sidebar-progress-value">0%</span>
+    </div>
+    <div class="sidebar-progress-bar">
+      <div class="sidebar-progress-fill" id="sidebar-progress-fill" style="width: 0%"></div>
+    </div>
+  </div>
+  
+  <nav class="sidebar-nav">
+    <div class="weekly-nav" id="weekly-nav">
+      {{ range .Site.Params.weeks }}
+      <div class="week-group" data-week="{{ .id }}">
+        <button class="week-header" aria-expanded="false">
+          <span class="week-title-wrap">
+            <span class="week-label">Week {{ .id }}</span>
+            <span class="week-title">{{ .title }}</span>
+          </span>
+          <span class="week-progress-badge" id="week-{{ .id }}-progress">0/{{ sub (add (index .days 1) 1) (index .days 0) }}</span>
+          <svg class="week-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="week-content">
+          {{ range $i := seq (index .days 0) (index .days 1) }}
+          {{ $dayNum := printf "%02d" $i }}
+          {{ $dayPage := $.Site.GetPage (printf "/day-%s" $dayNum) }}
+          <a href="{{ if $dayPage }}{{ $dayPage.RelPermalink }}{{ else }}#{{ end }}" 
+             class="nav-day-item {{ if eq $.RelPermalink $dayPage.RelPermalink }}active{{ end }}" 
+             data-day="{{ $i }}"
+             data-status="locked">
+            <span class="nav-day-status-icon"></span>
+            <span class="nav-day-info">
+              <span class="nav-day-label">Day {{ $i }}</span>
+              <span class="nav-day-title">{{ if $dayPage }}{{ $dayPage.Title }}{{ else }}Day {{ $i }}{{ end }}</span>
+            </span>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </nav>
+  
+  <div class="sidebar-footer">
+    <div class="sidebar-actions">
+      <button class="sidebar-action-btn" id="export-progress-btn" title="Export Progress">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Export</span>
+      </button>
+      <button class="sidebar-action-btn" id="import-progress-btn" title="Import Progress">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="17 8 12 3 7 8"></polyline>
+          <line x1="12" y1="3" x2="12" y2="15"></line>
+        </svg>
+        <span>Import</span>
+      </button>
+    </div>
+  </div>
+</aside>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<!-- Mobile Bottom Progress Bar -->
+<div class="mobile-progress-nav" id="mobile-progress-nav">
+  <div class="mobile-progress-track">
+    <div class="mobile-progress-fill" id="mobile-progress-fill" style="width: 0%"></div>
+  </div>
+  <div class="mobile-nav-content">
+    <div class="mobile-progress-info">
+      <span class="mobile-progress-percent" id="mobile-progress-percent">0% Complete</span>
+      <span class="mobile-current-day">Day {{ .Params.day | default "1" }}</span>
+    </div>
+    <button class="mobile-nav-toggle" id="mobile-nav-toggle">
+      <span>Curriculum</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</div>

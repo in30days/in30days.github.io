@@ -1,0 +1,49 @@
+<div class="focus-mode-controls" id="focus-mode-controls" style="display: none;">
+  <div class="focus-controls-inner">
+    <button class="focus-control-btn" id="focus-exit-btn" title="Exit focus mode (Esc)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+      <span>Exit</span>
+    </button>
+    
+    <div class="focus-control-divider"></div>
+    
+    <button class="focus-control-btn" id="focus-font-decrease" title="Decrease font size">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <text x="12" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="currentColor" stroke="none">A</text>
+        <line x1="5" y1="22" x2="11" y2="22"></line>
+      </svg>
+    </button>
+    
+    <button class="focus-control-btn" id="focus-font-increase" title="Increase font size">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <text x="12" y="18" text-anchor="middle" font-size="18" font-weight="bold" fill="currentColor" stroke="none">A</text>
+        <line x1="13" y1="22" x2="19" y2="22"></line>
+      </svg>
+    </button>
+    
+    <div class="focus-control-divider"></div>
+    
+    <button class="focus-control-btn" id="focus-sepia-toggle" title="Toggle sepia mode">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 2a10 10 0 0 0 0 20"></path>
+      </svg>
+      <span>Sepia</span>
+    </button>
+    
+    <button class="focus-control-btn" id="focus-highlight-toggle" title="Toggle line highlighting">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6" opacity="0.3"></line>
+        <line x1="3" y1="18" x2="21" y2="18" opacity="0.3"></line>
+      </svg>
+      <span>Highlight</span>
+    </button>
+  </div>
+</div>
+
+<!-- Focus mode line highlight overlay -->
+<div class="focus-line-highlight" id="focus-line-highlight" style="display: none;"></div>

@@ -1,0 +1,79 @@
+- id: python
+  name: Python
+  fullName: Python in 30 Days
+  description: Master Python programming from beginner to intermediate level
+  color: "#3b82f6"
+  icon: python
+  difficulty: beginner
+  totalDays: 30
+  url: /python/
+  featured: true
+  tags:
+    - programming
+    - beginner-friendly
+    - data-science
+    - automation
+
+- id: kubernetes
+  name: Kubernetes
+  fullName: Kubernetes in 30 Days
+  description: Learn container orchestration and cloud-native development
+  color: "#326ce5"
+  icon: kubernetes
+  difficulty: intermediate
+  totalDays: 30
+  url: /kubernetes/
+  featured: true
+  comingSoon: true
+  tags:
+    - devops
+    - cloud
+    - containers
+
+- id: javascript
+  name: JavaScript
+  fullName: JavaScript in 30 Days
+  description: Build interactive web applications from scratch
+  color: "#f7df1e"
+  icon: javascript
+  difficulty: beginner
+  totalDays: 30
+  url: /javascript/
+  featured: true
+  comingSoon: true
+  tags:
+    - web
+    - frontend
+    - programming
+
+- id: rust
+  name: Rust
+  fullName: Rust in 30 Days
+  description: Systems programming with memory safety and performance
+  color: "#dea584"
+  icon: rust
+  difficulty: intermediate
+  totalDays: 30
+  url: /rust/
+  featured: false
+  comingSoon: true
+  tags:
+    - systems
+    - performance
+    - programming
+
+- id: go
+  name: Go
+  fullName: Go in 30 Days
+  description: Build fast, reliable, and efficient software
+  color: "#00add8"
+  icon: go
+  difficulty: intermediate
+  totalDays: 30
+  url: /go/
+  featured: false
+  comingSoon: true
+  tags:
+    - backend
+    - cloud
+    - programming

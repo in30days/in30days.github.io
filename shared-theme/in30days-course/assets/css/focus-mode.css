@@ -1,0 +1,246 @@
+/* Focus Reading Mode Styles */
+
+/* Focus mode active state */
+[data-focus-mode="true"] .site-header {
+  transform: translateY(-100%);
+  transition: transform var(--transition-base);
+}
+
+[data-focus-mode="true"] .sidebar {
+  transform: translateX(-100%) !important;
+}
+
+[data-focus-mode="true"] .sidebar-overlay {
+  display: none !important;
+}
+
+[data-focus-mode="true"] .main-content {
+  margin-left: 0;
+}
+
+[data-focus-mode="true"] .content-wrapper {
+  max-width: 720px;
+  padding-top: var(--spacing-8);
+}
+
+[data-focus-mode="true"] .day-navigation {
+  display: none;
+}
+
+[data-focus-mode="true"] .comments-section {
+  display: none;
+}
+
+[data-focus-mode="true"] .site-footer {
+  display: none;
+}
+
+/* Focus mode typography enhancement */
+[data-focus-mode="true"] .prose {
+  font-size: 1.1rem;
+  line-height: 1.85;
+}
+
+[data-focus-mode="true"] .prose h1 {
+  font-size: 2.25rem;
+}
+
+[data-focus-mode="true"] .prose h2 {
+  font-size: 1.75rem;
+}
+
+[data-focus-mode="true"] .prose h3 {
+  font-size: 1.375rem;
+}
+
+/* Focus mode font size adjustments */
+[data-focus-mode="true"][data-font-size="small"] .prose {
+  font-size: 1rem;
+}
+
+[data-focus-mode="true"][data-font-size="large"] .prose {
+  font-size: 1.25rem;
+  line-height: 1.9;
+}
+
+[data-focus-mode="true"][data-font-size="xlarge"] .prose {
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+/* Sepia mode */
+[data-focus-mode="true"][data-sepia="true"] {
+  --bg-primary: #f4ecd8;
+  --bg-secondary: #ebe3d1;
+  --bg-tertiary: #e2d9c5;
+  --text-primary: #433422;
+  --text-secondary: #6b5a48;
+  --text-muted: #8b7a68;
+  --border-color: #d4c9b5;
+}
+
+[data-focus-mode="true"][data-sepia="true"] .prose code {
+  background-color: #e2d9c5;
+  color: #433422;
+}
+
+[data-focus-mode="true"][data-sepia="true"] .prose pre {
+  background-color: #ebe3d1;
+  border-color: #d4c9b5;
+}
+
+/* Focus mode controls */
+.focus-mode-controls {
+  position: fixed;
+  bottom: var(--spacing-6);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-fixed);
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.focus-controls-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.focus-control-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: transparent;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.focus-control-btn:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.focus-control-btn.is-active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.focus-control-divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--border-color);
+}
+
+/* Line highlighting */
+.focus-line-highlight {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 3em;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(99, 102, 241, 0.08) 20%,
+    rgba(99, 102, 241, 0.08) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  transition: top 0.1s ease-out;
+}
+
+[data-theme="dark"] .focus-line-highlight {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(99, 102, 241, 0.15) 20%,
+    rgba(99, 102, 241, 0.15) 80%,
+    transparent 100%
+  );
+}
+
+[data-sepia="true"] .focus-line-highlight {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(139, 69, 19, 0.08) 20%,
+    rgba(139, 69, 19, 0.08) 80%,
+    transparent 100%
+  );
+}
+
+/* Focus mode reading indicator */
+.focus-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--bg-tertiary);
+  z-index: var(--z-fixed);
+}
+
+.focus-reading-progress-bar {
+  height: 100%;
+  background-color: var(--color-primary);
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
+
+/* Mobile adjustments for focus mode */
+@media (max-width: 640px) {
+  .focus-mode-controls {
+    bottom: var(--spacing-4);
+    left: var(--spacing-4);
+    right: var(--spacing-4);
+    transform: none;
+  }
+  
+  .focus-controls-inner {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .focus-control-btn span {
+    display: none;
+  }
+  
+  .focus-control-btn {
+    padding: var(--spacing-3);
+  }
+}
+
+/* Focus button active state in header */
+#focus-mode-btn.is-active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Smooth transitions when entering/exiting focus mode */
+.app-container {
+  transition: background-color var(--transition-base);
+}
+
+[data-focus-mode="true"] .app-container {
+  background-color: var(--bg-primary);
+}

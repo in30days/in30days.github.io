@@ -1,0 +1,12 @@
+{{/* Objectives Shortcode - Renders objectives from front matter
+    Usage: {{< objectives >}}
+*/}}
+{{ with .Page.Params.objectives }}
+<div class="objectives-shortcode">
+  <ul>
+    {{ range . }}
+    <li>{{ . }}</li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

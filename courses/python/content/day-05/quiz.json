@@ -1,0 +1,50 @@
+{
+  "dayId": 5,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "Which loop is better when you know the exact number of iterations beforehand?",
+      "options": [
+        { "id": "a", "text": "for loop", "correct": true },
+        { "id": "b", "text": "while loop", "correct": false }
+      ],
+      "explanation": "While both can work, a 'for' loop with 'range()' is idiomatic and safer when the number of steps is known."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "What is the output of 'range(3)'?",
+      "options": [
+        { "id": "a", "text": "1, 2, 3", "correct": false },
+        { "id": "b", "text": "0, 1, 2", "correct": true },
+        { "id": "c", "text": "0, 1, 2, 3", "correct": false }
+      ],
+      "explanation": "range(n) generates numbers from 0 up to (but not including) n."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "What does the 'break' statement do?",
+      "options": [
+        { "id": "a", "text": "Skips the current iteration", "correct": false },
+        { "id": "b", "text": "Exits the entire loop", "correct": true },
+        { "id": "c", "text": "Pauses the program", "correct": false }
+      ],
+      "explanation": "'break' stops the loop immediately, while 'continue' just skips to the next iteration."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange the parts of a 'while' loop in the correct logical execution order:",
+      "items": [
+        { "id": "cond", "text": "Check Condition" },
+        { "id": "body", "text": "Execute Block" },
+        { "id": "upd", "text": "Update Variable" }
+      ],
+      "correctOrder": ["cond", "body", "upd"],
+      "explanation": "A while loop first checks the condition, then runs the body, and typically ends the body by updating a variable that affects the next condition check."
+    }
+  ]
+}

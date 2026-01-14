@@ -1,0 +1,50 @@
+<!-- Mermaid.js for diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+  });
+</script>
+
+<!-- Firebase SDK (loaded conditionally) -->
+{{ if .Site.Params.firebase.enabled }}
+<script src="{{ "/firebase-config.js" | relURL }}"></script>
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
+  import { getAuth, signInAnonymously, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
+  import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
+  
+  window.firebaseModules = { initializeApp, getAuth, signInAnonymously, onAuthStateChanged, getFirestore };
+</script>
+{{ end }}
+
+<!-- Main JavaScript -->
+{{ $mainJS := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $mainJS.RelPermalink }}" defer></script>
+
+{{ $progressJS := resources.Get "js/progress-tracker.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $progressJS.RelPermalink }}" defer></script>
+
+{{ $themeJS := resources.Get "js/theme-toggle.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $themeJS.RelPermalink }}" defer></script>
+
+{{ $focusJS := resources.Get "js/focus-mode.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $focusJS.RelPermalink }}" defer></script>
+
+{{ $clipboardJS := resources.Get "js/clipboard.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $clipboardJS.RelPermalink }}" defer></script>
+
+{{ $quizJS := resources.Get "js/quiz-engine.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $quizJS.RelPermalink }}" defer></script>
+
+{{ $dragDropJS := resources.Get "js/drag-drop.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $dragDropJS.RelPermalink }}" defer></script>
+
+{{ if .Site.Params.firebase.enabled }}
+{{ $firebaseJS := resources.Get "js/firebase-sync.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $firebaseJS.RelPermalink }}" type="module" defer></script>
+{{ end }}
+
+{{ $tableJS := resources.Get "js/interactive-table.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $tableJS.RelPermalink }}" defer></script>

@@ -1,0 +1,21 @@
+# Hugo folders
+public/
+resources/
+.hugo_build.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDES
+.vscode/
+.idea/
+
+# Development
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Plan files
+plan.md

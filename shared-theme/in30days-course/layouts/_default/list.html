@@ -1,0 +1,50 @@
+{{ define "main" }}
+<div class="course-overview">
+  <header class="course-header">
+    <div class="course-badge" style="--course-color: {{ .Site.Params.courseColor }}">
+      {{ .Site.Params.courseName }}
+    </div>
+    <h1 class="course-title">{{ .Title }}</h1>
+    {{ with .Params.description }}
+    <p class="course-description">{{ . }}</p>
+    {{ end }}
+    
+    <div class="course-hero-actions">
+      <a href="{{ ($.Site.GetPage "/day-01").RelPermalink }}" class="resume-btn" id="resume-learning-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Start Learning</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="course-info-grid">
+    {{ if .Params.objectives }}
+    <section class="course-objectives">
+      <h2>What You'll Learn</h2>
+      <ul class="course-objectives-list">
+        {{ range .Params.objectives }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+  
+    {{ if .Params.prerequisites }}
+    <section class="course-prerequisites">
+      <h2>Prerequisites</h2>
+      <ul class="prerequisites-list">
+        {{ range .Params.prerequisites }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+  </div>
+
+  <div class="course-body prose">
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}
