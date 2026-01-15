@@ -15,13 +15,13 @@
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem(STORAGE_KEY, theme);
     
-    const sunIcon = document.querySelector('#theme-toggle .icon-sun');
-    const moonIcon = document.querySelector('#theme-toggle .icon-moon');
-    
-    if (sunIcon && moonIcon) {
-      sunIcon.style.display = theme === 'dark' ? 'none' : 'block';
-      moonIcon.style.display = theme === 'dark' ? 'block' : 'none';
-    }
+    // Update all theme toggle icons (desktop and mobile)
+    document.querySelectorAll('.icon-sun').forEach(icon => {
+      icon.style.display = theme === 'dark' ? 'none' : 'block';
+    });
+    document.querySelectorAll('.icon-moon').forEach(icon => {
+      icon.style.display = theme === 'dark' ? 'block' : 'none';
+    });
   }
 
   function toggleTheme() {
@@ -33,8 +33,9 @@
   // Initialize theme
   setTheme(getPreferredTheme());
 
-  // Bind toggle button
+  // Bind toggle buttons (desktop and mobile)
   document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  document.getElementById('mobile-theme-toggle')?.addEventListener('click', toggleTheme);
 
   // Listen for system theme changes
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
@@ -80,8 +81,8 @@
   // Mobile Menu Toggle
   function initMobileMenu() {
     const toggle = document.getElementById('mobile-menu-toggle');
-    const container = document.getElementById('nav-links-container');
-    const links = document.querySelectorAll('.nav-link');
+    const overlay = document.getElementById('mobile-nav-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
     if (!toggle) return;
 
@@ -91,8 +92,14 @@
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close menu when a link is clicked (especially important for anchor links)
-    links.forEach(link => {
+    // Close menu when overlay is clicked
+    overlay?.addEventListener('click', () => {
+      document.body.classList.remove('is-nav-open');
+      document.body.style.overflow = '';
+    });
+
+    // Close menu when a link is clicked
+    mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         document.body.classList.remove('is-nav-open');
         document.body.style.overflow = '';
