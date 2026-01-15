@@ -1,0 +1,54 @@
+{
+  "dayId": 15,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "What is a Class in Python?",
+      "options": [
+        { "id": "a", "text": "An actual piece of data", "correct": false },
+        { "id": "b", "text": "A blueprint for creating objects", "correct": true },
+        { "id": "c", "text": "A type of loop", "correct": false },
+        { "id": "d", "text": "A function that runs automatically", "correct": false }
+      ],
+      "explanation": "A class defines the structure and behavior, while an object is the actual instance."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "What keyword is used to create a class in Python?",
+      "options": [
+        { "id": "a", "text": "object", "correct": false },
+        { "id": "b", "text": "def", "correct": false },
+        { "id": "c", "text": "class", "correct": true },
+        { "id": "d", "text": "create", "correct": false }
+      ],
+      "explanation": "The 'class' keyword is used to start a class definition."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "What does the 'self' parameter refer to?",
+      "options": [
+        { "id": "a", "text": "The entire program", "correct": false },
+        { "id": "b", "text": "The class blueprint itself", "correct": false },
+        { "id": "c", "text": "The specific instance of the object calling the method", "correct": true },
+        { "id": "d", "text": "The last variable defined in the file", "correct": false }
+      ],
+      "explanation": "'self' allows methods to access the data belonging to the specific object they are acting on."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange these in the logical order of object creation:",
+      "items": [
+        { "id": "cls", "text": "Define a Class" },
+        { "id": "ins", "text": "Create an Instance (Object)" },
+        { "id": "use", "text": "Access Attributes or Methods" }
+      ],
+      "correctOrder": ["cls", "ins", "use"],
+      "explanation": "You must first define the blueprint (Class), then build the object (Instance), then you can use it."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "dayId": 18,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "What is the correct syntax for a basic list comprehension?",
+      "options": [
+        { "id": "a", "text": "new_list = [x for x in old_list]", "correct": true },
+        { "id": "b", "text": "new_list = {x for x in old_list}", "correct": false },
+        { "id": "c", "text": "new_list = (x for x in old_list)", "correct": false },
+        { "id": "d", "text": "new_list = [for x in old_list: x]", "correct": false }
+      ],
+      "explanation": "List comprehensions use square brackets [] and the syntax [expression for item in iterable]."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "Where do you place a condition to filter items in a comprehension?",
+      "options": [
+        { "id": "a", "text": "At the beginning", "correct": false },
+        { "id": "b", "text": "After the 'for' statement", "correct": true },
+        { "id": "c", "text": "Outside the brackets", "correct": false }
+      ],
+      "explanation": "The 'if' condition goes at the end of the comprehension: [expr for item in iterable if condition]."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "What is the result of '[x.upper() for x in [\"a\", \"b\"]]'?",
+      "options": [
+        { "id": "a", "text": "[\"a\", \"b\"]", "correct": false },
+        { "id": "b", "text": "[\"A\", \"B\"]", "correct": true },
+        { "id": "c", "text": "[\"AA\", \"BB\"]", "correct": false }
+      ],
+      "explanation": "It applies the .upper() method to each element in the list."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange the parts of a list comprehension that doubles only even numbers:",
+      "items": [
+        { "id": "1", "text": "[" },
+        { "id": "2", "text": "n * 2" },
+        { "id": "3", "text": "for n in nums" },
+        { "id": "4", "text": "if n % 2 == 0" },
+        { "id": "5", "text": "]" }
+      ],
+      "correctOrder": ["1", "2", "3", "4", "5"],
+      "explanation": "The order is: [ expression context condition ]"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "dayId": 21,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "What is the advantage of using a Class to represent a Book rather than just a dictionary?",
+      "options": [
+        { "id": "a", "text": "It can store methods (behavior) alongside the data", "correct": true },
+        { "id": "b", "text": "It is required for saving to files", "correct": false },
+        { "id": "c", "text": "It is easier to manage as the system grows", "correct": true },
+        { "id": "d", "text": "Classes use less memory than dictionaries", "correct": false }
+      ],
+      "explanation": "Classes provide a structured template that encapsulates both the attributes and the actions (methods) associated with an entity."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "Why use ISBN as the dictionary key in the Library class?",
+      "options": [
+        { "id": "a", "text": "Because ISBNs are unique", "correct": true },
+        { "id": "b", "text": "Because they are always numbers", "correct": false },
+        { "id": "c", "text": "It allows for instant lookup without looping through all books", "correct": true }
+      ],
+      "explanation": "Using a unique identifier as a key allows for highly efficient retrieval of data."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "What does the '__str__' method do?",
+      "options": [
+        { "id": "a", "text": "Deletes the object", "correct": false },
+        { "id": "b", "text": "Defines what happens when you print() the object", "correct": true },
+        { "id": "c", "text": "Converts all numbers to strings", "correct": false }
+      ],
+      "explanation": "__str__ is a 'magic method' that provides a human-readable string representation of an object."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange the logic for 'Borrowing' a book:",
+      "items": [
+        { "id": "1", "text": "Check if is_available is True" },
+        { "id": "2", "text": "Set is_available to False" },
+        { "id": "3", "text": "Add current time to history list" }
+      ],
+      "correctOrder": ["1", "2", "3"],
+      "explanation": "You must first verify the book is free, then mark it as taken, then log the transaction."
+    }
+  ]
+}

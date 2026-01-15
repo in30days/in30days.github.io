@@ -1,0 +1,54 @@
+{
+  "dayId": 19,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "Given 'data = [[1, 2], [3, 4]]', how do you access the number 4?",
+      "options": [
+        { "id": "a", "text": "data[1][1]", "correct": true },
+        { "id": "b", "text": "data[2][2]", "correct": false },
+        { "id": "c", "text": "data[0][1]", "correct": false },
+        { "id": "d", "text": "data[1][0]", "correct": false }
+      ],
+      "explanation": "Indices start at 0. data[1] is the second list [3, 4], and data[1][1] is the second item in that list."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "What is the best structure to store a list of users where each user has multiple attributes?",
+      "options": [
+        { "id": "a", "text": "A simple list of strings", "correct": false },
+        { "id": "b", "text": "A list of dictionaries", "correct": true },
+        { "id": "c", "text": "A single giant dictionary", "correct": false },
+        { "id": "d", "text": "A list of integers", "correct": false }
+      ],
+      "explanation": "A list of dictionaries is highly effective for representing rows of data with named fields."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "If 'menu = {\"drinks\": [\"coffee\", \"tea\"]}', how do you get 'tea'?",
+      "options": [
+        { "id": "a", "text": "menu[1][1]", "correct": false },
+        { "id": "b", "text": "menu[\"drinks\"][1]", "correct": true },
+        { "id": "c", "text": "menu[\"drinks\"][0]", "correct": false },
+        { "id": "d", "text": "menu[0][\"drinks\"]", "correct": false }
+      ],
+      "explanation": "You first access the value by key 'drinks', then use index [1] for the second item in that list."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange the access syntax from outer to inner for 'students[0][\"grades\"][2]':",
+      "items": [
+        { "id": "1", "text": "List Index (which student)" },
+        { "id": "2", "text": "Dict Key (access grades)" },
+        { "id": "3", "text": "List Index (specific grade)" }
+      ],
+      "correctOrder": ["1", "2", "3"],
+      "explanation": "You work from left to right: start with the outer container index, then the middle key, then the inner item index."
+    }
+  ]
+}

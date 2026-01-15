@@ -1,0 +1,52 @@
+{
+  "dayId": 22,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "Which function would you use to calculate the square root of a number?",
+      "options": [
+        { "id": "a", "text": "math.sq()", "correct": false },
+        { "id": "b", "text": "math.sqrt()", "correct": true },
+        { "id": "c", "text": "math.root()", "correct": false },
+        { "id": "d", "text": "math.pow()", "correct": false }
+      ],
+      "explanation": "sqrt() is the standard math module function for square roots."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "What is the difference between random.random() and random.randint(1, 10)?",
+      "options": [
+        { "id": "a", "text": "random() gives a float, randint() gives an integer", "correct": true },
+        { "id": "b", "text": "randint() is more random", "correct": false },
+        { "id": "c", "text": "random() only goes up to 1, while randint() can go higher", "correct": true }
+      ],
+      "explanation": "random.random() returns a decimal between 0 and 1, while randint() returns a whole number within a specified range."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "Which method is used to pick a random item from a list?",
+      "options": [
+        { "id": "a", "text": "random.select()", "correct": false },
+        { "id": "b", "text": "random.pick()", "correct": false },
+        { "id": "c", "text": "random.choice()", "correct": true },
+        { "id": "d", "text": "random.grab()", "correct": false }
+      ],
+      "explanation": "random.choice() is specifically designed to select one element from a sequence like a list."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "question": "What does 'math.ceil(7.1)' return?",
+      "options": [
+        { "id": "a", "text": "7", "correct": false },
+        { "id": "b", "text": "8", "correct": true },
+        { "id": "c", "text": "7.0", "correct": false }
+      ],
+      "explanation": "math.ceil() (short for ceiling) always rounds up to the nearest integer."
+    }
+  ]
+}

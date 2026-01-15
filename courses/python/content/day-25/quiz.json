@@ -1,0 +1,52 @@
+{
+  "dayId": 25,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "What is a 'Logic Error'?",
+      "options": [
+        { "id": "a", "text": "When you misspell a word in your code", "correct": false },
+        { "id": "b", "text": "When the program crashes with an exception", "correct": false },
+        { "id": "c", "text": "When the program runs but produces an incorrect result", "correct": true },
+        { "id": "d", "text": "When you lose your internet connection", "correct": false }
+      ],
+      "explanation": "Logic errors occur when your thinking is flawed, even though the syntax is correct."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "What does 'Rubber Duck Debugging' involve?",
+      "options": [
+        { "id": "a", "text": "Cleaning your keyboard", "correct": false },
+        { "id": "b", "text": "Explaining your code line-by-line to someone (or something)", "correct": true },
+        { "id": "c", "text": "Writing code while floating in a pool", "correct": false },
+        { "id": "d", "text": "Buying a yellow computer", "correct": false }
+      ],
+      "explanation": "Explaining code out loud helps the brain catch discrepancies between expectation and reality."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "Which module provides built-in debugging capabilities in Python?",
+      "options": [
+        { "id": "a", "text": "debug", "correct": false },
+        { "id": "b", "text": "fix", "correct": false },
+        { "id": "c", "text": "pdb", "correct": true },
+        { "id": "d", "text": "trace", "correct": false }
+      ],
+      "explanation": "pdb is the built-in Python DeBugger."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "question": "Should you leave your 'print' statements in the final version of your software?",
+      "options": [
+        { "id": "a", "text": "Yes, to help users debug it", "correct": false },
+        { "id": "b", "text": "No, they should be removed or replaced with logging", "correct": true }
+      ],
+      "explanation": "Debug prints can leak information and clutter the output for users. Always clean up after debugging."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "dayId": 30,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "What is the most important part of the Capstone project?",
+      "options": [
+        { "id": "a", "text": "Writing thousands of lines of code", "correct": false },
+        { "id": "b", "text": "Combining all the different concepts you've learned into one system", "correct": true },
+        { "id": "c", "text": "Having the best graphics", "correct": false },
+        { "id": "d", "text": "Completing it in under 5 minutes", "correct": false }
+      ],
+      "explanation": "The Capstone is designed to test your ability to integrate functions, classes, data structures, and file I/O."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "Which method is best for storing a complex game state that includes a player's inventory and current room?",
+      "options": [
+        { "id": "a", "text": "Saving each item in a separate text file", "correct": false },
+        { "id": "b", "text": "Using a JSON file to store a dictionary of the state", "correct": true },
+        { "id": "c", "text": "Just printing it to the screen and asking the user to write it down", "correct": false }
+      ],
+      "explanation": "JSON is perfect for preserving the structure of Python objects between game sessions."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "What should you do after completing this course?",
+      "options": [
+        { "id": "a", "text": "Stop coding forever", "correct": false },
+        { "id": "b", "text": "Continue practicing and start a specialized learning path", "correct": true },
+        { "id": "c", "text": "Delete all your code", "correct": false }
+      ],
+      "explanation": "Programming is a skill that grows with practice. Transitioning to advanced or web topics is the next natural step."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange the final steps of your Python Basics journey:",
+      "items": [
+        { "id": "1", "text": "Complete Capstone Project" },
+        { "id": "2", "text": "Pass Final Quiz" },
+        { "id": "3", "text": "Celebrate and Start Next Path" }
+      ],
+      "correctOrder": ["1", "2", "3"],
+      "explanation": "Finish your practical work, verify your knowledge, and keep moving forward!"
+    }
+  ]
+}

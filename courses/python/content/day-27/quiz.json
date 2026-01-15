@@ -1,0 +1,54 @@
+{
+  "dayId": 27,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "What is 'pip' in the Python ecosystem?",
+      "options": [
+        { "id": "a", "text": "A type of list", "correct": false },
+        { "id": "b", "text": "The standard package manager", "correct": true },
+        { "id": "c", "text": "A text editor", "correct": false },
+        { "id": "d", "text": "A cloud server", "correct": false }
+      ],
+      "explanation": "pip is used to install and manage additional libraries that are not part of the Python standard library."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "Why should you use a Virtual Environment (venv)?",
+      "options": [
+        { "id": "a", "text": "To make Python run faster", "correct": false },
+        { "id": "b", "text": "To keep different project dependencies separate", "correct": true },
+        { "id": "c", "text": "To avoid polluting your global Python installation", "correct": true },
+        { "id": "d", "text": "To encrypt your code", "correct": false }
+      ],
+      "explanation": "Isolation ensures that a change in one project doesn't break another project on the same computer."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "Which command creates a new virtual environment called 'my_env'?",
+      "options": [
+        { "id": "a", "text": "pip install my_env", "correct": false },
+        { "id": "b", "text": "python -m venv my_env", "correct": true },
+        { "id": "c", "text": "create venv my_env", "correct": false },
+        { "id": "d", "text": "new-env my_env", "correct": false }
+      ],
+      "explanation": "The built-in 'venv' module is accessed using the -m flag with the python command."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange the steps of starting a new project with packages:",
+      "items": [
+        { "id": "1", "text": "Create Virtual Environment" },
+        { "id": "2", "text": "Activate Environment" },
+        { "id": "3", "text": "Install Packages with pip" }
+      ],
+      "correctOrder": ["1", "2", "3"],
+      "explanation": "You must build and enter the sandbox before you can start installing tools inside it."
+    }
+  ]
+}

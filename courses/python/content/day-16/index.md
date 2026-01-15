@@ -1,30 +1,80 @@
 ---
-title: "Day 16: Coming Soon"
+title: "Constructors and Instance Methods"
 date: 2024-01-16
 day: 16
 weight: 16
 draft: false
 duration: "45 min"
 difficulty: "beginner"
-description: "Content for Day 16 is coming soon"
+description: "Learn how to initialize objects with data using the __init__ method."
 objectives:
-  - Objective 1
-  - Objective 2
-  - Objective 3
+  - Understand and use the `__init__` constructor
+  - Create objects with unique data
+  - Write methods that use object attributes
+  - Understand the life cycle of an object
 prerequisites: [15]
-tags: ["placeholder"]
+tags: ["oop", "constructor", "init"]
 ---
 
-## Coming Soon
+## Initializing Objects
 
-This lesson is currently being developed. Check back soon!
+Yesterday, we created an empty object and added attributes manually. In professional code, we use a **Constructor** to set up an object's data as soon as it is created.
 
-The full Python in 30 Days curriculum includes:
+## The `__init__` Method
 
-- **Days 1-7**: Python Basics (Setup, Variables, Operators, Control Flow)
-- **Days 8-14**: Functions and Data Structures
-- **Days 15-21**: File Handling and Modules
-- **Days 22-28**: Object-Oriented Programming
-- **Days 29-30**: Final Project
+In Python, the constructor is a special method called `__init__` (short for initialization). It runs automatically when you create a new object.
 
-Stay tuned for more content!
+{{< code-file filename="constructor.py" lang="python" >}}
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name   # Assigning param to object attribute
+        self.breed = breed
+        print(f"{self.name} has been created!")
+
+# Now we pass data during creation
+my_dog = Dog("Rex", "German Shepherd")
+friend_dog = Dog("Bella", "Poodle")
+
+print(my_dog.name)
+print(friend_dog.name)
+{{< /code-file >}}
+
+## Instance Methods
+
+Methods can use the data stored in the object to perform specific tasks.
+
+{{< code-file filename="methods_with_data.py" lang="python" >}}
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"Hi, I'm {self.name} and I am {self.age} years old.")
+
+    def human_years(self):
+        return self.age * 7
+
+rex = Dog("Rex", 3)
+rex.introduce()
+print(f"In human years, Rex is {rex.human_years()}")
+{{< /code-file >}}
+
+## Why use `self`?
+
+Remember, `self` is how the method knows *which* object's data to use. If you have two dogs, `self.name` ensures Rex says "Rex" and Bella says "Bella".
+
+---
+
+## Interactive Practice
+
+Try building a `Book` class that takes `title` and `author` as arguments in the `__init__` method. Add a method called `get_description` that returns a string like "Title by Author".
+
+{{< mermaid >}}
+flowchart TD
+    Create[Create: Dog 'Rex'] --> Init[__init__ runs]
+    Init --> Set[Set self.name = 'Rex']
+    Set --> Done[Object is ready to use]
+{{< /mermaid >}}
+
+{{< quiz >}}

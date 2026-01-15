@@ -1,0 +1,54 @@
+{
+  "dayId": 29,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "What is 'PEP 8'?",
+      "options": [
+        { "id": "a", "text": "The latest version of Python", "correct": false },
+        { "id": "b", "text": "The official style guide for Python code", "correct": true },
+        { "id": "c", "text": "A popular Python library", "correct": false },
+        { "id": "d", "text": "A type of data structure", "correct": false }
+      ],
+      "explanation": "PEP stands for Python Enhancement Proposal, and PEP 8 specifically covers code style."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "Which naming style is recommended for Python variables?",
+      "options": [
+        { "id": "a", "text": "camelCase", "correct": false },
+        { "id": "b", "text": "snake_case", "correct": true },
+        { "id": "c", "text": "PascalCase", "correct": false },
+        { "id": "d", "text": "kebab-case", "correct": false }
+      ],
+      "explanation": "PEP 8 recommends using lowercase words separated by underscores for variables and functions."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "How many spaces should be used for indentation according to PEP 8?",
+      "options": [
+        { "id": "a", "text": "2", "correct": false },
+        { "id": "b", "text": "4", "correct": true },
+        { "id": "c", "text": "8", "correct": false },
+        { "id": "d", "text": "Any amount as long as it is consistent", "correct": false }
+      ],
+      "explanation": "While Python technically allows any consistent indentation, 4 spaces is the industry standard."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange these naming examples into: Constant, Class, Variable",
+      "items": [
+        { "id": "1", "text": "DATABASE_URL" },
+        { "id": "2", "text": "UserAccount" },
+        { "id": "3", "text": "current_balance" }
+      ],
+      "correctOrder": ["1", "2", "3"],
+      "explanation": "Constants are ALL_CAPS, Classes are PascalCase, and Variables are snake_case."
+    }
+  ]
+}
