@@ -1,0 +1,138 @@
+{{ define "main" }}
+<div class="container" style="padding: 8rem 1.5rem 4rem;">
+  <div class="section-header">
+    <h1 class="section-title">{{ .Title }}</h1>
+    <p class="section-description">{{ .Content }}</p>
+  </div>
+
+  <div class="contributors-grid">
+    {{ range site.Data.contributors }}
+      {{ $contributorId := .id }}
+      {{ $contributedCourses := where site.Data.courses "contributor" $contributorId }}
+      {{ $contributedPaths := where site.Data.paths "contributor" $contributorId }}
+      {{ $numCourses := len $contributedCourses }}
+      {{ $numPaths := len $contributedPaths }}
+      {{ $profileUrl := printf "/contributors/%s/" .id | relURL }}
+      
+      <article class="contributor-card">
+        <div class="contributor-card-main">
+          <img src="{{ .avatar }}" alt="{{ .name }}" class="contributor-card-avatar">
+          <h2 class="contributor-card-name">{{ .name }}</h2>
+          <p class="contributor-card-bio">{{ .bio | truncate 120 }}</p>
+          
+          <div class="contributor-stats">
+            <a href="{{ $profileUrl }}#paths" class="contributor-stat-link">
+              <span class="stat-count">{{ $numPaths }}</span>
+              <span class="stat-label">Paths</span>
+            </a>
+            <a href="{{ $profileUrl }}#courses" class="contributor-stat-link">
+              <span class="stat-count">{{ $numCourses }}</span>
+              <span class="stat-label">Courses</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contributor-card-footer">
+          <a href="{{ $profileUrl }}" class="btn btn--secondary btn--full">View Profile</a>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+</div>
+
+<style>
+.contributors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.contributor-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.contributor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary);
+}
+
+.contributor-card-main {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  flex: 1;
+}
+
+.contributor-card-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  border: 3px solid var(--bg-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.contributor-card-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.contributor-card-bio {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  height: 4.8em; /* Fixed height for bio */
+  overflow: hidden;
+}
+
+.contributor-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--bg-tertiary);
+}
+
+.contributor-stat-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contributor-stat-link:hover {
+  color: var(--color-primary);
+}
+
+.stat-count {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.contributor-card-footer {
+  padding: 0 2rem 2rem;
+}
+
+.btn--full {
+  width: 100%;
+}
+</style>
+{{ end }}

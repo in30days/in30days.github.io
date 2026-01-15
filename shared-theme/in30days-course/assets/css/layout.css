@@ -289,6 +289,31 @@
   gap: var(--spacing-3);
 }
 
+.objective-bullet {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.objective-bullet::before {
+  content: "";
+  width: 6px;
+  height: 10px;
+  border: solid var(--color-success);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.objective-text {
+  color: var(--text-primary);
+  line-height: var(--line-height-normal);
+}
+
 .objective-checkbox {
   flex-shrink: 0;
   width: 20px;

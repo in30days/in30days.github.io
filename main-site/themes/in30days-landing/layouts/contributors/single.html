@@ -1,0 +1,274 @@
+{{ define "main" }}
+{{ $contributorId := .Params.contributor_id }}
+{{ $contributor := index site.Data.contributors 0 }}
+{{ range site.Data.contributors }}{{ if eq .id $contributorId }}{{ $contributor = . }}{{ end }}{{ end }}
+
+{{ $contributedCourses := where site.Data.courses "contributor" $contributorId }}
+{{ $contributedPaths := where site.Data.paths "contributor" $contributorId }}
+
+<div class="contributor-profile">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="{{ "/contributors/" | relURL }}">Contributors</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">{{ $contributor.name }}</span>
+    </nav>
+  </div>
+
+  <header class="profile-header">
+    <div class="container">
+      <div class="profile-hero">
+        <img src="{{ $contributor.avatar }}" alt="{{ $contributor.name }}" class="profile-avatar">
+        <div class="profile-info">
+          <h1 class="profile-name">{{ $contributor.name }}</h1>
+          <p class="profile-bio">{{ $contributor.bio }}</p>
+          <div class="profile-social">
+            {{ with $contributor.github }}
+            <a href="https://github.com/{{ . }}" target="_blank" rel="noopener" class="social-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+            {{ end }}
+            {{ with $contributor.twitter }}
+            <a href="https://twitter.com/{{ . }}" target="_blank" rel="noopener" class="social-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+              <span>Twitter</span>
+            </a>
+            {{ end }}
+            {{ with $contributor.website }}
+            <a href="{{ . }}" target="_blank" rel="noopener" class="social-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>Website</span>
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    {{ if $contributedPaths }}
+    <section class="profile-section" id="paths">
+      <h2 class="section-title">Learning Paths</h2>
+      <div class="courses-grid pagination-container" data-page-size="6">
+        {{ range $contributedPaths }}
+          {{ partial "card-path.html" . }}
+        {{ end }}
+      </div>
+      <div class="pagination-controls" id="paths-pagination"></div>
+    </section>
+    {{ end }}
+
+    {{ if $contributedCourses }}
+    <section class="profile-section" id="courses">
+      <h2 class="section-title">30-Day Courses</h2>
+      <div class="courses-grid pagination-container" data-page-size="6">
+        {{ range $contributedCourses }}
+          {{ partial "card-course.html" . }}
+        {{ end }}
+      </div>
+      <div class="pagination-controls" id="courses-pagination"></div>
+    </section>
+    {{ end }}
+  </div>
+</div>
+
+<style>
+.contributor-profile {
+  padding-top: 8rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-primary);
+}
+
+.breadcrumb-separator {
+  color: var(--text-muted);
+}
+
+.breadcrumb-current {
+  color: var(--text-primary);
+}
+
+.profile-header {
+  padding: 5rem 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: var(--radius-2xl);
+}
+
+.profile-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .profile-hero {
+    flex-direction: row;
+    text-align: left;
+    gap: 3rem;
+  }
+}
+
+.profile-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid var(--bg-primary);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .profile-avatar { margin-bottom: 0; }
+}
+
+.profile-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.profile-bio {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.profile-social {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .profile-social { justify-content: flex-start; }
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.social-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.profile-section {
+  padding: 5rem 0;
+}
+
+.profile-section .section-title {
+  font-size: 1.75rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.pagination-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.pagination-btn.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.pagination-btn:hover:not(.active) {
+  background: var(--bg-tertiary);
+  border-color: var(--color-primary);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const containers = document.querySelectorAll('.pagination-container');
+  
+  containers.forEach(container => {
+    const items = Array.from(container.children);
+    const pageSize = parseInt(container.dataset.pageSize) || 6;
+    const controlsId = container.nextElementSibling.id;
+    const controls = document.getElementById(controlsId);
+    
+    if (items.length <= pageSize) return;
+    
+    const pageCount = Math.ceil(items.length / pageSize);
+    
+    function showPage(page) {
+      items.forEach((item, index) => {
+        const start = (page - 1) * pageSize;
+        const end = start + pageSize;
+        item.style.display = (index >= start && index < end) ? 'flex' : 'none';
+      });
+      
+      // Update buttons
+      controls.querySelectorAll('.pagination-btn').forEach((btn, index) => {
+        btn.classList.toggle('active', index + 1 === page);
+      });
+    }
+    
+    for (let i = 1; i <= pageCount; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'pagination-btn';
+      btn.textContent = i;
+      btn.addEventListener('click', () => {
+        showPage(i);
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      controls.appendChild(btn);
+    }
+    
+    showPage(1);
+  });
+});
+</script>
+{{ end }}

@@ -1,0 +1,102 @@
+{{ define "main" }}
+{{ $path := .Params.path_id }}
+{{ $pathData := index $.Site.Data.paths 0 }} {{/* Simplification for demo: finding matching path */}}
+{{ range $.Site.Data.paths }}{{ if eq .id $path }}{{ $pathData = . }}{{ end }}{{ end }}
+
+<div class="path-landing-page">
+  <header class="path-hero" style="background-color: {{ $pathData.color }}20; border-bottom: 4px solid {{ $pathData.color }}">
+    <div class="container">
+      <div class="path-hero-content">
+        <div class="path-badge">Learning Path</div>
+        <h1 class="path-title">{{ $pathData.name }}</h1>
+        <p class="path-description">{{ $pathData.description }}</p>
+        
+        {{ if $pathData.contributor }}
+        {{ $targetId := $pathData.contributor }}
+        {{ $contributor := index $.Site.Data.contributors 0 }}
+        {{ range $.Site.Data.contributors }}{{ if eq .id $targetId }}{{ $contributor = . }}{{ end }}{{ end }}
+        <div class="path-curator">
+          <img src="{{ $contributor.avatar }}" alt="{{ $contributor.name }}" class="curator-avatar">
+          <span>Curated by <span class="curator-name">{{ $contributor.name }}</span></span>
+        </div>
+        {{ end }}
+
+        <div class="path-stats">
+          <div class="path-stat">
+            <span class="path-stat-value">{{ $pathData.totalDays }} Days</span>
+            <span class="path-stat-label">Duration</span>
+          </div>
+          <div class="path-stat">
+            <span class="path-stat-value">{{ len $pathData.courses }}</span>
+            <span class="path-stat-label">Modules</span>
+          </div>
+          <div class="path-stat">
+            {{ $readers := index $.Site.Data.stats $pathData.id | default 0 }}
+            <span class="path-stat-value">{{ if ge $readers 1000 }}{{ lang.FormatNumber 1 (div $readers 1000.0) }}k{{ else }}{{ $readers }}{{ end }}+</span>
+            <span class="path-stat-label">Learners</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="path-roadmap">
+    <div class="container">
+      <h2 class="roadmap-title">Roadmap to Mastery</h2>
+      <div class="roadmap-timeline">
+        {{ range $index, $courseId := $pathData.courses }}
+          {{ $course := index $.Site.Data.courses 0 }}
+          {{ range $.Site.Data.courses }}{{ if eq .id $courseId }}{{ $course = . }}{{ end }}{{ end }}
+          
+          <div class="roadmap-item">
+            <div class="roadmap-node" style="background-color: {{ $course.color }}">
+              {{ add $index 1 }}
+            </div>
+            <div class="roadmap-content">
+              <div class="roadmap-meta">
+                <span class="roadmap-tag">30 Days</span>
+                <span class="roadmap-difficulty difficulty--{{ $course.difficulty }}">{{ $course.difficulty }}</span>
+              </div>
+              <h3 class="roadmap-course-title">{{ $course.fullName }}</h3>
+              <p class="roadmap-course-desc">{{ $course.description }}</p>
+              {{ if $course.comingSoon }}
+                <span class="roadmap-coming">Coming Soon</span>
+              {{ else }}
+                <a href="{{ $course.url | relURL }}" class="roadmap-link">Start Module</a>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+.path-hero { padding: 8rem 0 4rem; }
+.path-badge { display: inline-block; padding: 0.25rem 0.75rem; background: var(--color-primary); color: white; border-radius: 99px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; }
+.path-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
+.path-description { font-size: 1.25rem; color: var(--text-secondary); max-width: 800px; margin-bottom: 2rem; }
+.path-curator { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; font-size: 1rem; color: var(--text-secondary); }
+.curator-avatar { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border-color); }
+.curator-name { font-weight: 700; color: var(--text-primary); }
+.path-stats { display: flex; gap: 3rem; }
+.path-stat { display: flex; flex-direction: column; }
+.path-stat-value { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
+.path-stat-label { font-size: 0.9rem; color: var(--text-muted); }
+
+.path-roadmap { padding: 5rem 0; }
+.roadmap-title { font-size: 2rem; margin-bottom: 3rem; text-align: center; }
+.roadmap-timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 2rem; border-left: 2px dashed var(--border-color); }
+.roadmap-item { position: relative; margin-bottom: 4rem; padding-left: 3rem; }
+.roadmap-node { position: absolute; left: -1.25rem; top: 0; width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; border: 4px solid var(--bg-primary); z-index: 1; }
+.roadmap-content { background: var(--bg-secondary); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border-color); }
+.roadmap-meta { display: flex; gap: 1rem; margin-bottom: 1rem; }
+.roadmap-tag { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); }
+.roadmap-difficulty { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.roadmap-course-title { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.roadmap-course-desc { color: var(--text-secondary); margin-bottom: 1.5rem; }
+.roadmap-link { color: var(--color-primary); font-weight: 600; text-decoration: underline; }
+.roadmap-coming { color: var(--text-muted); font-style: italic; }
+</style>
+{{ end }}

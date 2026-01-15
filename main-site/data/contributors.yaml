@@ -1,0 +1,7 @@
+- id: in30days-team
+  name: in30days Team
+  github: in30days
+  twitter: in30days
+  website: https://in30days.org
+  bio: "The core team building structured 30-day learning paths for everyone. Our mission is to make mastering complex technologies accessible and consistent."
+  avatar: "https://github.com/in30days.png"

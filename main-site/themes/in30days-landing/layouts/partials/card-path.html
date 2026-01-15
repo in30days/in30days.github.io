@@ -1,0 +1,46 @@
+{{ $readers := index site.Data.stats .id | default 0 }}
+<article class="course-card path-card" 
+         data-difficulty="{{ .difficulty }}" 
+         data-type="path"
+         style="--course-color: {{ .color }}">
+  <div class="course-badge-type">Guided Path</div>
+  
+  <div class="course-card-header">
+    <div class="course-icon" style="background-color: {{ .color }}20; color: {{ .color }}">
+      <span class="path-icon-stack">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </span>
+    </div>
+    <div class="course-meta">
+      <span class="course-difficulty course-difficulty--{{ .difficulty }}">{{ .difficulty }}</span>
+      <span class="course-duration">{{ .totalDays }} days</span>
+    </div>
+  </div>
+  
+  <div class="course-card-body">
+    <h3 class="course-title">{{ .name }}</h3>
+    <p class="course-description">{{ .description }}</p>
+    
+    {{ if .contributor }}
+    {{ $targetId := .contributor }}
+    {{ $contributor := index site.Data.contributors 0 }}
+    {{ range site.Data.contributors }}{{ if eq .id $targetId }}{{ $contributor = . }}{{ end }}{{ end }}
+    <div class="course-contributor">
+      <img src="{{ $contributor.avatar }}" alt="{{ $contributor.name }}" class="contributor-avatar">
+      <span>by <span class="contributor-name">{{ $contributor.name }}</span></span>
+    </div>
+    {{ end }}
+
+    <div class="path-steps">
+      <span class="path-step-count">{{ len .courses }} Courses</span>
+    </div>
+  </div>
+  
+  <div class="course-card-footer">
+    <div class="learner-count">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      <span>{{ if ge $readers 1000 }}{{ lang.FormatNumber 1 (div $readers 1000.0) }}k{{ else }}{{ $readers }}{{ end }} learners</span>
+    </div>
+    <a href="{{ .url | relURL }}" class="course-start-btn">View Path</a>
+  </div>
+</article>

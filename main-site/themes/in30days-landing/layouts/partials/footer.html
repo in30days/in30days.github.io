@@ -23,9 +23,10 @@
       <div class="footer-links-group">
         <h4 class="footer-links-title">Resources</h4>
         <ul class="footer-links">
+          <li><a href="{{ "how-it-works" | relURL }}">How it Works</a></li>
+          <li><a href="{{ "contributors" | relURL }}">Contributors</a></li>
+          <li><a href="{{ "privacy" | relURL }}">Privacy Policy</a></li>
           <li><a href="https://github.com/in30days" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://github.com/in30days/in30days/issues" target="_blank" rel="noopener">Report Issue</a></li>
-          <li><a href="https://github.com/in30days/in30days/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute</a></li>
         </ul>
       </div>
     </div>
@@ -33,6 +34,17 @@
     <div class="footer-bottom">
       <p class="footer-copyright">&copy; {{ now.Year }} in30days. Open source under MIT License.</p>
       <p class="footer-credits">Made with <span aria-label="love">&#x2764;</span> for learners everywhere</p>
+    </div>
+  </div>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>We use local storage and anonymous sync to track your progress. By continuing, you agree to our <a href="{{ "privacy" | relURL }}" style="text-decoration: underline;">Privacy Policy</a>.</p>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookie-decline" class="cookie-btn cookie-btn--secondary">Decline</button>
+      <button id="cookie-accept" class="cookie-btn cookie-btn--primary">Accept All</button>
     </div>
   </div>
 </footer>

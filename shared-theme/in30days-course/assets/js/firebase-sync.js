@@ -47,7 +47,21 @@
     return null;
   }
 
+  // Get privacy settings from localStorage
+  function getPrivacySettings() {
+    const SETTINGS_KEY = 'in30days_privacy_settings';
+    return JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{"essential": true, "sync": true, "analytics": true}');
+  }
+
   async function init() {
+    // Check privacy settings first
+    const privacy = getPrivacySettings();
+    if (!privacy.sync) {
+      console.log('Cloud sync disabled by user privacy settings');
+      updateSyncStatus('disabled');
+      return;
+    }
+
     // Check if Firebase modules are available
     if (!window.firebaseModules) {
       console.log('Firebase modules not loaded');

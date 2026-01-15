@@ -93,29 +93,6 @@
     }
   }
 
-  function initObjectives() {
-    document.querySelectorAll('.objective-checkbox').forEach((checkbox, index) => {
-      const dayMatch = window.location.pathname.match(/day-(\d+)/);
-      if (dayMatch) {
-        const storageKey = `in30days_objectives_day${dayMatch[1]}`;
-        const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
-        if (saved[index]) checkbox.setAttribute('data-checked', 'true');
-      }
-
-      checkbox.addEventListener('click', () => {
-        const isChecked = checkbox.getAttribute('data-checked') === 'true';
-        checkbox.setAttribute('data-checked', !isChecked);
-        const dayMatch = window.location.pathname.match(/day-(\d+)/);
-        if (dayMatch) {
-          const storageKey = `in30days_objectives_day${dayMatch[1]}`;
-          const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
-          saved[index] = !isChecked;
-          localStorage.setItem(storageKey, JSON.stringify(saved));
-        }
-      });
-    });
-  }
-
   window.showToast = function(type, title, message, duration = 5000) {
     const container = document.getElementById('toast-container');
     if (!container) return;
@@ -150,7 +127,6 @@
     initSettingsModal();
     initWeeklyNav();
     initMobileProgressNav();
-    initObjectives();
     initReadingProgress();
     console.log('in30days initialized');
   });

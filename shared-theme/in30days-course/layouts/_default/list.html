@@ -9,6 +9,16 @@
     <p class="course-description">{{ . }}</p>
     {{ end }}
     
+    {{ with .Site.Params.contributor }}
+    <div class="course-contributor">
+      <img src="{{ .avatar }}" alt="{{ .name }}" class="contributor-avatar">
+      <div class="contributor-details">
+        <span class="contributor-label">Course Contributor</span>
+        <span class="contributor-name">{{ .name }}</span>
+      </div>
+    </div>
+    {{ end }}
+    
     <div class="course-hero-actions">
       <a href="{{ ($.Site.GetPage "/day-01").RelPermalink }}" class="resume-btn" id="resume-learning-btn">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

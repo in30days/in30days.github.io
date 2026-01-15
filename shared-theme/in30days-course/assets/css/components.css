@@ -113,6 +113,46 @@
   margin-top: var(--spacing-10);
 }
 
+/* Course Contributor on landing page */
+.course-contributor {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-4);
+  padding: var(--spacing-3);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  width: fit-content;
+}
+
+.contributor-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.contributor-details {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.contributor-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-muted);
+}
+
+.contributor-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
 /* Modal */
 .modal {
   position: fixed;

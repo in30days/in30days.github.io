@@ -54,6 +54,15 @@
   </nav>
   
   <div class="sidebar-footer">
+    {{ with .Site.Params.contributor }}
+    <div class="sidebar-contributor">
+      <img src="{{ .avatar }}" alt="{{ .name }}" class="contributor-avatar-sm">
+      <div class="contributor-info">
+        <span class="contributor-label">Contributor</span>
+        <span class="contributor-name-sm">{{ .name }}</span>
+      </div>
+    </div>
+    {{ end }}
     <div class="sidebar-actions">
       <button class="sidebar-action-btn" id="export-progress-btn" title="Export Progress">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

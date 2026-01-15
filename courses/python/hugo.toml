@@ -15,6 +15,11 @@ themesDir = "../../shared-theme"
   quizPassScore = 80
   difficulty = "beginner"
   landingPageUrl = "http://localhost:1313" # Used for Home icon in local dev
+  
+  [params.contributor]
+    name = "in30days Team"
+    avatar = "https://github.com/in30days.png"
+    github = "in30days"
 
   [[params.weeks]]
     id = 1
@@ -22,16 +27,20 @@ themesDir = "../../shared-theme"
     days = [1, 7]
   [[params.weeks]]
     id = 2
-    title = "Control Flow"
+    title = "Functions & Logic"
     days = [8, 14]
   [[params.weeks]]
     id = 3
-    title = "Data Structures"
+    title = "Object Oriented Programming"
     days = [15, 21]
   [[params.weeks]]
     id = 4
-    title = "Advanced & Projects"
-    days = [22, 30]
+    title = "Power Features"
+    days = [22, 28]
+  [[params.weeks]]
+    id = 5
+    title = "Final Portfolio"
+    days = [29, 30]
   
   [params.giscus]
     enabled = true

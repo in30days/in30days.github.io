@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="container" style="padding: 8rem 1.5rem;">
+  <h1 style="font-size: 2.5rem; margin-bottom: 2rem;">Learning Paths</h1>
+  <div class="courses-grid">
+    {{ range .Data.Pages }}
+      {{ .Render "summary" }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

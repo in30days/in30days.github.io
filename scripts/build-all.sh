@@ -26,11 +26,14 @@ hugo --source ./main-site \
 # Build each course
 for course_dir in ./courses/*/; do
     if [ -d "$course_dir" ]; then
-        course_name=$(basename "$course_dir")
-        echo "Building $course_name course..."
-        hugo --source "$course_dir" \
-             --destination "../../$OUTPUT_DIR/$course_name/" \
-             --baseURL "$BASE_URL/$course_name/"
+        course_id=$(basename "$course_dir")
+        # Check if hugo.toml exists to confirm it's a course directory
+        if [ -f "${course_dir}hugo.toml" ]; then
+            echo "Building $course_id course..."
+            hugo --source "$course_dir" \
+                 --destination "../../$OUTPUT_DIR/$course_id/" \
+                 --baseURL "$BASE_URL/$course_id/"
+        fi
     fi
 done
 

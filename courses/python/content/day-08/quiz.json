@@ -1,0 +1,54 @@
+{
+  "dayId": 8,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "Which keyword is used to define a function in Python?",
+      "options": [
+        { "id": "a", "text": "function", "correct": false },
+        { "id": "b", "text": "define", "correct": false },
+        { "id": "c", "text": "def", "correct": true },
+        { "id": "d", "text": "func", "correct": false }
+      ],
+      "explanation": "In Python, the 'def' keyword is used to start a function definition."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "What is the term for the variables listed inside the parentheses in a function definition?",
+      "options": [
+        { "id": "a", "text": "Arguments", "correct": false },
+        { "id": "b", "text": "Parameters", "correct": true },
+        { "id": "c", "text": "Inputs", "correct": false },
+        { "id": "d", "text": "Variables", "correct": false }
+      ],
+      "explanation": "Parameters are the placeholders defined in the function signature, while arguments are the actual values passed when calling it."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "What does the 'return' keyword do?",
+      "options": [
+        { "id": "a", "text": "Ends the program", "correct": false },
+        { "id": "b", "text": "Displays text in the console", "correct": false },
+        { "id": "c", "text": "Exits the function and sends a value back to the caller", "correct": true },
+        { "id": "d", "text": "Restarts the function", "correct": false }
+      ],
+      "explanation": "'return' exits the current function and allows you to pass data back to where the function was called."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange these lines to create a valid function call that stores the result:",
+      "items": [
+        { "id": "def", "text": "def add(x, y): return x + y" },
+        { "id": "res", "text": "result = add(5, 3)" },
+        { "id": "prnt", "text": "print(result)" }
+      ],
+      "correctOrder": ["def", "res", "prnt"],
+      "explanation": "First you define the function, then you call it and assign the return value to a variable, then you print that variable."
+    }
+  ]
+}

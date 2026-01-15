@@ -1,0 +1,52 @@
+{
+  "dayId": 10,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "What keyword is used to create an anonymous function in Python?",
+      "options": [
+        { "id": "a", "text": "anon", "correct": false },
+        { "id": "b", "text": "lambda", "correct": true },
+        { "id": "c", "text": "def", "correct": false },
+        { "id": "d", "text": "inline", "correct": false }
+      ],
+      "explanation": "The 'lambda' keyword is used to define small, one-line anonymous functions."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "How many expressions can a lambda function contain?",
+      "options": [
+        { "id": "a", "text": "Only one", "correct": true },
+        { "id": "b", "text": "Up to three", "correct": false },
+        { "id": "c", "text": "As many as needed", "correct": false }
+      ],
+      "explanation": "Lambda functions are restricted to a single expression. If you need more logic, use a 'def' function."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "Does a lambda function require a 'return' keyword to send back a value?",
+      "options": [
+        { "id": "a", "text": "Yes", "correct": false },
+        { "id": "b", "text": "No, it returns the result of the expression automatically", "correct": true }
+      ],
+      "explanation": "The value resulting from the single expression is automatically returned by the lambda function."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange the parts of a lambda function correctly:",
+      "items": [
+        { "id": "kw", "text": "lambda" },
+        { "id": "arg", "text": "arguments" },
+        { "id": "col", "text": ":" },
+        { "id": "exp", "text": "expression" }
+      ],
+      "correctOrder": ["kw", "arg", "col", "exp"],
+      "explanation": "The syntax is: lambda [arguments] : [expression]"
+    }
+  ]
+}

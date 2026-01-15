@@ -80,8 +80,6 @@ flowchart LR
 
 Summarize what was learned today.
 
-{{< progress-check id="day$DAY_NUM-summary" >}}I understand today's content{{< /progress-check >}}
-
 ## Next Steps
 
 Preview what's coming in Day $((DAY_NUM + 1)).

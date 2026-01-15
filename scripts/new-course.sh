@@ -1,18 +1,19 @@
 #!/bin/bash
 
 # Create a new course from template
-# Usage: ./scripts/new-course.sh <course_id> "<course_name>" "#color"
-# Example: ./scripts/new-course.sh rust "Rust in 30 Days" "#dea584"
+# Usage: ./scripts/new-course.sh <course_id> "<course_name>" "<contributor_id>" "#color"
+# Example: ./scripts/new-course.sh rust "Rust in 30 Days" "jdoe" "#dea584"
 
 set -e
 
 COURSE_ID=$1
 COURSE_NAME=$2
-COURSE_COLOR=${3:-"#6366f1"}
+CONTRIBUTOR_ID=$3
+COURSE_COLOR=${4:-"#6366f1"}
 
-if [ -z "$COURSE_ID" ] || [ -z "$COURSE_NAME" ]; then
-    echo "Usage: $0 <course_id> \"<course_name>\" [#color]"
-    echo "Example: $0 rust \"Rust in 30 Days\" \"#dea584\""
+if [ -z "$COURSE_ID" ] || [ -z "$COURSE_NAME" ] || [ -z "$CONTRIBUTOR_ID" ]; then
+    echo "Usage: $0 <course_id> \"<course_name>\" <contributor_id> [#color]"
+    echo "Example: $0 rust \"Rust in 30 Days\" \"jdoe\" \"#dea584\""
     exit 1
 fi
 
@@ -24,6 +25,7 @@ if [ -d "$COURSE_DIR" ]; then
 fi
 
 echo "Creating course: $COURSE_NAME"
+echo "Contributor: $CONTRIBUTOR_ID"
 echo "Directory: $COURSE_DIR"
 echo "Color: $COURSE_COLOR"
 echo ""
@@ -32,9 +34,14 @@ echo ""
 mkdir -p "$COURSE_DIR/content"
 mkdir -p "$COURSE_DIR/static/images"
 
+# Fetch contributor info from main-site data if available
+CONTRIBUTOR_NAME="Contributor"
+CONTRIBUTOR_AVATAR="https://github.com/${CONTRIBUTOR_ID}.png"
+CONTRIBUTOR_GITHUB="${CONTRIBUTOR_ID}"
+
 # Create hugo.toml
 cat > "$COURSE_DIR/hugo.toml" << EOF
-baseURL = "https://in30days.org/$COURSE_ID/"
+baseURL = "/"
 languageCode = "en-us"
 title = "$COURSE_NAME"
 theme = "in30days-course"
@@ -50,7 +57,13 @@ themesDir = "../../shared-theme"
   totalDays = 30
   quizPassScore = 80
   difficulty = "beginner"
+  landingPageUrl = "http://localhost:1313"
   
+  [params.contributor]
+    name = "$CONTRIBUTOR_NAME"
+    avatar = "$CONTRIBUTOR_AVATAR"
+    github = "$CONTRIBUTOR_GITHUB"
+
   [params.giscus]
     enabled = true
     repo = "PLACEHOLDER/in30days-discussions"
@@ -134,7 +147,7 @@ tags: ["placeholder"]
 
 ## Coming Soon
 
-This lesson is currently being developed.
+This lesson is currently being developed. Stay tuned!
 EOF
 done
 

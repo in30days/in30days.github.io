@@ -1,0 +1,14 @@
+- id: mastering-python
+  name: Mastering Python
+  contributor: in30days-team
+  description: A complete journey from Python basics to professional web development and systems design.
+  color: "#3b82f6"
+  icon: python
+  totalDays: 90
+  difficulty: beginner
+  courses:
+    - python
+    - python-advanced
+    - python-web
+  featured: true
+  url: /paths/python/

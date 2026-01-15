@@ -77,6 +77,150 @@
     lastScroll = currentScroll;
   });
 
+  // Mobile Menu Toggle
+  function initMobileMenu() {
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const container = document.getElementById('nav-links-container');
+    const links = document.querySelectorAll('.nav-link');
+
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('is-nav-open');
+      const isOpen = document.body.classList.contains('is-nav-open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Close menu when a link is clicked (especially important for anchor links)
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('is-nav-open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // Filtering logic
+  function initFilters() {
+    const cards = document.querySelectorAll('.course-card');
+    const difficultyFilters = document.querySelectorAll('#filter-difficulty .filter-btn');
+    const typeFilters = document.querySelectorAll('#filter-type .filter-btn');
+    
+    let currentDifficulty = 'beginner'; // Default filter
+    let currentType = 'all';
+
+    function applyFilters() {
+      cards.forEach(card => {
+        const difficulty = card.dataset.difficulty;
+        const type = card.dataset.type;
+        
+        const difficultyMatch = currentDifficulty === 'all' || difficulty === currentDifficulty;
+        const typeMatch = currentType === 'all' || type === currentType;
+        
+        if (difficultyMatch && typeMatch) {
+          card.style.display = 'flex';
+          // Re-trigger observer for visible cards
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    difficultyFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        difficultyFilters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentDifficulty = btn.dataset.value;
+        applyFilters();
+      });
+    });
+
+    typeFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        typeFilters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentType = btn.dataset.value;
+        applyFilters();
+      });
+    });
+
+    // Run initial filter (Beginner default)
+    applyFilters();
+  }
+
+  // Privacy Settings logic
+  function initPrivacySettings() {
+    const saveBtn = document.getElementById('save-privacy-settings');
+    const statusMsg = document.getElementById('privacy-save-status');
+    const checkboxes = document.querySelectorAll('.consent-checkbox');
+    const SETTINGS_KEY = 'in30days_privacy_settings';
+
+    if (!saveBtn) return;
+
+    // Load current settings
+    const currentSettings = JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{"essential": true, "sync": true, "analytics": true}');
+    
+    checkboxes.forEach(cb => {
+      const type = cb.dataset.consent;
+      cb.checked = currentSettings[type] !== false; // Default to true if not set
+    });
+
+    saveBtn.addEventListener('click', () => {
+      const newSettings = { essential: true };
+      checkboxes.forEach(cb => {
+        newSettings[cb.dataset.consent] = cb.checked;
+      });
+      
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify(newSettings));
+      
+      // Notify other parts of the app
+      window.dispatchEvent(new CustomEvent('privacySettingsChanged', { detail: newSettings }));
+
+      // Show success message
+      statusMsg.style.display = 'inline';
+      setTimeout(() => { statusMsg.style.display = 'none'; }, 3000);
+    });
+  }
+
+  // Cookie Banner
+  function initCookieBanner() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+    const CONSENT_KEY = 'in30days_cookie_consent';
+    const SETTINGS_KEY = 'in30days_privacy_settings';
+
+    if (!banner) return;
+
+    if (localStorage.getItem(CONSENT_KEY)) {
+      banner.style.display = 'none';
+      return;
+    }
+
+    acceptBtn?.addEventListener('click', () => {
+      localStorage.setItem(CONSENT_KEY, 'accepted');
+      // If they accept all, ensure all settings are true
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify({"essential": true, "sync": true, "analytics": true}));
+      banner.style.display = 'none';
+    });
+
+    declineBtn?.addEventListener('click', () => {
+      localStorage.setItem(CONSENT_KEY, 'declined');
+      // If they decline, set optional to false
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify({"essential": true, "sync": false, "analytics": false}));
+      banner.style.display = 'none';
+      window.dispatchEvent(new CustomEvent('privacySettingsChanged', { detail: { essential: true, sync: false, analytics: false } }));
+    });
+  }
+
+  // Initialize
+  initMobileMenu();
+  initFilters();
+  initPrivacySettings();
+  initCookieBanner();
+
   // Animate elements on scroll
   const observerOptions = {
     root: null,
