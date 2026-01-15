@@ -41,30 +41,30 @@
   name: Kubernetes
   fullName: Kubernetes in 30 Days
   contributor: rchaganti
-  description: Learn container orchestration and cloud-native development.
+  description: Learn container orchestration and cloud-native infrastructure.
   color: "#326ce5"
   icon: kubernetes
   difficulty: intermediate
   totalDays: 30
   url: /kubernetes/
   comingSoon: true
-  tags: [devops, cloud]
+  tags: [devops, cloud, beginner]
 
-- id: javascript
-  name: JavaScript
-  fullName: JavaScript in 30 Days
+- id: go
+  name: Go Basics
+  fullName: Go Basics in 30 Days
   contributor: rchaganti
-  description: Build interactive web applications from scratch.
+  description: Learn fundamentals of Go programming language.
   color: "#f7df1e"
-  icon: javascript
+  icon: go
   difficulty: beginner
   totalDays: 30
-  url: /javascript/
+  url: /go/
   comingSoon: true
-  tags: [web, frontend]
+  tags: [programming, beginner]
 
 - id: rust
-  name: Rust
+  name: Rust Basics in 30 days
   fullName: Rust in 30 Days
   contributor: rchaganti
   description: Systems programming with memory safety and performance.
