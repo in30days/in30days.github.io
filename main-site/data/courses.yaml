@@ -54,13 +54,12 @@
   name: Go Basics
   fullName: Go Basics in 30 Days
   contributor: rchaganti
-  description: Learn fundamentals of Go programming language.
-  color: "#f7df1e"
+  description: Master the Go programming language fundamentals, control flow, and concurrency.
+  color: "#00ADD8"
   icon: go
   difficulty: beginner
   totalDays: 30
   url: /go/
-  comingSoon: true
   tags: [programming, beginner]
 
 - id: rust

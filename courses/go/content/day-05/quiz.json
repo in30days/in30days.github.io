@@ -1,0 +1,59 @@
+{
+  "questions": [
+    {
+      "question": "How many different types of loop keywords does Go have?",
+      "options": [
+        "Three: for, while, and do-while",
+        "Two: for and while",
+        "One: only for",
+        "Four: for, while, do, and repeat"
+      ],
+      "answer": "One: only for",
+      "explanation": "Go only has one looping construct, the 'for' loop, which can be used in various forms to replicate while or infinite loops."
+    },
+    {
+      "question": "Which of the following creates an infinite loop in Go?",
+      "options": [
+        "for (true) { }",
+        "while true { }",
+        "for { }",
+        "loop { }"
+      ],
+      "answer": "for { }",
+      "explanation": "A 'for' loop without any condition, initialization, or post statement is an infinite loop in Go."
+    },
+    {
+      "question": "What does the 'continue' keyword do in a loop?",
+      "options": [
+        "Immediately exits the loop",
+        "Restarts the entire loop from the beginning",
+        "Skips the rest of the current iteration and goes to the next one",
+        "Pauses the loop execution"
+      ],
+      "answer": "Skips the rest of the current iteration and goes to the next one",
+      "explanation": "The 'continue' statement skips the remaining code in the current loop body and proceeds to the next iteration (evaluating the post statement and condition)."
+    },
+    {
+      "question": "How do you iterate over a collection (like a string or slice) while getting both index and value?",
+      "options": [
+        "Using the 'each' keyword",
+        "Using the 'range' keyword",
+        "Using a standard for loop with len()",
+        "Using the 'map' function"
+      ],
+      "answer": "Using the 'range' keyword",
+      "explanation": "The 'range' keyword allows you to iterate over elements in various data structures, returning the index and the value at each step."
+    },
+    {
+      "question": "How can you break out of an outer loop from within a nested inner loop?",
+      "options": [
+        "Use 'break break'",
+        "Use 'exit'",
+        "Use a label with the 'break' statement",
+        "It's not possible in Go"
+      ],
+      "answer": "Use a label with the 'break' statement",
+      "explanation": "Go supports labels which can be used with break or continue statements to specify which loop the operation should apply to in nested scenarios."
+    }
+  ]
+}

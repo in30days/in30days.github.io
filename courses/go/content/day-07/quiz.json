@@ -1,0 +1,59 @@
+{
+  "questions": [
+    {
+      "question": "Which of the following is a valid short variable declaration in Go?",
+      "options": [
+        "var x = 10",
+        "x := 10",
+        "int x := 10",
+        "x = 10"
+      ],
+      "answer": "x := 10",
+      "explanation": "The := syntax is used for short variable declarations inside functions and infers the type of the variable."
+    },
+    {
+      "question": "What happens if you use a variable that was declared but not used in Go?",
+      "options": [
+        "The program runs but displays a warning",
+        "The compiler throws an error and refuses to build",
+        "The variable is automatically deleted",
+        "The program crashes at runtime"
+      ],
+      "answer": "The compiler throws an error and refuses to build",
+      "explanation": "Go has a strict rule: unused variables (and imports) result in a compilation error."
+    },
+    {
+      "question": "Which construct would you use to iterate exactly 10 times in Go?",
+      "options": [
+        "while i < 10 { ... }",
+        "for i := 0; i < 10; i++ { ... }",
+        "repeat(10) { ... }",
+        "do 10 times { ... }"
+      ],
+      "answer": "for i := 0; i < 10; i++ { ... }",
+      "explanation": "The three-component 'for' loop is the standard way to perform a fixed number of iterations in Go."
+    },
+    {
+      "question": "How do you ignore one of the return values from a function that returns two values?",
+      "options": [
+        "Just don't assign it: result = myFunction()",
+        "Use the blank identifier: result, _ = myFunction()",
+        "Use nil: result, nil = myFunction()",
+        "Use the 'ignore' keyword: result, ignore = myFunction()"
+      ],
+      "answer": "Use the blank identifier: result, _ = myFunction()",
+      "explanation": "The blank identifier '_' is used to tell the compiler that you intentionally want to ignore a specific value."
+    },
+    {
+      "question": "What is the default value (zero value) of a string in Go?",
+      "options": [
+        "nil",
+        "null",
+        "\"\" (empty string)",
+        "undefined"
+      ],
+      "answer": "\"\" (empty string)",
+      "explanation": "In Go, variables are always initialized to their 'zero value'. For strings, the zero value is an empty string."
+    }
+  ]
+}

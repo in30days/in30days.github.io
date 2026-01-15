@@ -1,0 +1,10 @@
+{
+  "questions": [
+    {
+      "question": "Are you ready to learn Error Handling?",
+      "options": ["Yes", "Absolutely", "I'm born ready", "Go! Go! Go!"],
+      "answer": "Yes",
+      "explanation": "This is a placeholder quiz while the full content is being prepared."
+    }
+  ]
+}

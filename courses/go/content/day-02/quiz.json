@@ -1,0 +1,73 @@
+{
+  "dayId": 2,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which of the following are valid ways to declare a variable in Go? (Select all that apply)",
+      "options": [
+        { "id": "a", "text": "var name string = \"Go\"", "correct": true },
+        { "id": "b", "text": "name := \"Go\"", "correct": true },
+        { "id": "c", "text": "string name = \"Go\"", "correct": false },
+        { "id": "d", "text": "var name = \"Go\"", "correct": true },
+        { "id": "e", "text": "let name = \"Go\"", "correct": false }
+      ],
+      "explanation": "Go supports 'var name type = value', 'var name = value' (type inference), and ':=' (short declaration inside functions). Go does not use 'string name' syntax like C/Java or 'let' like JavaScript."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is the zero value for an uninitialized string variable in Go?",
+      "options": [
+        { "id": "a", "text": "null", "correct": false },
+        { "id": "b", "text": "nil", "correct": false },
+        { "id": "c", "text": "\"\" (empty string)", "correct": true },
+        { "id": "d", "text": "undefined", "correct": false }
+      ],
+      "explanation": "In Go, the zero value for a string is an empty string \"\". Go doesn't have null or undefined for basic types. 'nil' is only used for pointers, slices, maps, channels, functions, and interfaces."
+    },
+    {
+      "id": "q3",
+      "type": "drag-order",
+      "points": 25,
+      "question": "Arrange these integer types from smallest to largest storage size:",
+      "items": [
+        { "id": "a", "text": "int8" },
+        { "id": "b", "text": "int16" },
+        { "id": "c", "text": "int32" },
+        { "id": "d", "text": "int64" }
+      ],
+      "correctOrder": ["a", "b", "c", "d"],
+      "explanation": "int8 uses 8 bits (1 byte), int16 uses 16 bits (2 bytes), int32 uses 32 bits (4 bytes), and int64 uses 64 bits (8 bytes)."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What does 'iota' do in Go constants?",
+      "options": [
+        { "id": "a", "text": "Generates sequential integer values starting from 0", "correct": true },
+        { "id": "b", "text": "Creates a random number", "correct": false },
+        { "id": "c", "text": "Resets to 0 in each const block", "correct": true },
+        { "id": "d", "text": "Can only be used with strings", "correct": false }
+      ],
+      "explanation": "iota is a constant generator that produces sequential integers starting from 0. It resets to 0 at the beginning of each const block and increments for each constant specification."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 15,
+      "question": "How do you convert an int variable 'x' to float64 in Go?",
+      "options": [
+        { "id": "a", "text": "float64(x)", "correct": true },
+        { "id": "b", "text": "(float64)x", "correct": false },
+        { "id": "c", "text": "x.toFloat64()", "correct": false },
+        { "id": "d", "text": "Go converts automatically", "correct": false }
+      ],
+      "explanation": "Go uses the syntax Type(value) for type conversion, so float64(x) converts x to float64. Go does not have automatic type conversion - all conversions must be explicit."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "questions": [
+    {
+      "question": "What is the correct syntax for a function that takes two ints and returns an int?",
+      "options": [
+        "func add(a, b int) : int { ... }",
+        "int func add(a int, b int) { ... }",
+        "func add(a, b int) int { ... }",
+        "function add(a int, b int) int { ... }"
+      ],
+      "answer": "func add(a, b int) int { ... }",
+      "explanation": "In Go, functions are defined with the 'func' keyword, followed by the name, parameters, and then the return type."
+    },
+    {
+      "question": "How many values can a Go function return?",
+      "options": [
+        "Exactly one",
+        "Zero or one",
+        "Any number of values",
+        "Up to two values (result and error)"
+      ],
+      "answer": "Any number of values",
+      "explanation": "Go functions can return multiple values, which are listed in parentheses after the parameter list."
+    },
+    {
+      "question": "What is a 'naked return' in Go?",
+      "options": [
+        "A return statement that returns nil",
+        "A return statement in a function with named return values that doesn't explicitly list variables",
+        "A return statement that exits a function without returning any value",
+        "A return statement used in void functions"
+      ],
+      "answer": "A return statement in a function with named return values that doesn't explicitly list variables",
+      "explanation": "When return values are named, a simple 'return' statement will return the current values of those variables. This is called a 'naked' return."
+    },
+    {
+      "question": "How do you define a variadic function that can take any number of integers?",
+      "options": [
+        "func sum(nums []int) { }",
+        "func sum(nums ...int) { }",
+        "func sum(int... nums) { }",
+        "func sum(nums *int) { }"
+      ],
+      "answer": "func sum(nums ...int) { }",
+      "explanation": "The '...' prefix before the type of the last parameter makes it a variadic parameter, which is treated as a slice inside the function."
+    },
+    {
+      "question": "Does Go pass arguments by value or by reference by default?",
+      "options": [
+        "By value (creates a copy)",
+        "By reference (shares the memory)",
+        "It depends on the data type",
+        "By value for primitives, by reference for objects"
+      ],
+      "answer": "By value (creates a copy)",
+      "explanation": "Go is a 'pass by value' language. This means when you pass a variable to a function, a copy of its data is created and passed."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "dayId": 1,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which of the following are true about Go? (Select all that apply)",
+      "options": [
+        { "id": "a", "text": "Go was developed at Google", "correct": true },
+        { "id": "b", "text": "Go is an interpreted language like Python", "correct": false },
+        { "id": "c", "text": "Go has built-in support for concurrent programming", "correct": true },
+        { "id": "d", "text": "Go compiles to native machine code", "correct": true },
+        { "id": "e", "text": "Go requires a virtual machine to run", "correct": false }
+      ],
+      "explanation": "Go was developed at Google, compiles directly to native machine code (no VM needed), and has built-in concurrency support through goroutines and channels. It's a compiled language, not interpreted."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What does 'package main' indicate in a Go program?",
+      "options": [
+        { "id": "a", "text": "This is an executable program", "correct": true },
+        { "id": "b", "text": "This is a library package", "correct": false },
+        { "id": "c", "text": "The program will have a main() function", "correct": true },
+        { "id": "d", "text": "This package can be imported by other programs", "correct": false }
+      ],
+      "explanation": "The 'package main' declaration indicates this is an executable program (not a library). Executable programs must have both 'package main' and a 'func main()' as the entry point."
+    },
+    {
+      "id": "q3",
+      "type": "drag-order",
+      "points": 25,
+      "question": "Arrange the steps to create and run a new Go project in the correct order:",
+      "items": [
+        { "id": "a", "text": "Create a new directory for your project" },
+        { "id": "b", "text": "Run 'go mod init' to initialize the module" },
+        { "id": "c", "text": "Create a main.go file with your code" },
+        { "id": "d", "text": "Run 'go run main.go' to execute" }
+      ],
+      "correctOrder": ["a", "b", "c", "d"],
+      "explanation": "First create a directory, then initialize a Go module with 'go mod init', create your source file, and finally run it with 'go run'."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is the purpose of the 'fmt' package in Go?",
+      "options": [
+        { "id": "a", "text": "Formatting and printing output", "correct": true },
+        { "id": "b", "text": "File management", "correct": false },
+        { "id": "c", "text": "Reading input from users", "correct": true },
+        { "id": "d", "text": "Network operations", "correct": false }
+      ],
+      "explanation": "The 'fmt' package (short for format) provides functions for formatted I/O - both printing output (like Println) and reading input (like Scanf)."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 15,
+      "question": "Which command compiles and immediately runs a Go program?",
+      "options": [
+        { "id": "a", "text": "go run", "correct": true },
+        { "id": "b", "text": "go build", "correct": false },
+        { "id": "c", "text": "go execute", "correct": false },
+        { "id": "d", "text": "go start", "correct": false }
+      ],
+      "explanation": "'go run' compiles your code to a temporary location and immediately executes it. 'go build' only compiles and creates an executable file without running it."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Go Basics in 30 Days"
+theme = "in30days-course"
+themesDir = "../../shared-theme"
+
+[params]
+  courseId = "go"
+  courseName = "Go"
+  courseFullName = "Go Basics in 30 Days"
+  courseDescription = "Master Go programming fundamentals from zero to confident developer in 30 days"
+  courseColor = "#00ADD8"
+  courseIcon = "go"
+  totalDays = 30
+  quizPassScore = 80
+  difficulty = "beginner"
+  landingPageUrl = "http://localhost:1313"
+  
+  [params.contributor]
+    name = "Ravikanth Chaganti"
+    avatar = "https://ravichaganti.com/images/author/ravikanth.jpg"
+    github = "rchaganti"
+
+  [[params.weeks]]
+    id = 1
+    title = "Go Fundamentals"
+    days = [1, 7]
+  [[params.weeks]]
+    id = 2
+    title = "Data Structures"
+    days = [8, 14]
+  [[params.weeks]]
+    id = 3
+    title = "Interfaces & Errors"
+    days = [15, 21]
+  [[params.weeks]]
+    id = 4
+    title = "Packages & Concurrency"
+    days = [22, 28]
+  [[params.weeks]]
+    id = 5
+    title = "Final Project"
+    days = [29, 30]
+  
+  [params.giscus]
+    enabled = true
+    repo = "in30days/discussions"
+    repoId = "R_kgDOQ6O5Mg"
+    category = "Q&A"
+    categoryId = "DIC_kwDOQ6O5Ms4C0-vF"
+    mapping = "pathname"
+    reactionsEnabled = true
+    theme = "preferred_color_scheme"
+    
+  [params.firebase]
+    enabled = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "dracula"
+    lineNos = true
+    lineNumbersInTable = true
+    
+[build]
+  writeStats = true
