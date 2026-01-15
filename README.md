@@ -1,13 +1,13 @@
 # in30days.org
 
-Master any skill in 30 days with structured learning paths, community-driven content, and interactive progress tracking.
+Master any skill in 30 days with structured learning paths, 3community-driven content, and interactive progress tracking.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Hugo](https://img.shields.io/badge/hugo-%3E%3D0.112-ff4088)
 
 ## Overview
 
-**in30days** is an educational ecosystem designed for mastery through consistency. We provide curated **Learning Paths** that sequence specialized **30-day courses** to guide you from absolute beginner to professional competence.
+**in30days** is an educational ecosystem designed for mastery through consistency. In30days provides curated **Learning Paths** that sequence specialized **30-day courses** to guide you from absolute beginner to professional competence.
 
 ### Core Features
 - **Mastery-Based Progression:** Lessons are locked until you pass the previous day's quiz with an **80% score**.

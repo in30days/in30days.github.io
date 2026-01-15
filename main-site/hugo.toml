@@ -4,8 +4,8 @@ title = "in30days - Master Any Skill in 30 Days"
 theme = "in30days-landing"
 
 [params]
-  description = "Interactive learning paths to master programming languages and technologies in just 30 days"
-  author = "in30days"
+  description = "Interactive learning paths to master programming languages and technologies in 30 days"
+  author = "rchaganti"
   
 [markup]
   [markup.goldmark]

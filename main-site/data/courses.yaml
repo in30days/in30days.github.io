@@ -1,7 +1,7 @@
 - id: python
   name: Python Basics
   fullName: Python Basics in 30 Days
-  contributor: in30days-team
+  contributor: rchaganti
   description: Master Python fundamentals, control flow, and data structures.
   color: "#3b82f6"
   icon: python
@@ -14,7 +14,7 @@
 - id: python-advanced
   name: Advanced Python
   fullName: Advanced Python in 30 Days
-  contributor: in30days-team
+  contributor: rchaganti
   description: Dive deep into decorators, generators, async programming, and metaprogramming.
   color: "#2563eb"
   icon: python
@@ -27,7 +27,7 @@
 - id: python-web
   name: Python Web Dev
   fullName: Python Web Development in 30 Days
-  contributor: in30days-team
+  contributor: rchaganti
   description: Build robust web applications using FastAPI, Django, and modern backend patterns.
   color: "#1d4ed8"
   icon: python
@@ -40,7 +40,7 @@
 - id: kubernetes
   name: Kubernetes
   fullName: Kubernetes in 30 Days
-  contributor: in30days-team
+  contributor: rchaganti
   description: Learn container orchestration and cloud-native development.
   color: "#326ce5"
   icon: kubernetes
@@ -53,7 +53,7 @@
 - id: javascript
   name: JavaScript
   fullName: JavaScript in 30 Days
-  contributor: in30days-team
+  contributor: rchaganti
   description: Build interactive web applications from scratch.
   color: "#f7df1e"
   icon: javascript
@@ -66,7 +66,7 @@
 - id: rust
   name: Rust
   fullName: Rust in 30 Days
-  contributor: in30days-team
+  contributor: rchaganti
   description: Systems programming with memory safety and performance.
   color: "#dea584"
   icon: rust

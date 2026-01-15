@@ -1,7 +1,7 @@
-- id: in30days-team
-  name: in30days Team
-  github: in30days
-  twitter: in30days
-  website: https://in30days.org
-  bio: "The core team building structured 30-day learning paths for everyone. Our mission is to make mastering complex technologies accessible and consistent."
-  avatar: "https://github.com/in30days.png"
+- id: rchaganti
+  name: Ravikanth Chaganti
+  github: rchaganti
+  twitter: ravikanth
+  website: https://ravichaganti.com/
+  bio: "Ravikanth [Ravi] Chaganti is a cloud, cloud-native, and AI enthusiast. He is a technologist working on AI infrastructure solutions, multi-cloud infrastructure management and orchestration. He is an automation fanatic and looks for opportunities to automate mundane and complex tasks. He is a multi-year recipient of the Microsoft Most Valuable Professional (MVP) award."
+  avatar: "https://ravichaganti.com/images/author/ravikanth.jpg"

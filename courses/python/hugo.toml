@@ -17,9 +17,9 @@ themesDir = "../../shared-theme"
   landingPageUrl = "http://localhost:1313" # Used for Home icon in local dev
   
   [params.contributor]
-    name = "in30days Team"
-    avatar = "https://github.com/in30days.png"
-    github = "in30days"
+    name = "Ravikanth Chaganti"
+    avatar = "https://ravichaganti.com/images/author/ravikanth.jpg"
+    github = "rchaganti"
 
   [[params.weeks]]
     id = 1
@@ -44,10 +44,10 @@ themesDir = "../../shared-theme"
   
   [params.giscus]
     enabled = true
-    repo = "in30days/website"
-    repoId = "R_kgDOQ5u0wQ"
+    repo = "in30days/discussions"
+    repoId = "R_kgDOQ6O5Mg"
     category = "Q&A"
-    categoryId = "DIC_kwDOQ5u0wc4C08ta"
+    categoryId = "DIC_kwDOQ6O5Ms4C0-vF"
     mapping = "pathname"
     reactionsEnabled = true
     theme = "preferred_color_scheme"
