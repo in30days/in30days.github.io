@@ -74,6 +74,8 @@
   font-size: var(--font-size-base); /* Reduced from font-size-lg */
   color: var(--text-primary);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (min-width: 640px) {
@@ -407,6 +409,7 @@
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-2);
+  overflow-wrap: break-word;
 }
 
 .day-description {
@@ -616,7 +619,27 @@
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--spacing-3);
+  overflow-wrap: break-word;
 }
+
+.course-objectives, .course-prerequisites {
+  margin-bottom: var(--spacing-10);
+}
+
+.course-objectives h2, .course-prerequisites h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 2px solid var(--bg-tertiary);
+}
+
+.course-objectives-list, .prerequisites-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: var(--spacing-4);
+}
+
 
 .course-description {
   font-size: var(--font-size-lg);

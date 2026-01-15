@@ -144,11 +144,13 @@ body {
 
 /* Table styling */
 .prose table {
+  display: block;
   width: 100%;
   margin: var(--spacing-6) 0;
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow-x: auto;
   border: 1px solid var(--border-color);
+  -webkit-overflow-scrolling: touch;
 }
 
 .prose th, .prose td {

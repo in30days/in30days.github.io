@@ -75,12 +75,12 @@
 <style>
 .path-hero { padding: 8rem 0 4rem; }
 .path-badge { display: inline-block; padding: 0.25rem 0.75rem; background: var(--color-primary); color: white; border-radius: 99px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; }
-.path-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
+.path-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; overflow-wrap: break-word; }
 .path-description { font-size: 1.25rem; color: var(--text-secondary); max-width: 800px; margin-bottom: 2rem; }
 .path-curator { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; font-size: 1rem; color: var(--text-secondary); }
 .curator-avatar { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border-color); }
 .curator-name { font-weight: 700; color: var(--text-primary); }
-.path-stats { display: flex; gap: 3rem; }
+.path-stats { display: flex; gap: 3rem; flex-wrap: wrap; }
 .path-stat { display: flex; flex-direction: column; }
 .path-stat-value { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
 .path-stat-label { font-size: 0.9rem; color: var(--text-muted); }
@@ -88,6 +88,14 @@
 .path-roadmap { padding: 5rem 0; }
 .roadmap-title { font-size: 2rem; margin-bottom: 3rem; text-align: center; }
 .roadmap-timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 2rem; border-left: 2px dashed var(--border-color); }
+@media (max-width: 640px) {
+  .path-title { font-size: 2.25rem; }
+  .path-stats { gap: 1.5rem; }
+  .roadmap-timeline { padding-left: 1rem; }
+  .roadmap-item { padding-left: 2rem; }
+  .roadmap-node { left: -1.25rem; }
+  .roadmap-content { padding: 1.5rem; }
+}
 .roadmap-item { position: relative; margin-bottom: 4rem; padding-left: 3rem; }
 .roadmap-node { position: absolute; left: -1.25rem; top: 0; width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; border: 4px solid var(--bg-primary); z-index: 1; }
 .roadmap-content { background: var(--bg-secondary); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border-color); }
