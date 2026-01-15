@@ -380,37 +380,18 @@
 .mobile-nav-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: var(--spacing-3) var(--spacing-4);
 }
 
 .mobile-progress-info {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .mobile-progress-percent {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: var(--font-weight-bold);
   color: var(--text-primary);
-}
-
-.mobile-current-day {
-  font-size: 13px;
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-secondary);
-}
-
-.mobile-nav-toggle {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-  padding: var(--spacing-2) var(--spacing-4);
-  background-color: var(--color-primary);
-  color: white;
-  border: none;
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
-  cursor: pointer;
 }

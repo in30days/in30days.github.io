@@ -80,7 +80,7 @@ img { max-width: 100%; display: block; }
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 2000; /* Increased from 1000 */
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border-color);
@@ -101,7 +101,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  z-index: 1100;
+  z-index: 2100; /* Increased */
 }
 
 .logo-image {
@@ -127,7 +127,7 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius-md);
   color: var(--text-primary);
   background: var(--bg-tertiary);
-  z-index: 1100;
+  z-index: 2100; /* Increased */
 }
 
 .mobile-menu-toggle svg line {
@@ -150,6 +150,7 @@ img { max-width: 100%; display: block; }
   display: none;
   flex-direction: column;
   overflow-y: auto;
+  z-index: 2000; /* Explicit z-index */
 }
 
 .is-nav-open .nav-links-container {
