@@ -151,19 +151,40 @@
     if (mobilePercent) mobilePercent.textContent = `${stats.percent}% Complete`;
     if (mobileFill) mobileFill.style.width = `${stats.percent}%`;
 
-    // Update Weekly Nav items
-    document.querySelectorAll('.nav-day-item').forEach(item => {
+    // Update Weekly Nav items and Bottom Navigation
+    document.querySelectorAll('.nav-day-item, .day-nav-btn--next').forEach(item => {
       const dayNum = parseInt(item.dataset.day, 10);
+      if (isNaN(dayNum)) return;
+
       const status = progress.days[dayNum]?.status || 'locked';
       item.setAttribute('data-status', status);
       
       if (status === 'locked') {
-        item.addEventListener('click', function(e) {
+        if (item.classList.contains('day-nav-btn--next')) {
+          item.classList.add('day-nav-btn--disabled');
+        }
+        
+        // Remove existing listener if any (to avoid duplicates)
+        if (item._lockedHandler) {
+          item.removeEventListener('click', item._lockedHandler);
+        }
+        
+        item._lockedHandler = function(e) {
           if (this.getAttribute('data-status') === 'locked') {
             e.preventDefault();
-            window.showToast?.('warning', 'Day Locked', 'Complete the previous day to unlock this one.');
+            window.showToast?.('warning', 'Day Locked', 'Complete the current day (including the quiz) to unlock the next one.');
           }
-        }, { once: true });
+        };
+        
+        item.addEventListener('click', item._lockedHandler);
+      } else {
+        if (item.classList.contains('day-nav-btn--next')) {
+          item.classList.remove('day-nav-btn--disabled');
+        }
+        if (item._lockedHandler) {
+          item.removeEventListener('click', item._lockedHandler);
+          delete item._lockedHandler;
+        }
       }
     });
 

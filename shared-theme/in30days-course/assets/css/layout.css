@@ -562,7 +562,7 @@
 .day-nav-btn--disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .day-nav-content {
