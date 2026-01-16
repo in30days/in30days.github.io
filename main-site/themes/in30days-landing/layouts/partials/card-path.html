@@ -1,4 +1,8 @@
-{{ $readers := index site.Data.stats .id | default 0 }}
+{{ $totalReaders := 0 }}
+{{ range .courses }}
+  {{ $totalReaders = add $totalReaders (index site.Data.stats . | default 0) }}
+{{ end }}
+{{ $readers := $totalReaders }}
 <article class="course-card path-card" 
          data-difficulty="{{ .difficulty }}" 
          data-type="path"

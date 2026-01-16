@@ -31,7 +31,11 @@
             <span class="path-stat-label">Modules</span>
           </div>
           <div class="path-stat">
-            {{ $readers := index $.Site.Data.stats $pathData.id | default 0 }}
+            {{ $totalReaders := 0 }}
+            {{ range $pathData.courses }}
+              {{ $totalReaders = add $totalReaders (index $.Site.Data.stats . | default 0) }}
+            {{ end }}
+            {{ $readers := $totalReaders }}
             <span class="path-stat-value">{{ if ge $readers 1000 }}{{ lang.FormatNumber 1 (div $readers 1000.0) }}k{{ else }}{{ $readers }}{{ end }}+</span>
             <span class="path-stat-label">Learners</span>
           </div>
