@@ -44,7 +44,7 @@ themesDir = "../../shared-theme"
   
   [params.giscus]
     enabled = true
-    repo = "in30days/discussions"
+    repo = "learnerscommunity/discussions"
     repoId = "R_kgDOQ6O5Mg"
     category = "Q&A"
     categoryId = "DIC_kwDOQ6O5Ms4C0-vF"
