@@ -23,3 +23,6 @@ Your progress is saved locally in your browser first. You can also:
 
 ## 5. Community-Driven
 Every lesson features a discussion section powered by GitHub Discussions. Ask questions, share your code, and learn from others in the same cohort.
+
+## 6. Got feedback?
+You can share your feedback by opening an issue in the repository https://github.com/learnerscommunity/issues. 
