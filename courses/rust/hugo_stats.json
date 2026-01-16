@@ -55,6 +55,7 @@
     "classes": [
       "active",
       "app-container",
+      "back-to-top",
       "callout",
       "callout--info",
       "callout--tip",
@@ -241,6 +242,7 @@
       "4-character",
       "associated-functions",
       "automated-tests",
+      "back-to-top",
       "complex-types-move",
       "compound-types",
       "constants",

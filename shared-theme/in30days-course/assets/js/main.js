@@ -122,12 +122,33 @@
     };
   }
 
+  function initBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        btn.classList.add('is-visible');
+      } else {
+        btn.classList.remove('is-visible');
+      }
+    });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   ready(function() {
     initSidebar();
     initSettingsModal();
     initWeeklyNav();
     initMobileProgressNav();
     initReadingProgress();
+    initBackToTop();
     console.log('in30days initialized');
   });
 })();

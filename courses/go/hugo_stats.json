@@ -55,6 +55,7 @@
     "classes": [
       "active",
       "app-container",
+      "back-to-top",
       "callout",
       "callout--info",
       "callout--tip",
@@ -236,6 +237,7 @@
     "ids": [
       "arithmetic-operators",
       "assignment-operators",
+      "back-to-top",
       "basic-data-types",
       "basic-function-syntax",
       "better-early-return-pattern",
