@@ -1,0 +1,71 @@
+{
+  "dayId": 4,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which keyword is used to define a function in Rust?",
+      "options": [
+        { "id": "a", "text": "func", "correct": false },
+        { "id": "b", "text": "function", "correct": false },
+        { "id": "c", "text": "fn", "correct": true },
+        { "id": "d", "text": "def", "correct": false }
+      ],
+      "explanation": "Rust uses the 'fn' keyword to define functions."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is the difference between a Statement and an Expression?",
+      "options": [
+        { "id": "a", "text": "There is no difference", "correct": false },
+        { "id": "b", "text": "Statements return a value, Expressions do not", "correct": false },
+        { "id": "c", "text": "Expressions return a value, Statements do not", "correct": true },
+        { "id": "d", "text": "Statements are only for loops", "correct": false }
+      ],
+      "explanation": "This is a fundamental distinction in Rust's expression-based syntax."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "How do you specify a return type for a function?",
+      "options": [
+        { "id": "a", "text": "fn my_func() : i32", "correct": false },
+        { "id": "b", "text": "fn my_func() -> i32", "correct": true },
+        { "id": "c", "text": "fn my_func() return i32", "correct": false },
+        { "id": "d", "text": "i32 fn my_func()", "correct": false }
+      ],
+      "explanation": "The '->' syntax (the arrow) is used to indicate the return type in a function signature."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "In Rust, what happens if you omit the semicolon on the last line of a function?",
+      "options": [
+        { "id": "a", "text": "It's a syntax error", "correct": false },
+        { "id": "b", "text": "The line becomes an expression and its value is returned", "correct": true },
+        { "id": "c", "text": "The line is ignored", "correct": false },
+        { "id": "d", "text": "The compiler adds the semicolon for you", "correct": false }
+      ],
+      "explanation": "Omitting the semicolon on the last line of a block makes it the return value of that block."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which naming convention is standard for functions in Rust?",
+      "options": [
+        { "id": "a", "text": "camelCase", "correct": false },
+        { "id": "b", "text": "PascalCase", "correct": false },
+        { "id": "c", "text": "snake_case", "correct": true },
+        { "id": "d", "text": "kebab-case", "correct": false }
+      ],
+      "explanation": "Rust uses snake_case (lowercase with underscores) for function and variable names."
+    }
+  ]
+}

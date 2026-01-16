@@ -1,58 +1,70 @@
 {
+  "dayId": 6,
+  "passScore": 80,
   "questions": [
     {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
       "question": "What is the correct syntax for a function that takes two ints and returns an int?",
       "options": [
-        "func add(a, b int) : int { ... }",
-        "int func add(a int, b int) { ... }",
-        "func add(a, b int) int { ... }",
-        "function add(a int, b int) int { ... }"
+        { "id": "a", "text": "func add(a, b int) : int { ... }", "correct": false },
+        { "id": "b", "text": "int func add(a int, b int) { ... }", "correct": false },
+        { "id": "c", "text": "func add(a, b int) int { ... }", "correct": true },
+        { "id": "d", "text": "function add(a int, b int) int { ... }", "correct": false }
       ],
-      "answer": "func add(a, b int) int { ... }",
       "explanation": "In Go, functions are defined with the 'func' keyword, followed by the name, parameters, and then the return type."
     },
     {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
       "question": "How many values can a Go function return?",
       "options": [
-        "Exactly one",
-        "Zero or one",
-        "Any number of values",
-        "Up to two values (result and error)"
+        { "id": "a", "text": "Exactly one", "correct": false },
+        { "id": "b", "text": "Zero or one", "correct": false },
+        { "id": "c", "text": "Any number of values", "correct": true },
+        { "id": "d", "text": "Up to two values (result and error)", "correct": false }
       ],
-      "answer": "Any number of values",
       "explanation": "Go functions can return multiple values, which are listed in parentheses after the parameter list."
     },
     {
+      "id": "q3",
+      "type": "multiple-select",
+      "points": 20,
       "question": "What is a 'naked return' in Go?",
       "options": [
-        "A return statement that returns nil",
-        "A return statement in a function with named return values that doesn't explicitly list variables",
-        "A return statement that exits a function without returning any value",
-        "A return statement used in void functions"
+        { "id": "a", "text": "A return statement that returns nil", "correct": false },
+        { "id": "b", "text": "A return statement in a function with named return values that doesn't explicitly list variables", "correct": true },
+        { "id": "c", "text": "A return statement that exits a function without returning any value", "correct": false },
+        { "id": "d", "text": "A return statement used in void functions", "correct": false }
       ],
-      "answer": "A return statement in a function with named return values that doesn't explicitly list variables",
       "explanation": "When return values are named, a simple 'return' statement will return the current values of those variables. This is called a 'naked' return."
     },
     {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 20,
       "question": "How do you define a variadic function that can take any number of integers?",
       "options": [
-        "func sum(nums []int) { }",
-        "func sum(nums ...int) { }",
-        "func sum(int... nums) { }",
-        "func sum(nums *int) { }"
+        { "id": "a", "text": "func sum(nums []int) { }", "correct": false },
+        { "id": "b", "text": "func sum(nums ...int) { }", "correct": true },
+        { "id": "c", "text": "func sum(int... nums) { }", "correct": false },
+        { "id": "d", "text": "func sum(nums *int) { }", "correct": false }
       ],
-      "answer": "func sum(nums ...int) { }",
       "explanation": "The '...' prefix before the type of the last parameter makes it a variadic parameter, which is treated as a slice inside the function."
     },
     {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 20,
       "question": "Does Go pass arguments by value or by reference by default?",
       "options": [
-        "By value (creates a copy)",
-        "By reference (shares the memory)",
-        "It depends on the data type",
-        "By value for primitives, by reference for objects"
+        { "id": "a", "text": "By value (creates a copy)", "correct": true },
+        { "id": "b", "text": "By reference (shares the memory)", "correct": false },
+        { "id": "c", "text": "It depends on the data type", "correct": false },
+        { "id": "d", "text": "By value for primitives, by reference for objects", "correct": false }
       ],
-      "answer": "By value (creates a copy)",
       "explanation": "Go is a 'pass by value' language. This means when you pass a variable to a function, a copy of its data is created and passed."
     }
   ]

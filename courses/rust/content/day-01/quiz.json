@@ -1,0 +1,71 @@
+{
+  "dayId": 1,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which of the following is NOT a core goal of Rust?",
+      "options": [
+        { "id": "a", "text": "Memory Safety", "correct": false },
+        { "id": "b", "text": "Garbage Collection", "correct": true },
+        { "id": "c", "text": "High Performance", "correct": false },
+        { "id": "d", "text": "Concurrency", "correct": false }
+      ],
+      "explanation": "Rust achieves memory safety without a garbage collector, which is one of its most defining features."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which command is used to create a new Rust project using Cargo?",
+      "options": [
+        { "id": "a", "text": "cargo start", "correct": false },
+        { "id": "b", "text": "cargo build", "correct": false },
+        { "id": "c", "text": "cargo new", "correct": true },
+        { "id": "d", "text": "rustc init", "correct": false }
+      ],
+      "explanation": "'cargo new <name>' initializes a new directory with a Cargo.toml file and a src folder."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is the file extension for Rust source code files?",
+      "options": [
+        { "id": "a", "text": ".rt", "correct": false },
+        { "id": "b", "text": ".rs", "correct": true },
+        { "id": "c", "text": ".rust", "correct": false },
+        { "id": "d", "text": ".rc", "correct": false }
+      ],
+      "explanation": "Rust source files always end with the .rs extension."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which tool is used to manage Rust versions and the toolchain?",
+      "options": [
+        { "id": "a", "text": "rust-mgr", "correct": false },
+        { "id": "b", "text": "cargo", "correct": false },
+        { "id": "c", "text": "rustup", "correct": true },
+        { "id": "d", "text": "rust-env", "correct": false }
+      ],
+      "explanation": "rustup is the official installer and version manager for the Rust programming language."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is the name of the function that serves as the entry point for every Rust program?",
+      "options": [
+        { "id": "a", "text": "start()", "correct": false },
+        { "id": "b", "text": "init()", "correct": false },
+        { "id": "c", "text": "main()", "correct": true },
+        { "id": "d", "text": "rust_main()", "correct": false }
+      ],
+      "explanation": "Like C and Java, Rust programs begin execution at the main() function."
+    }
+  ]
+}

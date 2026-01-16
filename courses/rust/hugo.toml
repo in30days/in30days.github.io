@@ -1,0 +1,68 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Rust Basics in 30 Days"
+theme = "in30days-course"
+themesDir = "../../shared-theme"
+
+[params]
+  courseId = "rust"
+  courseName = "Rust"
+  courseFullName = "Rust Basics in 30 Days"
+  courseDescription = "Master Rust programming from scratch - focusing on safety, speed, and concurrency."
+  courseColor = "#DEA584"
+  courseIcon = "rust"
+  totalDays = 30
+  quizPassScore = 80
+  difficulty = "intermediate"
+  landingPageUrl = "http://localhost:1313"
+  
+  [params.contributor]
+    name = "Ravikanth Chaganti"
+    avatar = "https://ravichaganti.com/images/author/ravikanth.jpg"
+    github = "rchaganti"
+
+  [[params.weeks]]
+    id = 1
+    title = "Rust Fundamentals"
+    days = [1, 7]
+  [[params.weeks]]
+    id = 2
+    title = "Ownership & Borrowing"
+    days = [8, 14]
+  [[params.weeks]]
+    id = 3
+    title = "Enums & Pattern Matching"
+    days = [15, 21]
+  [[params.weeks]]
+    id = 4
+    title = "Generics, Traits & Lifetimes"
+    days = [22, 28]
+  [[params.weeks]]
+    id = 5
+    title = "Final Project"
+    days = [29, 30]
+  
+  [params.giscus]
+    enabled = true
+    repo = "in30days/discussions"
+    repoId = "R_kgDOQ6O5Mg"
+    category = "Q&A"
+    categoryId = "DIC_kwDOQ6O5Ms4C0-vF"
+    mapping = "pathname"
+    reactionsEnabled = true
+    theme = "preferred_color_scheme"
+    
+  [params.firebase]
+    enabled = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "dracula"
+    lineNos = true
+    lineNumbersInTable = true
+    
+[build]
+  writeStats = true

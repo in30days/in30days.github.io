@@ -63,14 +63,13 @@
   tags: [programming, beginner]
 
 - id: rust
-  name: Rust Basics in 30 days
-  fullName: Rust in 30 Days
+  name: Rust Basics
+  fullName: Rust Basics in 30 Days
   contributor: rchaganti
-  description: Systems programming with memory safety and performance.
-  color: "#dea584"
+  description: Systems programming with memory safety, speed, and concurrency.
+  color: "#DEA584"
   icon: rust
   difficulty: intermediate
   totalDays: 30
   url: /rust/
-  comingSoon: true
-  tags: [systems, performance]
+  tags: [systems, performance, safety]
