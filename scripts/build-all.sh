@@ -5,7 +5,7 @@
 
 set -e
 
-BASE_URL=${1:-"https://in30days.org"}
+BASE_URL=${1:-"https://learn.ravichaganti.com"}
 OUTPUT_DIR="public"
 
 echo "Building in30days sites..."

@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://learn.ravichaganti.com/go/"
 languageCode = "en-us"
 title = "Go Basics in 30 Days"
 theme = "in30days-course"
@@ -14,7 +14,7 @@ themesDir = "../../shared-theme"
   totalDays = 30
   quizPassScore = 80
   difficulty = "beginner"
-  landingPageUrl = "http://localhost:1313"
+  landingPageUrl = "https://learn.ravichaganti.com"
   
   [params.contributor]
     name = "Ravikanth Chaganti"

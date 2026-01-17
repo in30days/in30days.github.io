@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://learn.ravichaganti.com/python/"
 languageCode = "en-us"
 title = "Python in 30 Days"
 theme = "in30days-course"
@@ -14,7 +14,7 @@ themesDir = "../../shared-theme"
   totalDays = 30
   quizPassScore = 80
   difficulty = "beginner"
-  landingPageUrl = "http://localhost:1313" # Used for Home icon in local dev
+  landingPageUrl = "https://learn.ravichaganti.com" # Used for Home icon in local dev
   
   [params.contributor]
     name = "Ravikanth Chaganti"
