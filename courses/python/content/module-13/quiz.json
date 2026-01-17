@@ -1,0 +1,51 @@
+{
+  "moduleId": 13,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "Which statement is the best practice for opening files in Python?",
+      "options": [
+        { "id": "a", "text": "open()", "correct": false },
+        { "id": "b", "text": "with open()", "correct": true },
+        { "id": "c", "text": "file.open()", "correct": false }
+      ],
+      "explanation": "The 'with' statement ensures the file is closed automatically, even if an error occurs."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "Which mode should you use to add text to the end of an existing file without deleting its content?",
+      "options": [
+        { "id": "a", "text": "r", "correct": false },
+        { "id": "b", "text": "w", "correct": false },
+        { "id": "c", "text": "a", "correct": true },
+        { "id": "d", "text": "x", "correct": false }
+      ],
+      "explanation": "'a' stands for 'append', which adds new data to the end of the file."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "What happens if you open a non-existent file in 'w' mode?",
+      "options": [
+        { "id": "a", "text": "It raises an error", "correct": false },
+        { "id": "b", "text": "It creates a new file", "correct": true },
+        { "id": "c", "text": "It does nothing", "correct": false }
+      ],
+      "explanation": "'w' and 'a' modes will both create the file if it does not already exist."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "question": "Which method is used to read the entire contents of a file as a single string?",
+      "options": [
+        { "id": "a", "text": "file.readline()", "correct": false },
+        { "id": "b", "text": "file.readlines()", "correct": false },
+        { "id": "c", "text": "file.read()", "correct": true }
+      ],
+      "explanation": "read() returns the whole file, while readline() returns one line, and readlines() returns a list of lines."
+    }
+  ]
+}

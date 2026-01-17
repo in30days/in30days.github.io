@@ -1,0 +1,71 @@
+{
+  "moduleId": 2,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "By default, variables in Rust are...",
+      "options": [
+        { "id": "a", "text": "Mutable", "correct": false },
+        { "id": "b", "text": "Immutable", "correct": true },
+        { "id": "c", "text": "Constants", "correct": false },
+        { "id": "d", "text": "Global", "correct": false }
+      ],
+      "explanation": "In Rust, variables are immutable by default to encourage safety and predictability."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which keyword is used to make a variable mutable?",
+      "options": [
+        { "id": "a", "text": "var", "correct": false },
+        { "id": "b", "text": "change", "correct": false },
+        { "id": "c", "text": "mut", "correct": true },
+        { "id": "d", "text": "let!", "correct": false }
+      ],
+      "explanation": "Adding 'mut' after 'let' makes a variable mutable."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is true about constants in Rust?",
+      "options": [
+        { "id": "a", "text": "They can use the 'mut' keyword", "correct": false },
+        { "id": "b", "text": "Their type must be explicitly annotated", "correct": true },
+        { "id": "c", "text": "They can only be declared inside functions", "correct": false },
+        { "id": "d", "text": "They use the 'let' keyword", "correct": false }
+      ],
+      "explanation": "Unlike variables where types can often be inferred, constants always require an explicit type annotation."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is 'shadowing' in Rust?",
+      "options": [
+        { "id": "a", "text": "Hiding a variable so it cannot be used", "correct": false },
+        { "id": "b", "text": "Declaring a new variable with the same name as a previous one", "correct": true },
+        { "id": "c", "text": "Copying a variable to a different memory location", "correct": false },
+        { "id": "d", "text": "An error that occurs when two variables have the same name", "correct": false }
+      ],
+      "explanation": "Shadowing allows you to reuse a name for a new variable, potentially with a different type."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What happens if you try to change the type of a 'mut' variable?",
+      "options": [
+        { "id": "a", "text": "It works fine", "correct": false },
+        { "id": "b", "text": "The compiler throws an error", "correct": true },
+        { "id": "c", "text": "The variable is automatically shadowed", "correct": false },
+        { "id": "d", "text": "The value is cast to the new type", "correct": false }
+      ],
+      "explanation": "Mutable variables allow you to change the value, but the type must remain the same as when it was initialized."
+    }
+  ]
+}

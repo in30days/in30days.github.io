@@ -1,0 +1,75 @@
+{
+  "moduleId": 2,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which of the following are valid Python variable names? (Select all that apply)",
+      "options": [
+        { "id": "a", "text": "user_name", "correct": true },
+        { "id": "b", "text": "2nd_place", "correct": false },
+        { "id": "c", "text": "_private", "correct": true },
+        { "id": "d", "text": "class", "correct": false },
+        { "id": "e", "text": "firstName", "correct": true },
+        { "id": "f", "text": "my-variable", "correct": false }
+      ],
+      "explanation": "Valid names start with a letter or underscore, can contain letters/numbers/underscores, and can't be Python keywords. '2nd_place' starts with a number, 'class' is a keyword, and 'my-variable' contains a hyphen."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is the data type of the value 3.14?",
+      "options": [
+        { "id": "a", "text": "int", "correct": false },
+        { "id": "b", "text": "float", "correct": true },
+        { "id": "c", "text": "str", "correct": false },
+        { "id": "d", "text": "decimal", "correct": false }
+      ],
+      "explanation": "Numbers with decimal points are floats in Python. Integers (int) are whole numbers without decimals."
+    },
+    {
+      "id": "q3",
+      "type": "drag-order",
+      "points": 30,
+      "question": "Arrange these type conversions in the order they would be needed to: take user input '25', add 5 to it, then display 'Age: 30'",
+      "items": [
+        { "id": "a", "text": "Get input as string: '25'" },
+        { "id": "b", "text": "Convert string to int: int('25')" },
+        { "id": "c", "text": "Add 5: 25 + 5 = 30" },
+        { "id": "d", "text": "Convert to string or use f-string for output" },
+        { "id": "e", "text": "Print: 'Age: 30'" }
+      ],
+      "correctOrder": ["a", "b", "c", "d", "e"],
+      "explanation": "User input is always a string. To do math, convert to int. For output with text, convert back to string or use f-strings."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 15,
+      "question": "What will be the output of: print(type(True))?",
+      "options": [
+        { "id": "a", "text": "<class 'bool'>", "correct": true },
+        { "id": "b", "text": "<class 'str'>", "correct": false },
+        { "id": "c", "text": "True", "correct": false },
+        { "id": "d", "text": "<class 'int'>", "correct": false }
+      ],
+      "explanation": "True and False are boolean values, so type(True) returns <class 'bool'>."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 15,
+      "question": "Which of these correctly creates a formatted string showing 'Hello, Alice!'? (Select all that apply)",
+      "options": [
+        { "id": "a", "text": "name = 'Alice'; f'Hello, {name}!'", "correct": true },
+        { "id": "b", "text": "'Hello, ' + name + '!'", "correct": true },
+        { "id": "c", "text": "'Hello, name!'", "correct": false },
+        { "id": "d", "text": "f'Hello, name!'", "correct": false }
+      ],
+      "explanation": "F-strings use curly braces {name} to insert variables. 'Hello, name!' just prints the literal word 'name'. String concatenation with + also works."
+    }
+  ]
+}

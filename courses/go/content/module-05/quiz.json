@@ -1,0 +1,71 @@
+{
+  "moduleId": 5,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "How many different types of loop keywords does Go have?",
+      "options": [
+        { "id": "a", "text": "Three: for, while, and do-while", "correct": false },
+        { "id": "b", "text": "Two: for and while", "correct": false },
+        { "id": "c", "text": "One: only for", "correct": true },
+        { "id": "d", "text": "Four: for, while, do, and repeat", "correct": false }
+      ],
+      "explanation": "Go only has one looping construct, the 'for' loop, which can be used in various forms to replicate while or infinite loops."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which of the following creates an infinite loop in Go?",
+      "options": [
+        { "id": "a", "text": "for (true) { }", "correct": false },
+        { "id": "b", "text": "while true { }", "correct": false },
+        { "id": "c", "text": "for { }", "correct": true },
+        { "id": "d", "text": "loop { }", "correct": false }
+      ],
+      "explanation": "A 'for' loop without any condition, initialization, or post statement is an infinite loop in Go."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What does the 'continue' keyword do in a loop?",
+      "options": [
+        { "id": "a", "text": "Immediately exits the loop", "correct": false },
+        { "id": "b", "text": "Restarts the entire loop from the beginning", "correct": false },
+        { "id": "c", "text": "Skips the rest of the current iteration and goes to the next one", "correct": true },
+        { "id": "d", "text": "Pauses the loop execution", "correct": false }
+      ],
+      "explanation": "The 'continue' statement skips the remaining code in the current loop body and proceeds to the next iteration (evaluating the post statement and condition)."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "How do you iterate over a collection (like a string or slice) while getting both index and value?",
+      "options": [
+        { "id": "a", "text": "Using the 'each' keyword", "correct": false },
+        { "id": "b", "text": "Using the 'range' keyword", "correct": true },
+        { "id": "c", "text": "Using a standard for loop with len()", "correct": false },
+        { "id": "d", "text": "Using the 'map' function", "correct": false }
+      ],
+      "explanation": "The 'range' keyword allows you to iterate over elements in various data structures, returning the index and the value at each step."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "How can you break out of an outer loop from within a nested inner loop?",
+      "options": [
+        { "id": "a", "text": "Use 'break break'", "correct": false },
+        { "id": "b", "text": "Use 'exit'", "correct": false },
+        { "id": "c", "text": "Use a label with the 'break' statement", "correct": true },
+        { "id": "d", "text": "It's not possible in Go", "correct": false }
+      ],
+      "explanation": "Go supports labels which can be used with break or continue statements to specify which loop the operation should apply to in nested scenarios."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "moduleId": 27,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 100,
+      "question": "Are you ready to learn Select and Mutexes?",
+      "options": [
+        { "id": "a", "text": "Yes", "correct": true },
+        { "id": "b", "text": "Absolutely", "correct": true },
+        { "id": "c", "text": "I'm born ready", "correct": true },
+        { "id": "d", "text": "Go! Go! Go!", "correct": true }
+      ],
+      "explanation": "This is a placeholder quiz while the full content is being prepared."
+    }
+  ]
+}

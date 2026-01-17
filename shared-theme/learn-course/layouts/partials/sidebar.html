@@ -24,26 +24,26 @@
       <div class="week-group" data-week="{{ .id }}">
         <button class="week-header" aria-expanded="false">
           <span class="week-title-wrap">
-            <span class="week-label">Week {{ .id }}</span>
+            <span class="week-label">Section {{ .id }}</span>
             <span class="week-title">{{ .title }}</span>
           </span>
-          <span class="week-progress-badge" id="week-{{ .id }}-progress">0/{{ sub (add (index .days 1) 1) (index .days 0) }}</span>
+          <span class="week-progress-badge" id="week-{{ .id }}-progress">0/{{ sub (add (index  .modules 1) 1) (index  .modules 0) }}</span>
           <svg class="week-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
         </button>
         <div class="week-content">
-          {{ range $i := seq (index .days 0) (index .days 1) }}
-          {{ $dayNum := printf "%02d" $i }}
-          {{ $dayPage := $.Site.GetPage (printf "/day-%s" $dayNum) }}
-          <a href="{{ if $dayPage }}{{ $dayPage.RelPermalink }}{{ else }}#{{ end }}" 
-             class="nav-day-item {{ if eq $.RelPermalink $dayPage.RelPermalink }}active{{ end }}" 
-             data-day="{{ $i }}"
+          {{ range $i := seq (index  .modules 0) (index  .modules 1) }}
+          {{ $moduleNum := printf "%02d" $i }}
+          {{ $modulePage := $.Site.GetPage (printf "/module-%s" $moduleNum) }}
+          <a href="{{ if $modulePage }}{{ $modulePage.RelPermalink }}{{ else }}#{{ end }}" 
+             class="nav-module-item {{ if eq $.RelPermalink $modulePage.RelPermalink }}active{{ end }}" 
+             data-module="{{ $i }}"
              data-status="locked">
-            <span class="nav-day-status-icon"></span>
-            <span class="nav-day-info">
-              <span class="nav-day-label">Day {{ $i }}</span>
-              <span class="nav-day-title">{{ if $dayPage }}{{ $dayPage.Title }}{{ else }}Day {{ $i }}{{ end }}</span>
+            <span class="nav-module-status-icon"></span>
+            <span class="nav-module-info">
+              <span class="nav-module-label">Module {{ $i }}</span>
+              <span class="nav-module-title">{{ if $modulePage }}{{ $modulePage.Title }}{{ else }}Module {{ $i }}{{ end }}</span>
             </span>
           </a>
           {{ end }}

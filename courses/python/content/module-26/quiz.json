@@ -1,0 +1,53 @@
+{
+  "moduleId": 26,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "What is meant by Python having 'batteries included'?",
+      "options": [
+        { "id": "a", "text": "It requires physical batteries to run", "correct": false },
+        { "id": "b", "text": "It comes with a large set of useful modules ready to use", "correct": true },
+        { "id": "c", "text": "It charges your laptop while coding", "correct": false },
+        { "id": "d", "text": "It can only be used on mobile devices", "correct": false }
+      ],
+      "explanation": "This phrase refers to the extensive standard library that comes with every Python installation."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "Which module would you use to get the command line arguments passed to your script?",
+      "options": [
+        { "id": "a", "text": "os", "correct": false },
+        { "id": "b", "text": "args", "correct": false },
+        { "id": "c", "text": "sys", "correct": true },
+        { "id": "d", "text": "cmd", "correct": false }
+      ],
+      "explanation": "sys.argv is the standard way to access command line arguments."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "Which class in the 'collections' module is used to count items in a list?",
+      "options": [
+        { "id": "a", "text": "ListCounter", "correct": false },
+        { "id": "b", "text": "Calculator", "correct": false },
+        { "id": "c", "text": "Counter", "correct": true },
+        { "id": "d", "text": "Adder", "correct": false }
+      ],
+      "explanation": "The Counter class is designed specifically for tallying elements in a collection."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "question": "What is the benefit of using Standard Library modules?",
+      "options": [
+        { "id": "a", "text": "They are faster than manual code", "correct": true },
+        { "id": "b", "text": "They are tested and reliable", "correct": true },
+        { "id": "c", "text": "They require no extra installation", "correct": true }
+      ],
+      "explanation": "Built-in modules are efficient, high-quality, and 'free' since they come with Python itself."
+    }
+  ]
+}

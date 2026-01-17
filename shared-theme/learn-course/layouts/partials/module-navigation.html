@@ -1,0 +1,56 @@
+{{ if .Params.module }}
+<nav class="module-navigation">
+  {{ $currentModule := .Params.module }}
+  {{ $prevModule := sub $currentModule 1 }}
+  {{ $nextModule := add $currentModule 1 }}
+  {{ $totalModules := .Site.Params.totalModules | default 30 }}
+  
+  {{ if ge $prevModule 1 }}
+  {{ $prevModuleStr := printf "%02d" $prevModule }}
+  {{ $prevPage := .Site.GetPage (printf "/module-%s" $prevModuleStr) }}
+  {{ if $prevPage }}
+  <a href="{{ $prevPage.RelPermalink }}" class="module-nav-btn module-nav-btn--prev">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+    <div class="module-nav-content">
+      <span class="module-nav-label">Previous</span>
+      <span class="module-nav-title">Module {{ $prevModule }}: {{ $prevPage.Title }}</span>
+    </div>
+  </a>
+  {{ end }}
+  {{ else }}
+  <div class="module-nav-btn module-nav-btn--prev module-nav-btn--disabled"></div>
+  {{ end }}
+  
+  <a href="{{ .Site.BaseURL }}" class="module-nav-btn module-nav-btn--overview">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="3" width="7" height="7"></rect>
+      <rect x="14" y="3" width="7" height="7"></rect>
+      <rect x="14" y="14" width="7" height="7"></rect>
+      <rect x="3" y="14" width="7" height="7"></rect>
+    </svg>
+    <span>Overview</span>
+  </a>
+  
+  {{ if le $nextModule $totalModules }}
+  {{ $nextModuleStr := printf "%02d" $nextModule }}
+  {{ $nextPage := .Site.GetPage (printf "/module-%s" $nextModuleStr) }}
+  {{ if $nextPage }}
+  <a href="{{ $nextPage.RelPermalink }}" class="module-nav-btn module-nav-btn--next" data-module="{{ $nextModule }}">
+    <div class="module-nav-content">
+      <span class="module-nav-label">Next</span>
+      <span class="module-nav-title">Module {{ $nextModule }}: {{ $nextPage.Title }}</span>
+    </div>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </a>
+  {{ end }}
+  {{ else }}
+  <div class="module-nav-btn module-nav-btn--next module-nav-btn--disabled">
+    <span class="module-nav-complete">Course Complete!</span>
+  </div>
+  {{ end }}
+</nav>
+{{ end }}

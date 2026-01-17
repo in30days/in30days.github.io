@@ -200,7 +200,7 @@
 }
 
 /* Nav Day Item */
-.nav-day-item {
+.nav-module-item {
   display: flex;
   align-items: flex-start;
   gap: var(--spacing-3);
@@ -210,20 +210,20 @@
   border-left: 2px solid transparent;
 }
 
-.nav-day-item:hover {
+.nav-module-item:hover {
   background-color: var(--bg-tertiary);
 }
 
-.nav-day-item.active {
+.nav-module-item.active {
   background-color: var(--color-primary-light);
   border-left-color: var(--color-primary);
 }
 
-[data-theme="dark"] .nav-day-item.active {
+[data-theme="dark"] .nav-module-item.active {
   background-color: rgba(99, 102, 241, 0.1);
 }
 
-.nav-day-status-icon {
+.nav-module-status-icon {
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -233,12 +233,12 @@
   position: relative;
 }
 
-.nav-day-item[data-status="completed"] .nav-day-status-icon {
+.nav-module-item[data-status="completed"] .nav-module-status-icon {
   background-color: var(--color-success);
   border-color: var(--color-success);
 }
 
-.nav-day-item[data-status="completed"] .nav-day-status-icon::after {
+.nav-module-item[data-status="completed"] .nav-module-status-icon::after {
   content: "";
   position: absolute;
   top: 2px;
@@ -250,32 +250,32 @@
   transform: rotate(45deg);
 }
 
-.nav-day-item[data-status="in-progress"] .nav-day-status-icon {
+.nav-module-item[data-status="in-progress"] .nav-module-status-icon {
   border-color: var(--color-warning);
   border-width: 3px;
 }
 
-.nav-day-item[data-status="available"] .nav-day-status-icon {
+.nav-module-item[data-status="available"] .nav-module-status-icon {
   border-color: var(--color-available);
 }
 
-.nav-day-info {
+.nav-module-info {
   display: flex;
   flex-direction: column;
 }
 
-.nav-day-label {
+.nav-module-label {
   font-size: 10px;
   font-weight: var(--font-weight-bold);
   color: var(--text-muted);
 }
 
-.nav-day-title {
+.nav-module-title {
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
 }
 
-.nav-day-item.active .nav-day-title {
+.nav-module-item.active .nav-module-title {
   color: var(--text-primary);
   font-weight: var(--font-weight-medium);
 }

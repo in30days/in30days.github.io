@@ -1,16 +1,16 @@
 {{ define "main" }}
-<article class="day-content">
-  <header class="day-header">
-    <div class="day-meta">
-      <span class="day-badge">Day {{ .Params.day }}</span>
-      <span class="day-duration">{{ .Params.duration | default "30 min" }}</span>
+<article class="module-content">
+  <header class="module-header">
+    <div class="module-meta">
+      <span class="module-badge">Module {{ .Params.module }}</span>
+      <span class="module-duration">{{ .Params.duration | default "30 min" }}</span>
       {{ if .Params.difficulty }}
-      <span class="day-difficulty day-difficulty--{{ .Params.difficulty }}">{{ .Params.difficulty }}</span>
+      <span class="module-difficulty module-difficulty--{{ .Params.difficulty }}">{{ .Params.difficulty }}</span>
       {{ end }}
     </div>
-    <h1 class="day-title">{{ .Title }}</h1>
+    <h1 class="module-title">{{ .Title }}</h1>
     {{ with .Params.description }}
-    <p class="day-description">{{ . }}</p>
+    <p class="module-description">{{ . }}</p>
     {{ end }}
   </header>
 
@@ -28,7 +28,7 @@
   </section>
   {{ end }}
 
-  <div class="day-body prose">
+  <div class="module-body prose">
     {{ .Content }}
   </div>
 
@@ -36,10 +36,10 @@
   {{ if fileExists $quizPath }}
   <section class="quiz-section" id="quiz">
     <h2 class="quiz-title">Quiz</h2>
-    <p class="quiz-description">Complete this quiz with a minimum score of {{ .Site.Params.quizPassScore | default 80 }}% to mark Day {{ .Params.day }} as complete.</p>
+    <p class="quiz-description">Complete this quiz with a minimum score of {{ .Site.Params.quizPassScore | default 80 }}% to mark Module {{ .Params.module }} as complete.</p>
     <div class="quiz-container" 
          data-quiz-path="{{ .RelPermalink }}quiz.json"
-         data-day="{{ .Params.day }}"
+         data-module="{{ .Params.module }}"
          data-pass-score="{{ .Site.Params.quizPassScore | default 80 }}">
       <div class="quiz-loading">Loading quiz...</div>
     </div>

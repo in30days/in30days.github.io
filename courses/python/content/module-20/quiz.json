@@ -1,0 +1,56 @@
+{
+  "moduleId": 20,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "Which module is used to handle dates and times in Python?",
+      "options": [
+        { "id": "a", "text": "time", "correct": false },
+        { "id": "b", "text": "date", "correct": false },
+        { "id": "c", "text": "datetime", "correct": true },
+        { "id": "d", "text": "calendar", "correct": false }
+      ],
+      "explanation": "The 'datetime' module is the standard built-in library for most date and time operations."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "What method is used to turn a date object into a formatted string?",
+      "options": [
+        { "id": "a", "text": "to_string()", "correct": false },
+        { "id": "b", "text": "strftime()", "correct": true },
+        { "id": "c", "text": "strptime()", "correct": false },
+        { "id": "d", "text": "format()", "correct": false }
+      ],
+      "explanation": "strftime() (string format time) is used to create human-readable strings from date objects."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "What object do you use to add or subtract time from a date?",
+      "options": [
+        { "id": "a", "text": "timespan", "correct": false },
+        { "id": "b", "text": "duration", "correct": false },
+        { "id": "c", "text": "timedelta", "correct": true },
+        { "id": "d", "text": "timer", "correct": false }
+      ],
+      "explanation": "timedelta represents a duration, the difference between two dates or times."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange these strftime codes to produce '2026-01-15':",
+      "items": [
+        { "id": "y", "text": "%Y" },
+        { "id": "h1", "text": "-" },
+        { "id": "m", "text": "%m" },
+        { "id": "h2", "text": "-" },
+        { "id": "d", "text": "%d" }
+      ],
+      "correctOrder": ["y", "h1", "m", "h2", "d"],
+      "explanation": "%Y is 2026, %m is 01, and %d is 15."
+    }
+  ]
+}

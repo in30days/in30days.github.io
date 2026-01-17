@@ -1,0 +1,71 @@
+{
+  "moduleId": 3,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which of these is the default integer type in Rust?",
+      "options": [
+        { "id": "a", "text": "u32", "correct": false },
+        { "id": "b", "text": "i64", "correct": false },
+        { "id": "c", "text": "i32", "correct": true },
+        { "id": "d", "text": "usize", "correct": false }
+      ],
+      "explanation": "If not specified, Rust defaults to i32 for integers as it's generally the fastest."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is the difference between a Tuple and an Array?",
+      "options": [
+        { "id": "a", "text": "Arrays can change size, tuples cannot", "correct": false },
+        { "id": "b", "text": "Tuples can hold different types, arrays must hold the same type", "correct": true },
+        { "id": "c", "text": "Arrays use parentheses, tuples use brackets", "correct": false },
+        { "id": "d", "text": "There is no difference", "correct": false }
+      ],
+      "explanation": "Tuples are collections of multiple types, while arrays are collections of the same type."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "How do you access the first element of a tuple named 'my_tup'?",
+      "options": [
+        { "id": "a", "text": "my_tup[0]", "correct": false },
+        { "id": "b", "text": "my_tup(0)", "correct": false },
+        { "id": "c", "text": "my_tup.0", "correct": true },
+        { "id": "d", "text": "my_tup->0", "correct": false }
+      ],
+      "explanation": "Tuples use dot notation followed by the index to access elements."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which type would you use for a single character like 'A'?",
+      "options": [
+        { "id": "a", "text": "String", "correct": false },
+        { "id": "b", "text": "str", "correct": false },
+        { "id": "c", "text": "char", "correct": true },
+        { "id": "d", "text": "u8", "correct": false }
+      ],
+      "explanation": "The 'char' type is used for single Unicode characters and uses single quotes."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What happens if you access an array index that is out of bounds?",
+      "options": [
+        { "id": "a", "text": "It returns 0", "correct": false },
+        { "id": "b", "text": "The program crashes (panics) at runtime", "correct": true },
+        { "id": "c", "text": "It returns a random value from memory", "correct": false },
+        { "id": "d", "text": "The compiler catches it (if possible) or it panics", "correct": false }
+      ],
+      "explanation": "Rust provides safety by checking bounds at runtime and panicking if you try to access memory that doesn't belong to the array."
+    }
+  ]
+}

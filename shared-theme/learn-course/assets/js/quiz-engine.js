@@ -6,7 +6,7 @@
     constructor(container) {
       this.container = container;
       this.quizPath = container.dataset.quizPath;
-      this.dayNum = parseInt(container.dataset.day, 10);
+      this.moduleNum = parseInt(container.dataset.day, 10);
       this.passScore = parseInt(container.dataset.passScore, 10) || 80;
       this.questions = [];
       this.answers = {};
@@ -449,7 +449,7 @@
         </p>
         <div class="quiz-results-actions">
           ${!passed ? '<button class="retry-btn" id="retry-quiz-btn">Try Again</button>' : ''}
-          ${passed ? `<a href="../day-${String(this.dayNum + 1).padStart(2, '0')}/" class="next-day-btn">Continue to Day ${this.dayNum + 1}</a>` : ''}
+          ${passed ? `<a href="../day-${String(this.moduleNum + 1).padStart(2, '0')}/" class="next-day-btn">Continue to Module ${this.moduleNum + 1}</a>` : ''}
         </div>
       `;
 
@@ -465,7 +465,7 @@
 
       // Update progress if passed
       if (passed && window.progressTracker) {
-        window.progressTracker.completeDay(this.dayNum, percent);
+        window.progressTracker.completeDay(this.moduleNum, percent);
       }
     }
 

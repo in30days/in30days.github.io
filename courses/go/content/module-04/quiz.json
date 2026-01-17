@@ -1,0 +1,71 @@
+{
+  "moduleId": 4,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which of the following is TRUE about Go's if statement?",
+      "options": [
+        { "id": "a", "text": "Parentheses are required around the condition", "correct": false },
+        { "id": "b", "text": "Braces {} are optional for single-line bodies", "correct": false },
+        { "id": "c", "text": "Parentheses are not required around the condition", "correct": true },
+        { "id": "d", "text": "The condition must be an integer", "correct": false }
+      ],
+      "explanation": "Go does not require parentheses around the condition in an if statement, but braces {} are always required."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is the scope of a variable declared in an 'if' initialization statement like 'if y := 20; y > 15'?",
+      "options": [
+        { "id": "a", "text": "The entire function where the if statement is defined", "correct": false },
+        { "id": "b", "text": "Only the if block and its corresponding else/else if blocks", "correct": true },
+        { "id": "c", "text": "Only the if block, but not the else block", "correct": false },
+        { "id": "d", "text": "The entire package", "correct": false }
+      ],
+      "explanation": "Variables declared in the if initialization statement are scoped to the if statement and any associated else if or else blocks."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "How does Go's switch statement handle case fall-through?",
+      "options": [
+        { "id": "a", "text": "Cases fall through by default, similar to C or JavaScript", "correct": false },
+        { "id": "b", "text": "You must use the 'break' keyword to prevent fall-through", "correct": false },
+        { "id": "c", "text": "Cases do not fall through by default; each case ends automatically", "correct": true },
+        { "id": "d", "text": "Fall-through is not supported in Go", "correct": false }
+      ],
+      "explanation": "In Go, switch cases do not fall through by default. You don't need 'break' statements. If you explicitly want fall-through, you must use the 'fallthrough' keyword."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which keyword is used to explicitly fall through to the next case in a switch statement?",
+      "options": [
+        { "id": "a", "text": "continue", "correct": false },
+        { "id": "b", "text": "next", "correct": false },
+        { "id": "c", "text": "fallthrough", "correct": true },
+        { "id": "d", "text": "goto", "correct": false }
+      ],
+      "explanation": "The 'fallthrough' keyword is used to unconditionally transfer control to the first statement of the next case clause."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Does Go have a ternary conditional operator (condition ? val1 : val2)?",
+      "options": [
+        { "id": "a", "text": "Yes, it works exactly like in C/Java", "correct": false },
+        { "id": "b", "text": "No, Go requires using an if-else statement instead", "correct": true },
+        { "id": "c", "text": "Yes, but it uses a different syntax", "correct": false },
+        { "id": "d", "text": "Only for constant expressions", "correct": false }
+      ],
+      "explanation": "Go does not have a ternary operator. The designers of Go chose to omit it to favor the more explicit and readable if-else construct."
+    }
+  ]
+}

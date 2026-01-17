@@ -24,9 +24,9 @@
   }
 
   // Default progress structure
-  function createDefaultProgress(totalDays = 30) {
+  function createDefaultProgress(totalModules = 30) {
     const days = {};
-    for (let i = 1; i <= totalDays; i++) {
+    for (let i = 1; i <= totalModules; i++) {
       days[i] = {
         status: i === 1 ? 'available' : 'locked',
         quizScore: null,
@@ -80,17 +80,17 @@
   }
 
   // Update day status
-  function updateDayStatus(dayNum, status, quizScore = null) {
+  function updateDayStatus(moduleNum, status, quizScore = null) {
     const progress = loadProgress();
-    if (progress.days[dayNum]) {
-      progress.days[dayNum].status = status;
+    if (progress.days[moduleNum]) {
+      progress.days[moduleNum].status = status;
       if (quizScore !== null) {
-        progress.days[dayNum].quizScore = quizScore;
-        progress.days[dayNum].quizAttempts++;
+        progress.days[moduleNum].quizScore = quizScore;
+        progress.days[moduleNum].quizAttempts++;
       }
       if (status === 'completed') {
-        progress.days[dayNum].completedAt = new Date().toISOString();
-        const nextDay = parseInt(dayNum) + 1;
+        progress.days[moduleNum].completedAt = new Date().toISOString();
+        const nextModule = parseInt(moduleNum) + 1;
         if (progress.days[nextDay] && progress.days[nextDay].status === 'locked') {
           progress.days[nextDay].status = 'available';
         }
@@ -100,19 +100,19 @@
   }
 
   // Mark day as in progress
-  function startDay(dayNum) {
+  function startDay(moduleNum) {
     const progress = loadProgress();
-    if (progress.days[dayNum] && progress.days[dayNum].status === 'available') {
-      progress.days[dayNum].status = 'in-progress';
+    if (progress.days[moduleNum] && progress.days[moduleNum].status === 'available') {
+      progress.days[moduleNum].status = 'in-progress';
       saveProgress(progress);
     }
   }
 
   // Complete day (after passing quiz)
-  function completeDay(dayNum, quizScore) {
-    updateDayStatus(dayNum, 'completed', quizScore);
+  function completeDay(moduleNum, quizScore) {
+    updateDayStatus(moduleNum, 'completed', quizScore);
     if (window.showToast) {
-      window.showToast('success', 'Day Completed!', `You've completed Day ${dayNum} with a score of ${quizScore}%`);
+      window.showToast('success', 'Module Completed!', `You've completed Module ${moduleNum} with a score of ${quizScore}%`);
     }
   }
 
@@ -152,16 +152,16 @@
     if (mobileFill) mobileFill.style.width = `${stats.percent}%`;
 
     // Update Weekly Nav items and Bottom Navigation
-    document.querySelectorAll('.nav-day-item, .day-nav-btn--next').forEach(item => {
-      const dayNum = parseInt(item.dataset.day, 10);
-      if (isNaN(dayNum)) return;
+    document.querySelectorAll('.nav-module-item, .module-nav-btn--next').forEach(item => {
+      const moduleNum = parseInt(item.dataset.day, 10);
+      if (isNaN(moduleNum)) return;
 
-      const status = progress.days[dayNum]?.status || 'locked';
+      const status = progress.days[moduleNum]?.status || 'locked';
       item.setAttribute('data-status', status);
       
       if (status === 'locked') {
-        if (item.classList.contains('day-nav-btn--next')) {
-          item.classList.add('day-nav-btn--disabled');
+        if (item.classList.contains('module-nav-btn--next')) {
+          item.classList.add('module-nav-btn--disabled');
         }
         
         // Remove existing listener if any (to avoid duplicates)
@@ -172,14 +172,14 @@
         item._lockedHandler = function(e) {
           if (this.getAttribute('data-status') === 'locked') {
             e.preventDefault();
-            window.showToast?.('warning', 'Day Locked', 'Complete the current day (including the quiz) to unlock the next one.');
+            window.showToast?.('warning', 'Module Locked', 'Complete the current day (including the quiz) to unlock the next one.');
           }
         };
         
         item.addEventListener('click', item._lockedHandler);
       } else {
-        if (item.classList.contains('day-nav-btn--next')) {
-          item.classList.remove('day-nav-btn--disabled');
+        if (item.classList.contains('module-nav-btn--next')) {
+          item.classList.remove('module-nav-btn--disabled');
         }
         if (item._lockedHandler) {
           item.removeEventListener('click', item._lockedHandler);
@@ -191,7 +191,7 @@
     // Update Week Progress Badges
     document.querySelectorAll('.week-group').forEach(group => {
       const weekId = group.dataset.week;
-      const daysInWeek = group.querySelectorAll('.nav-day-item');
+      const daysInWeek = group.querySelectorAll('.nav-module-item');
       const completedInWeek = Array.from(daysInWeek).filter(d => d.getAttribute('data-status') === 'completed').length;
       const totalInWeek = daysInWeek.length;
       const badge = document.getElementById(`week-${weekId}-progress`);
@@ -221,12 +221,12 @@
       }
       
       const isStarted = stats.completed > 0;
-      resumeBtn.querySelector('span').textContent = isStarted ? `Resume Day ${nextDayNum}` : `Start Day ${nextDayNum}`;
+      resumeBtn.querySelector('span').textContent = isStarted ? `Resume Module ${nextDayNum}` : `Start Module ${nextDayNum}`;
       
-      const dayNumFormatted = nextDayNum.toString().padStart(2, '0');
+      const moduleNumFormatted = nextDayNum.toString().padStart(2, '0');
       const baseUrl = getCourseBaseUrl();
       const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
-      resumeBtn.href = `${normalizedBase}day-${dayNumFormatted}/`;
+      resumeBtn.href = `${normalizedBase}module-${moduleNumFormatted}/`;
     }
   }
 
@@ -273,10 +273,10 @@
   }
 
   function init() {
-    const pathMatch = window.location.pathname.match(/day-(\d+)/);
+    const pathMatch = window.location.pathname.match(/module-(\d+)/);
     if (pathMatch) {
-      const dayNum = parseInt(pathMatch[1], 10);
-      if (getDayStatus(dayNum) === 'available') startDay(dayNum);
+      const moduleNum = parseInt(pathMatch[1], 10);
+      if (getDayStatus(moduleNum) === 'available') startDay(moduleNum);
     }
     updateUI();
     window.addEventListener('progressUpdated', () => updateUI());
@@ -295,8 +295,8 @@
     });
   }
 
-  function getDayStatus(dayNum) {
-    return loadProgress().days[dayNum]?.status || 'locked';
+  function getDayStatus(moduleNum) {
+    return loadProgress().days[moduleNum]?.status || 'locked';
   }
 
   if (document.readyState !== 'loading') init();

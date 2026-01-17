@@ -1,0 +1,74 @@
+{
+  "moduleId": 1,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which of the following are valid reasons to learn Python? (Select all that apply)",
+      "options": [
+        { "id": "a", "text": "It has clean, readable syntax", "correct": true },
+        { "id": "b", "text": "It can only be used for web development", "correct": false },
+        { "id": "c", "text": "It's used in data science and machine learning", "correct": true },
+        { "id": "d", "text": "It has a large community and many libraries", "correct": true },
+        { "id": "e", "text": "It requires compilation before running", "correct": false }
+      ],
+      "explanation": "Python is popular because of its readable syntax, versatility across many domains (web, data science, ML, automation), and its large ecosystem of libraries. It's interpreted, not compiled."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What does the print() function do in Python?",
+      "options": [
+        { "id": "a", "text": "Displays output to the screen", "correct": true },
+        { "id": "b", "text": "Creates a new variable", "correct": false },
+        { "id": "c", "text": "Sends text to a printer", "correct": false },
+        { "id": "d", "text": "Outputs text to the console/terminal", "correct": true }
+      ],
+      "explanation": "The print() function displays text output to the screen/console/terminal. It doesn't create variables or send anything to a physical printer."
+    },
+    {
+      "id": "q3",
+      "type": "drag-order",
+      "points": 30,
+      "question": "Arrange the steps to run your first Python program in the correct order:",
+      "items": [
+        { "id": "a", "text": "Download and install Python from python.org" },
+        { "id": "b", "text": "Verify installation with 'python --version'" },
+        { "id": "c", "text": "Create a file with .py extension" },
+        { "id": "d", "text": "Write your Python code in the file" },
+        { "id": "e", "text": "Run the file using 'python filename.py'" }
+      ],
+      "correctOrder": ["a", "b", "c", "d", "e"],
+      "explanation": "First install Python, verify it works, then create a .py file, write your code, and finally run it from the terminal."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 15,
+      "question": "What is the REPL in Python?",
+      "options": [
+        { "id": "a", "text": "Read-Eval-Print Loop", "correct": true },
+        { "id": "b", "text": "An interactive Python shell", "correct": true },
+        { "id": "c", "text": "A way to run code line by line", "correct": true },
+        { "id": "d", "text": "A Python code editor", "correct": false }
+      ],
+      "explanation": "REPL stands for Read-Eval-Print Loop. It's an interactive shell where you can run Python code line by line and see immediate results."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 15,
+      "question": "Which command correctly runs a Python file named 'hello.py'?",
+      "options": [
+        { "id": "a", "text": "python hello.py", "correct": true },
+        { "id": "b", "text": "run hello.py", "correct": false },
+        { "id": "c", "text": "python3 hello.py", "correct": true },
+        { "id": "d", "text": "execute hello.py", "correct": false }
+      ],
+      "explanation": "You run Python files using either 'python filename.py' or 'python3 filename.py' depending on your system configuration."
+    }
+  ]
+}

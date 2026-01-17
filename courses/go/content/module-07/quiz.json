@@ -1,0 +1,71 @@
+{
+  "moduleId": 7,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which of the following is a valid short variable declaration in Go?",
+      "options": [
+        { "id": "a", "text": "var x = 10", "correct": false },
+        { "id": "b", "text": "x := 10", "correct": true },
+        { "id": "c", "text": "int x := 10", "correct": false },
+        { "id": "d", "text": "x = 10", "correct": false }
+      ],
+      "explanation": "The := syntax is used for short variable declarations inside functions and infers the type of the variable."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What happens if you use a variable that was declared but not used in Go?",
+      "options": [
+        { "id": "a", "text": "The program runs but displays a warning", "correct": false },
+        { "id": "b", "text": "The compiler throws an error and refuses to build", "correct": true },
+        { "id": "c", "text": "The variable is automatically deleted", "correct": false },
+        { "id": "d", "text": "The program crashes at runtime", "correct": false }
+      ],
+      "explanation": "Go has a strict rule: unused variables (and imports) result in a compilation error."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Which construct would you use to iterate exactly 10 times in Go?",
+      "options": [
+        { "id": "a", "text": "while i < 10 { ... }", "correct": false },
+        { "id": "b", "text": "for i := 0; i < 10; i++ { ... }", "correct": true },
+        { "id": "c", "text": "repeat(10) { ... }", "correct": false },
+        { "id": "d", "text": "do 10 times { ... }", "correct": false }
+      ],
+      "explanation": "The three-component 'for' loop is the standard way to perform a fixed number of iterations in Go."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "How do you ignore one of the return values from a function that returns two values?",
+      "options": [
+        { "id": "a", "text": "Just don't assign it: result = myFunction()", "correct": false },
+        { "id": "b", "text": "Use the blank identifier: result, _ = myFunction()", "correct": true },
+        { "id": "c", "text": "Use nil: result, nil = myFunction()", "correct": false },
+        { "id": "d", "text": "Use the 'ignore' keyword: result, ignore = myFunction()", "correct": false }
+      ],
+      "explanation": "The blank identifier '_' is used to tell the compiler that you intentionally want to ignore a specific value."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is the default value (zero value) of a string in Go?",
+      "options": [
+        { "id": "a", "text": "nil", "correct": false },
+        { "id": "b", "text": "null", "correct": false },
+        { "id": "c", "text": "\"\" (empty string)", "correct": true },
+        { "id": "d", "text": "undefined", "correct": false }
+      ],
+      "explanation": "In Go, variables are always initialized to their 'zero value'. For strings, the zero value is an empty string."
+    }
+  ]
+}

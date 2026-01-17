@@ -1,0 +1,71 @@
+{
+  "moduleId": 6,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is the correct syntax for a function that takes two ints and returns an int?",
+      "options": [
+        { "id": "a", "text": "func add(a, b int) : int { ... }", "correct": false },
+        { "id": "b", "text": "int func add(a int, b int) { ... }", "correct": false },
+        { "id": "c", "text": "func add(a, b int) int { ... }", "correct": true },
+        { "id": "d", "text": "function add(a int, b int) int { ... }", "correct": false }
+      ],
+      "explanation": "In Go, functions are defined with the 'func' keyword, followed by the name, parameters, and then the return type."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "How many values can a Go function return?",
+      "options": [
+        { "id": "a", "text": "Exactly one", "correct": false },
+        { "id": "b", "text": "Zero or one", "correct": false },
+        { "id": "c", "text": "Any number of values", "correct": true },
+        { "id": "d", "text": "Up to two values (result and error)", "correct": false }
+      ],
+      "explanation": "Go functions can return multiple values, which are listed in parentheses after the parameter list."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "What is a 'naked return' in Go?",
+      "options": [
+        { "id": "a", "text": "A return statement that returns nil", "correct": false },
+        { "id": "b", "text": "A return statement in a function with named return values that doesn't explicitly list variables", "correct": true },
+        { "id": "c", "text": "A return statement that exits a function without returning any value", "correct": false },
+        { "id": "d", "text": "A return statement used in void functions", "correct": false }
+      ],
+      "explanation": "When return values are named, a simple 'return' statement will return the current values of those variables. This is called a 'naked' return."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "How do you define a variadic function that can take any number of integers?",
+      "options": [
+        { "id": "a", "text": "func sum(nums []int) { }", "correct": false },
+        { "id": "b", "text": "func sum(nums ...int) { }", "correct": true },
+        { "id": "c", "text": "func sum(int... nums) { }", "correct": false },
+        { "id": "d", "text": "func sum(nums *int) { }", "correct": false }
+      ],
+      "explanation": "The '...' prefix before the type of the last parameter makes it a variadic parameter, which is treated as a slice inside the function."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-select",
+      "points": 20,
+      "question": "Does Go pass arguments by value or by reference by default?",
+      "options": [
+        { "id": "a", "text": "By value (creates a copy)", "correct": true },
+        { "id": "b", "text": "By reference (shares the memory)", "correct": false },
+        { "id": "c", "text": "It depends on the data type", "correct": false },
+        { "id": "d", "text": "By value for primitives, by reference for objects", "correct": false }
+      ],
+      "explanation": "Go is a 'pass by value' language. This means when you pass a variable to a function, a copy of its data is created and passed."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "moduleId": 17,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "What is Inheritance in OOP?",
+      "options": [
+        { "id": "a", "text": "Copying and pasting code between files", "correct": false },
+        { "id": "b", "text": "Creating a new class based on an existing class", "correct": true },
+        { "id": "c", "text": "A way to delete a class", "correct": false },
+        { "id": "d", "text": "A type of mathematical calculation", "correct": false }
+      ],
+      "explanation": "Inheritance allows a child class to acquire the properties and behaviors of a parent class."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "How do you define a class 'Child' that inherits from 'Parent'?",
+      "options": [
+        { "id": "a", "text": "class Child <- Parent:", "correct": false },
+        { "id": "b", "text": "class Child inherits Parent:", "correct": false },
+        { "id": "c", "text": "class Child(Parent):", "correct": true },
+        { "id": "d", "text": "class Child is Parent:", "correct": false }
+      ],
+      "explanation": "In Python, inheritance is indicated by putting the parent class name in parentheses after the child class name."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "What does the 'super()' function do?",
+      "options": [
+        { "id": "a", "text": "Gives the object special powers", "correct": false },
+        { "id": "b", "text": "Accesses methods from the parent class", "correct": true },
+        { "id": "c", "text": "Multiplies a number by 2", "correct": false },
+        { "id": "d", "text": "Closes the program", "correct": false }
+      ],
+      "explanation": "'super()' returns a temporary object of the parent class, allowing you to call its methods."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "question": "What is 'Method Overriding'?",
+      "options": [
+        { "id": "a", "text": "Deleting a method from a class", "correct": false },
+        { "id": "b", "text": "Calling a method too many times", "correct": false },
+        { "id": "c", "text": "Providing a new implementation of a parent's method in a child class", "correct": true }
+      ],
+      "explanation": "Overriding allows a child class to change how a specific task is performed while keeping the same method name."
+    }
+  ]
+}

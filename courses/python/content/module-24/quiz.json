@@ -1,0 +1,54 @@
+{
+  "moduleId": 24,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "question": "What does JSON stand for?",
+      "options": [
+        { "id": "a", "text": "JavaScript Object Notation", "correct": true },
+        { "id": "b", "text": "Java Standard Online Network", "correct": false },
+        { "id": "c", "text": "Just Standard Object Nodes", "correct": false },
+        { "id": "d", "text": "Joined Scripting Object Name", "correct": false }
+      ],
+      "explanation": "JSON is a language-independent data format that originated from JavaScript."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "question": "Which function converts a Python object into a JSON string?",
+      "options": [
+        { "id": "a", "text": "json.load()", "correct": false },
+        { "id": "b", "text": "json.dump()", "correct": false },
+        { "id": "c", "text": "json.loads()", "correct": false },
+        { "id": "d", "text": "json.dumps()", "correct": true }
+      ],
+      "explanation": "The 's' in dumps stands for string. dumps() converts to a string, while dump() writes to a file."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "question": "Which of these is a valid JSON value for an empty field?",
+      "options": [
+        { "id": "a", "text": "None", "correct": false },
+        { "id": "b", "text": "NaN", "correct": false },
+        { "id": "c", "text": "null", "correct": true },
+        { "id": "d", "text": "void", "correct": false }
+      ],
+      "explanation": "In JSON, the representation for 'no value' is the keyword 'null'."
+    },
+    {
+      "id": "q4",
+      "type": "drag-order",
+      "question": "Arrange the steps to save a dictionary 'user' to 'config.json':",
+      "items": [
+        { "id": "imp", "text": "import json" },
+        { "id": "opn", "text": "with open('config.json', 'w') as f:" },
+        { "id": "dmp", "text": "json.dump(user, f)" }
+      ],
+      "correctOrder": ["imp", "opn", "dmp"],
+      "explanation": "You must import the module, open the file in write mode, and then use the dump function."
+    }
+  ]
+}
