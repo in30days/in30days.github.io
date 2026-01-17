@@ -1,17 +1,17 @@
 baseURL = "https://learn.ravichaganti.com/go/"
 languageCode = "en-us"
-title = "Go Basics in 30 Days"
-theme = "in30days-course"
+title = "Go Basics"
+theme = "learn-course"
 themesDir = "../../shared-theme"
 
 [params]
   courseId = "go"
   courseName = "Go"
-  courseFullName = "Go Basics in 30 Days"
-  courseDescription = "Master Go programming fundamentals from zero to confident developer in 30 days"
+  courseFullName = "Go Basics"
+  courseDescription = "Master Go programming fundamentals from zero to confident developer"
   courseColor = "#00ADD8"
   courseIcon = "go"
-  totalDays = 30
+  totalModules = 30
   quizPassScore = 80
   difficulty = "beginner"
   landingPageUrl = "https://learn.ravichaganti.com"
@@ -24,23 +24,23 @@ themesDir = "../../shared-theme"
   [[params.weeks]]
     id = 1
     title = "Go Fundamentals"
-    days = [1, 7]
+    modules = [1, 7]
   [[params.weeks]]
     id = 2
     title = "Data Structures"
-    days = [8, 14]
+    modules = [8, 14]
   [[params.weeks]]
     id = 3
     title = "Interfaces & Errors"
-    days = [15, 21]
+    modules = [15, 21]
   [[params.weeks]]
     id = 4
     title = "Packages & Concurrency"
-    days = [22, 28]
+    modules = [22, 28]
   [[params.weeks]]
     id = 5
     title = "Final Project"
-    days = [29, 30]
+    modules = [29, 30]
   
   [params.giscus]
     enabled = true

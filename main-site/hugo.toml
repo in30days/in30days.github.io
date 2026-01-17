@@ -1,11 +1,12 @@
 baseURL = "https://learn.ravichaganti.com/"
 languageCode = "en-us"
-title = "in30days - Master Any Skill in 30 Days"
-theme = "in30days-landing"
+title = "Learn - Master Any Technology"
+theme = "learn-landing"
 
 [params]
-  description = "Interactive learning paths to master programming languages and technologies in 30 days"
+  description = "Interactive learning paths to master programming languages and technologies"
   author = "rchaganti"
+  siteName = "Learn"
   
 [markup]
   [markup.goldmark]

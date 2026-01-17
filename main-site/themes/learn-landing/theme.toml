@@ -1,0 +1,9 @@
+name = "learn-landing"
+license = "MIT"
+licenselink = "https://github.com/learn/learn/blob/main/LICENSE"
+description = "Landing page theme for learning content"
+homepage = "https://learn.ravichaganti.com"
+
+[author]
+  name = "Ravikanth Chaganti"
+  homepage = "https://ravichaganti.com"

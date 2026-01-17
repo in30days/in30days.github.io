@@ -1,0 +1,9 @@
+name = "learn-course"
+license = "MIT"
+licenselink = "https://github.com/learn/learn/blob/main/LICENSE"
+description = "Course theme for learning content"
+homepage = "https://learn.ravichaganti.com"
+
+[author]
+  name = "Ravikanth Chaganti"
+  homepage = "https://ravichaganti.com"

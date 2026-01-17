@@ -1,17 +1,17 @@
 baseURL = "https://learn.ravichaganti.com/rust/"
 languageCode = "en-us"
-title = "Rust Basics in 30 Days"
-theme = "in30days-course"
+title = "Rust Basics"
+theme = "learn-course"
 themesDir = "../../shared-theme"
 
 [params]
   courseId = "rust"
   courseName = "Rust"
-  courseFullName = "Rust Basics in 30 Days"
+  courseFullName = "Rust Basics"
   courseDescription = "Master Rust programming from scratch - focusing on safety, speed, and concurrency."
   courseColor = "#DEA584"
   courseIcon = "rust"
-  totalDays = 30
+  totalModules = 30
   quizPassScore = 80
   difficulty = "intermediate"
   landingPageUrl = "https://learn.ravichaganti.com"
@@ -24,23 +24,23 @@ themesDir = "../../shared-theme"
   [[params.weeks]]
     id = 1
     title = "Rust Fundamentals"
-    days = [1, 7]
+    modules = [1, 7]
   [[params.weeks]]
     id = 2
     title = "Ownership & Borrowing"
-    days = [8, 14]
+    modules = [8, 14]
   [[params.weeks]]
     id = 3
     title = "Enums & Pattern Matching"
-    days = [15, 21]
+    modules = [15, 21]
   [[params.weeks]]
     id = 4
     title = "Generics, Traits & Lifetimes"
-    days = [22, 28]
+    modules = [22, 28]
   [[params.weeks]]
     id = 5
     title = "Final Project"
-    days = [29, 30]
+    modules = [29, 30]
   
   [params.giscus]
     enabled = true

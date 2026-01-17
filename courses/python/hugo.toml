@@ -1,20 +1,20 @@
 baseURL = "https://learn.ravichaganti.com/python/"
 languageCode = "en-us"
-title = "Python in 30 Days"
-theme = "in30days-course"
+title = "Python Basics"
+theme = "learn-course"
 themesDir = "../../shared-theme"
 
 [params]
   courseId = "python"
   courseName = "Python"
-  courseFullName = "Python in 30 Days"
-  courseDescription = "Master Python programming from zero to hero in 30 days"
+  courseFullName = "Python Basics"
+  courseDescription = "Master Python programming from zero to hero"
   courseColor = "#3b82f6"
   courseIcon = "python"
-  totalDays = 30
+  totalModules = 30
   quizPassScore = 80
   difficulty = "beginner"
-  landingPageUrl = "https://learn.ravichaganti.com" # Used for Home icon in local dev
+  landingPageUrl = "https://learn.ravichaganti.com"
   
   [params.contributor]
     name = "Ravikanth Chaganti"
@@ -24,23 +24,23 @@ themesDir = "../../shared-theme"
   [[params.weeks]]
     id = 1
     title = "Python Basics"
-    days = [1, 7]
+    modules = [1, 7]
   [[params.weeks]]
     id = 2
     title = "Functions & Logic"
-    days = [8, 14]
+    modules = [8, 14]
   [[params.weeks]]
     id = 3
     title = "Object Oriented Programming"
-    days = [15, 21]
+    modules = [15, 21]
   [[params.weeks]]
     id = 4
     title = "Power Features"
-    days = [22, 28]
+    modules = [22, 28]
   [[params.weeks]]
     id = 5
     title = "Final Portfolio"
-    days = [29, 30]
+    modules = [29, 30]
   
   [params.giscus]
     enabled = true

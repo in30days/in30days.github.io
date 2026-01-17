@@ -4,7 +4,7 @@
   description: A complete journey from Python basics to professional web development and systems design.
   color: "#3b82f6"
   icon: python
-  totalDays: 90
+  totalModules: 90
   difficulty: beginner
   courses:
     - python
