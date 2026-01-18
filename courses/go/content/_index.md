@@ -1,5 +1,5 @@
 ---
-title: "Go Basics"
+title: "Go Fundamentals"
 description: "Master Go programming fundamentals from zero to confident developer"
 courseId: "go"
 courseName: "Go"
@@ -22,7 +22,7 @@ prerequisites:
   - No prior Go experience required (some programming background helpful)
 ---
 
-## Welcome to Go Basics!
+## Welcome to Go Fundamentals!
 
 This course will take you from complete beginner to confident Go programmer. Go (also known as Golang) is a modern, statically-typed language designed at Google for building reliable, efficient software at scale.
 

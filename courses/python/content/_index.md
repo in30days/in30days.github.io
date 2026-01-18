@@ -1,5 +1,5 @@
 ---
-title: "Python Basics"
+title: "Python Fundamentals"
 description: "Master Python programming from beginner to intermediate"
 courseId: "python"
 courseName: "Python"
@@ -19,7 +19,7 @@ prerequisites:
   - No prior programming experience required
 ---
 
-## Welcome to Python Basics!
+## Welcome to Python Fundamentals!
 
 This course will take you from complete beginner to confident Python programmer. Each module builds upon the previous, with hands-on examples, interactive quizzes, and practical exercises.
 

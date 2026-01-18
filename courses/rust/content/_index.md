@@ -1,10 +1,10 @@
 ---
-title: "Rust Basics"
+title: "Rust Fundamentals"
 description: "Master Rust programming from scratch - focusing on safety, speed, and concurrency."
 courseId: "rust"
 courseName: "Rust"
 courseColor: "#DEA584"
-difficulty: "intermediate"
+difficulty: "beginner"
 duration: "30 Modules"
 totalModules: 30
 objectives:
@@ -19,7 +19,7 @@ prerequisites:
   - Comfort with the command line
 ---
 
-## Welcome to Rust Basics!
+## Welcome to Rust Fundamentals!
 
 Rust is a systems programming language that provides memory safety, concurrency, and performance without a garbage collector. This course is designed to take you from a curious developer to a confident Rustacean.
 
