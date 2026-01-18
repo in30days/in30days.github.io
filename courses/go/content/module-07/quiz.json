@@ -34,8 +34,8 @@
       "points": 20,
       "question": "Which construct would you use to iterate exactly 10 times in Go?",
       "options": [
-        { "id": "a", "text": "while i < 10 { ... }", "correct": false },
-        { "id": "b", "text": "for i := 0; i < 10; i++ { ... }", "correct": true },
+        { "id": "a", "text": "while i &lt; 10 { ... }", "correct": false },
+        { "id": "b", "text": "for i := 0; i &lt; 10; i++ { ... }", "correct": true },
         { "id": "c", "text": "repeat(10) { ... }", "correct": false },
         { "id": "d", "text": "do 10 times { ... }", "correct": false }
       ],

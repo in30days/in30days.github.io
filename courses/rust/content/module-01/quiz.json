@@ -26,7 +26,7 @@
         { "id": "c", "text": "cargo new", "correct": true },
         { "id": "d", "text": "rustc init", "correct": false }
       ],
-      "explanation": "'cargo new <name>' initializes a new directory with a Cargo.toml file and a src folder."
+      "explanation": "'cargo new &lt;name&gt;' initializes a new directory with a Cargo.toml file and a src folder."
     },
     {
       "id": "q3",

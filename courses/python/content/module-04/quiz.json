@@ -10,9 +10,9 @@
         { "id": "a", "text": "==", "correct": true },
         { "id": "b", "text": "=", "correct": false },
         { "id": "c", "text": "!=", "correct": true },
-        { "id": "d", "text": "<>", "correct": false }
+        { "id": "d", "text": "&lt;&gt;", "correct": false }
       ],
-      "explanation": "== is for equality, != is for inequality. = is for assignment. <> was used in Python 2 but is removed in Python 3."
+      "explanation": "== is for equality, != is for inequality. = is for assignment. &lt;&gt; was used in Python 2 but is removed in Python 3."
     },
     {
       "id": "q2",

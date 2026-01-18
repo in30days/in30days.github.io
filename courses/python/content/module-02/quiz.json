@@ -51,12 +51,12 @@
       "points": 15,
       "question": "What will be the output of: print(type(True))?",
       "options": [
-        { "id": "a", "text": "<class 'bool'>", "correct": true },
-        { "id": "b", "text": "<class 'str'>", "correct": false },
+        { "id": "a", "text": "&lt;class 'bool'&gt;", "correct": true },
+        { "id": "b", "text": "&lt;class 'str'&gt;", "correct": false },
         { "id": "c", "text": "True", "correct": false },
-        { "id": "d", "text": "<class 'int'>", "correct": false }
+        { "id": "d", "text": "&lt;class 'int'&gt;", "correct": false }
       ],
-      "explanation": "True and False are boolean values, so type(True) returns <class 'bool'>."
+      "explanation": "True and False are boolean values, so type(True) returns &lt;class 'bool'&gt;."
     },
     {
       "id": "q5",

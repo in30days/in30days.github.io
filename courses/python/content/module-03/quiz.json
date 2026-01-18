@@ -23,11 +23,11 @@
       "options": [
         { "id": "a", "text": "5 == 5", "correct": true },
         { "id": "b", "text": "10 != 10", "correct": false },
-        { "id": "c", "text": "3 < 3", "correct": false },
-        { "id": "d", "text": "7 >= 7", "correct": true },
+        { "id": "c", "text": "3 &lt; 3", "correct": false },
+        { "id": "d", "text": "7 &gt;= 7", "correct": true },
         { "id": "e", "text": "not False", "correct": true }
       ],
-      "explanation": "5 == 5 is True (equal). 10 != 10 is False (they are equal). 3 < 3 is False (not less than itself). 7 >= 7 is True (equal). not False is True."
+      "explanation": "5 == 5 is True (equal). 10 != 10 is False (they are equal). 3 &lt; 3 is False (not less than itself). 7 &gt;= 7 is True (equal). not False is True."
     },
     {
       "id": "q3",
