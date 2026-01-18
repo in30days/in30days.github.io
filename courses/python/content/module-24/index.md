@@ -18,7 +18,7 @@ tags: ["json", "data", "basics"]
 
 ## The Language of Data
 
-In Day 13, we learned to save text files. But text files can be messy. How do we save complex data like a user profile? We use **JSON** (JavaScript Object Notation).
+In Module 13, we learned to save text files. But text files can be messy. How do we save complex data like a user profile? We use **JSON** (JavaScript Object Notation).
 
 JSON is the standard format for exchanging data between applications and the web. It looks almost exactly like a Python dictionary!
 

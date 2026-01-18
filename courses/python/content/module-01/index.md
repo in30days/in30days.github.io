@@ -209,4 +209,4 @@ Today you learned:
 
 Tomorrow, we'll dive into **variables and data types** - the building blocks of any Python program.
 
-Now, complete the quiz below to test your knowledge and unlock Day 2!
+Now, complete the quiz below to test your knowledge and unlock Module 2!

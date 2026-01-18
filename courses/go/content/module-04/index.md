@@ -421,4 +421,4 @@ Today you learned:
 
 Tomorrow, we'll explore **loops** - the only loop construct in Go: the versatile `for` loop!
 
-Now, complete the quiz below to test your knowledge and unlock Day 5!
+Now, complete the quiz below to test your knowledge and unlock Module 5!

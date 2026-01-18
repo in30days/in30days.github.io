@@ -202,4 +202,4 @@ Today you learned:
 
 Tomorrow, we'll wrap up our first week with a **Review and Practice** session to solidify everything you've learned!
 
-Complete the quiz to wrap up Day 6!
+Complete the quiz to wrap up Module 6!

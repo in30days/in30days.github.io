@@ -402,4 +402,4 @@ Today you learned:
 
 Tomorrow, we'll learn about **control flow with conditionals** - making decisions in your Go programs!
 
-Now, complete the quiz below to test your knowledge and unlock Day 4!
+Now, complete the quiz below to test your knowledge and unlock Module 4!

@@ -1,14 +1,14 @@
 baseURL = "https://learn.ravichaganti.com/go/"
 languageCode = "en-us"
-title = "Go Basics"
+title = "Go Fundamentals"
 theme = "learn-course"
 themesDir = "../../shared-theme"
 
 [params]
   courseId = "go"
   courseName = "Go"
-  courseFullName = "Go Basics"
-  courseDescription = "Master Go programming fundamentals from zero to confident developer"
+  courseFullName = "Go Fundamentals"
+  courseDescription = "Master Go fundamentals with self-paced bite-sized learning modules"
   courseColor = "#00ADD8"
   courseIcon = "go"
   totalModules = 30

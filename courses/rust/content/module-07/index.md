@@ -20,12 +20,12 @@ tags: ["review", "practice", "cli", "project"]
 Congratulations on finishing your first week with Rust! You've navigated the most challenging part of the learning curve: understanding how Rust thinks about memory and safety.
 
 ### What We've Covered
-- **Day 1**: Installation and Cargo.
-- **Day 2**: Immutability vs. Mutability and Shadowing.
-- **Day 3**: Scalars (i32, char) and Compounds (Tuples, Arrays).
-- **Day 4**: Functions, Statements vs. Expressions.
-- **Day 5**: If/Else as expressions and Loop types.
-- **Day 6**: The 3 Rules of Ownership.
+- **Module 1**: Installation and Cargo.
+- **Module 2**: Immutability vs. Mutability and Shadowing.
+- **Module 3**: Scalars (i32, char) and Compounds (Tuples, Arrays).
+- **Module 4**: Functions, Statements vs. Expressions.
+- **Module 5**: If/Else as expressions and Loop types.
+- **Module 6**: The 3 Rules of Ownership.
 
 ---
 

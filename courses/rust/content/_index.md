@@ -1,12 +1,12 @@
 ---
-title: "Rust Basics in 30 Days"
+title: "Rust Basics"
 description: "Master Rust programming from scratch - focusing on safety, speed, and concurrency."
 courseId: "rust"
 courseName: "Rust"
 courseColor: "#DEA584"
 difficulty: "intermediate"
-duration: "30 days"
-totalDays: 30
+duration: "30 Modules"
+totalModules: 30
 objectives:
   - Understand Rust's unique ownership and borrowing system
   - Work with variables, mutability, and constants
@@ -19,7 +19,7 @@ prerequisites:
   - Comfort with the command line
 ---
 
-## Welcome to Rust Basics in 30 Days!
+## Welcome to Rust Basics!
 
 Rust is a systems programming language that provides memory safety, concurrency, and performance without a garbage collector. This course is designed to take you from a curious developer to a confident Rustacean.
 
@@ -34,10 +34,10 @@ Rust has been voted the "most loved language" in Stack Overflow's developer surv
 
 ### Curriculum at a Glance
 
-- **Week 1: Rust Fundamentals** - Syntax, types, functions, and the "Rust way" of thinking.
-- **Week 2: The Core: Ownership** - Ownership, Borrowing, Slices, and Structs.
-- **Week 3: Power Tools** - Enums, Match, Error Handling, and Modules.
-- **Week 4: Advanced Concepts** - Traits, Generics, and Lifetimes.
-- **Week 5: Final Project** - Build a high-performance CLI tool.
+- **Section 1: Rust Fundamentals** - Syntax, types, functions, and the "Rust way" of thinking.
+- **Section 2: The Core: Ownership** - Ownership, Borrowing, Slices, and Structs.
+- **Section 3: Power Tools** - Enums, Match, Error Handling, and Modules.
+- **Section 4: Advanced Concepts** - Traits, Generics, and Lifetimes.
+- **Section 5: Final Project** - Build a high-performance CLI tool.
 
-Ready to join the Rust community? Let's get started with Day 1!
+Ready to join the Rust community? Let's get started with Module 1!

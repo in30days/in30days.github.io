@@ -1,11 +1,11 @@
 ---
 title: "Privacy Policy"
-description: "How we handle your data at in30days"
+description: "How we handle your data"
 ---
 
 # Privacy Policy
 
-At in30days.org, we value your privacy. This policy explains what data we collect and how we use it.
+We value your privacy. This policy explains what data we collect and how we use it.
 
 ## 1. Data Collection
 We collect data in two primary ways:

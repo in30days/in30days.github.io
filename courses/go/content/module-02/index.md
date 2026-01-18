@@ -403,4 +403,4 @@ Today you learned:
 
 Tomorrow, we'll explore **operators and expressions** - how to perform calculations and comparisons in Go!
 
-Now, complete the quiz below to test your knowledge and unlock Day 3!
+Now, complete the quiz below to test your knowledge and unlock Module 3!

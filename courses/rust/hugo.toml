@@ -1,19 +1,19 @@
 baseURL = "https://learn.ravichaganti.com/rust/"
 languageCode = "en-us"
-title = "Rust Basics"
+title = "Rust Fundamentals"
 theme = "learn-course"
 themesDir = "../../shared-theme"
 
 [params]
   courseId = "rust"
   courseName = "Rust"
-  courseFullName = "Rust Basics"
-  courseDescription = "Master Rust programming from scratch - focusing on safety, speed, and concurrency."
+  courseFullName = "Rust Fundamentals"
+  courseDescription = "Master Rust Fundamentals  with self-paced bite-sized learning modules."
   courseColor = "#DEA584"
   courseIcon = "rust"
   totalModules = 30
   quizPassScore = 80
-  difficulty = "intermediate"
+  difficulty = "beginner"
   landingPageUrl = "https://learn.ravichaganti.com"
   
   [params.contributor]
@@ -23,7 +23,7 @@ themesDir = "../../shared-theme"
 
   [[params.weeks]]
     id = 1
-    title = "Rust Fundamentals"
+    title = "Introduction to Rust"
     modules = [1, 7]
   [[params.weeks]]
     id = 2

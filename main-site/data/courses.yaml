@@ -1,6 +1,6 @@
 - id: python
-  name: Python Basics
-  fullName: Python Basics
+  name: Python Fundamentals
+  fullName: Python Fundamentals
   contributor: rchaganti
   description: Master Python fundamentals, control flow, and data structures.
   color: "#3b82f6"
@@ -51,8 +51,8 @@
   tags: [devops, cloud, beginner]
 
 - id: go
-  name: Go Basics
-  fullName: Go Basics
+  name: Go Fundamentals
+  fullName: Go Fundamentals
   contributor: rchaganti
   description: Master the Go programming language fundamentals, control flow, and concurrency.
   color: "#00ADD8"
@@ -63,13 +63,13 @@
   tags: [programming, beginner]
 
 - id: rust
-  name: Rust Basics
-  fullName: Rust Basics
+  name: Rust Fundamentals
+  fullName: Rust Fundamentals
   contributor: rchaganti
   description: Systems programming with memory safety, speed, and concurrency.
   color: "#DEA584"
   icon: rust
-  difficulty: intermediate
+  difficulty: beginner
   totalModules: 30
   url: /rust/
-  tags: [systems, performance, safety]
+  tags: [programming, beginner]

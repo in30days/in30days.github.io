@@ -347,4 +347,4 @@ Calculate and print:
 
 Tomorrow, we'll learn about **control flow** - how to make decisions in your code with `if`, `elif`, and `else` statements.
 
-Complete the quiz below to unlock Day 4!
+Complete the quiz below to unlock Module 4!

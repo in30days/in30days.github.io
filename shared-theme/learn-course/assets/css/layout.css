@@ -67,6 +67,11 @@
 .site-logo {
   display: flex;
   align-items: center;
+  gap: var(--spacing-2);
+}
+
+.site-logo .logo-image {
+  flex-shrink: 0;
 }
 
 .logo-text {

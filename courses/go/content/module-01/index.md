@@ -327,4 +327,4 @@ Before moving on, try these exercises:
 
 Tomorrow, we'll dive into **variables and data types** - the foundation of every Go program!
 
-Now, complete the quiz below to test your knowledge and unlock Day 2!
+Now, complete the quiz below to test your knowledge and unlock Module 2!

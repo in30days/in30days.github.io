@@ -1,14 +1,14 @@
 baseURL = "https://learn.ravichaganti.com/python/"
 languageCode = "en-us"
-title = "Python Basics"
+title = "Python Fundamentals"
 theme = "learn-course"
 themesDir = "../../shared-theme"
 
 [params]
   courseId = "python"
   courseName = "Python"
-  courseFullName = "Python Basics"
-  courseDescription = "Master Python programming from zero to hero"
+  courseFullName = "Python Fundamentals"
+  courseDescription = "Master Python Fundamentals with self-paced bite-sized learning modules"
   courseColor = "#3b82f6"
   courseIcon = "python"
   totalModules = 30
@@ -23,7 +23,7 @@ themesDir = "../../shared-theme"
 
   [[params.weeks]]
     id = 1
-    title = "Python Basics"
+    title = "Introduction to Python"
     modules = [1, 7]
   [[params.weeks]]
     id = 2

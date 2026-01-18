@@ -1,38 +1,38 @@
-# in30days.org
+# learn.ravichaganti.com
 
-Master any skill in 30 days with structured learning paths, 3community-driven content, and interactive progress tracking.
+Master any technology with structured learning paths, community-driven content, and interactive progress tracking.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Hugo](https://img.shields.io/badge/hugo-%3E%3D0.112-ff4088)
 
 ## Overview
 
-**in30days** is an educational ecosystem designed for mastery through consistency. In30days provides curated **Learning Paths** that sequence specialized **30-day courses** to guide you from absolute beginner to professional competence.
+This is an educational ecosystem designed for mastery through consistency. We provide curated **Learning Paths** that sequence specialized courses to guide you from absolute beginner to professional competence.
 
 ### Core Features
-- **Mastery-Based Progression:** Lessons are locked until you pass the previous day's quiz with an **80% score**.
+- **Mastery-Based Progression:** Modules are locked until you pass the previous lesson's quiz with an **80% score**.
 - **Unified Learning Paths:** Group courses into professional roadmaps (e.g., "Mastering Python").
 - **Cross-Device Sync:** Optional cloud synchronization via Firebase (Anonymous & Google Auth).
 - **Interactive Content:** Localized diagrams (Mermaid.js), code examples, and discussion threads (Giscus).
 - **Privacy First:** Granular control over data collection directly from our privacy dashboard.
 
 ## Live Site
-Visit [in30days.org](https://in30days.org) to start your journey!
+Visit [learn.ravichaganti.com](https://learn.ravichaganti.com) to start your journey!
 
 ## Project Structure
 
 ```text
-in30days/
-├── main-site/              # Primary landing page (in30days.org)
+learn/
+├── main-site/              # Primary landing page (learn.ravichaganti.com)
 │   ├── data/               # Catalog, Paths, Contributors, Stats
 │   ├── content/paths/      # Learning path roadmap pages
 │   └── themes/             # Landing site theme
 │
-├── courses/                # Individual 30-day course repositories
+├── courses/                # Individual course repositories
 │   └── python/             # Sample course: Python Basics
 │
 ├── shared-theme/           # Centralized theme for all course subsites
-│   └── in30days-course/    # Layouts, CSS, and JS components
+│   └── learn-course/       # Layouts, CSS, and JS components
 │
 ├── scripts/                # Automation and scaffolding scripts
 └── .github/workflows/      # CI/CD for deployment and analytics

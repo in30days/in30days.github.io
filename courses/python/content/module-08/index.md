@@ -35,7 +35,7 @@ In Python, we use the `def` keyword to define a function.
 {{< code-file filename="greet.py" lang="python" >}}
 def say_hello():
     print("Hello there!")
-    print("Welcome to Day 8.")
+    print("Welcome to Module 8.")
 
 # Calling the function
 say_hello()

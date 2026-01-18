@@ -5,10 +5,10 @@ description: "Understanding our learning methodology"
 
 # Master Any Technology
 
-Our platform is designed for consistency, retention, and mastery. Here is how we help you learn complex technologies in a structured way.
+This learning platform is designed for consistency, retention, and mastery. Here is how we help you learn complex technologies in a structured way.
 
 ## 1. Modular Structure
-Each course is divided into bite-sized modules. By committing to focused learning sessions, you build a habit that leads to long-term retention.
+Each course is divided into bite-sized lessons. By committing to focused learning sessions, you build a habit that leads to long-term retention.
 
 ## 2. Mastery-Based Progression
 You cannot simply "skip ahead." To unlock the next module, you must complete the current lesson's quiz with a score of **80% or higher**. This ensures you've grasped the core concepts before moving to more advanced topics.

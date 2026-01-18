@@ -22,12 +22,12 @@ Congratulations! You've completed the first week of **Go Basics in 30 Days**. Yo
 
 ### What We've Covered
 
-- **Day 1**: Introduction to Go, environment setup, and your first program.
-- **Day 2**: Variables, constants, and basic data types (int, float, string, bool).
-- **Day 3**: Operators (arithmetic, comparison, logical) and expressions.
-- **Day 4**: Conditionals with `if`, `else if`, `else`, and `switch`.
-- **Day 5**: The versatile `for` loop, `break`, `continue`, and `range`.
-- **Day 6**: Functions, multiple return values, and variadic functions.
+- **Module 1**: Introduction to Go, environment setup, and your first program.
+- **Module 2**: Variables, constants, and basic data types (int, float, string, bool).
+- **Module 3**: Operators (arithmetic, comparison, logical) and expressions.
+- **Module 4**: Conditionals with `if`, `else if`, `else`, and `switch`.
+- **Module 5**: The versatile `for` loop, `break`, `continue`, and `range`.
+- **Module 6**: Functions, multiple return values, and variadic functions.
 
 ## Practice Project: The Multi-Tool CLI
 
