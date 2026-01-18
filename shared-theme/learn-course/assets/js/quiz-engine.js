@@ -6,7 +6,7 @@
     constructor(container) {
       this.container = container;
       this.quizPath = container.dataset.quizPath;
-      this.moduleNum = parseInt(container.dataset.day, 10);
+      this.moduleNum = parseInt(container.dataset.module || container.dataset.day, 10);
       this.passScore = parseInt(container.dataset.passScore, 10) || 80;
       this.questions = [];
       this.answers = {};
@@ -465,7 +465,7 @@
 
       // Update progress if passed
       if (passed && window.progressTracker) {
-        window.progressTracker.completeDay(this.moduleNum, percent);
+        window.progressTracker.completeModule(this.moduleNum, percent);
       }
     }
 

@@ -209,9 +209,12 @@
   function shouldUseCloudData(local, cloud) {
     if (!local || !cloud) return !!cloud;
     
-    // Count completed days
-    const localCompleted = Object.values(local.days || {}).filter(d => d.status === 'completed').length;
-    const cloudCompleted = Object.values(cloud.days || {}).filter(d => d.status === 'completed').length;
+    // Count completed modules/days
+    const localModules = local.modules || local.days || {};
+    const cloudModules = cloud.modules || cloud.days || {};
+    
+    const localCompleted = Object.values(localModules).filter(d => d.status === 'completed').length;
+    const cloudCompleted = Object.values(cloudModules).filter(d => d.status === 'completed').length;
     
     // Use cloud if it has more progress
     if (cloudCompleted > localCompleted) return true;
