@@ -25,9 +25,9 @@
 
   // Default progress structure
   function createDefaultProgress(totalModules = 30) {
-    const days = {};
+    const modules = {};
     for (let i = 1; i <= totalModules; i++) {
-      days[i] = {
+      modules[i] = {
         status: i === 1 ? 'available' : 'locked',
         quizScore: null,
         quizAttempts: 0,
@@ -42,7 +42,7 @@
       lastUpdated: new Date().toISOString(),
       userId: null,
       syncEnabled: false,
-      days: days,
+      modules: modules,
       settings: {
         darkMode: false,
         focusMode: false,
@@ -57,7 +57,13 @@
     try {
       const stored = localStorage.getItem(getStorageKey());
       if (stored) {
-        return JSON.parse(stored);
+        let progress = JSON.parse(stored);
+        // Migration: rename 'days' to 'modules'
+        if (progress.days && !progress.modules) {
+          progress.modules = progress.days;
+          delete progress.days;
+        }
+        return progress;
       }
     } catch (e) {
       console.error('Failed to load progress:', e);
@@ -79,38 +85,38 @@
     }
   }
 
-  // Update day status
-  function updateDayStatus(moduleNum, status, quizScore = null) {
+  // Update module status
+  function updateModuleStatus(moduleNum, status, quizScore = null) {
     const progress = loadProgress();
-    if (progress.days[moduleNum]) {
-      progress.days[moduleNum].status = status;
+    if (progress.modules[moduleNum]) {
+      progress.modules[moduleNum].status = status;
       if (quizScore !== null) {
-        progress.days[moduleNum].quizScore = quizScore;
-        progress.days[moduleNum].quizAttempts++;
+        progress.modules[moduleNum].quizScore = quizScore;
+        progress.modules[moduleNum].quizAttempts++;
       }
       if (status === 'completed') {
-        progress.days[moduleNum].completedAt = new Date().toISOString();
+        progress.modules[moduleNum].completedAt = new Date().toISOString();
         const nextModule = parseInt(moduleNum) + 1;
-        if (progress.days[nextDay] && progress.days[nextDay].status === 'locked') {
-          progress.days[nextDay].status = 'available';
+        if (progress.modules[nextModule] && progress.modules[nextModule].status === 'locked') {
+          progress.modules[nextModule].status = 'available';
         }
       }
       saveProgress(progress);
     }
   }
 
-  // Mark day as in progress
-  function startDay(moduleNum) {
+  // Mark module as in progress
+  function startModule(moduleNum) {
     const progress = loadProgress();
-    if (progress.days[moduleNum] && progress.days[moduleNum].status === 'available') {
-      progress.days[moduleNum].status = 'in-progress';
+    if (progress.modules[moduleNum] && progress.modules[moduleNum].status === 'available') {
+      progress.modules[moduleNum].status = 'in-progress';
       saveProgress(progress);
     }
   }
 
-  // Complete day (after passing quiz)
-  function completeDay(moduleNum, quizScore) {
-    updateDayStatus(moduleNum, 'completed', quizScore);
+  // Complete module (after passing quiz)
+  function completeModule(moduleNum, quizScore) {
+    updateModuleStatus(moduleNum, 'completed', quizScore);
     if (window.showToast) {
       window.showToast('success', 'Module Completed!', `You've completed Module ${moduleNum} with a score of ${quizScore}%`);
     }
@@ -119,13 +125,13 @@
   // Calculate overall progress
   function calculateProgress() {
     const progress = loadProgress();
-    const days = Object.values(progress.days);
-    const completed = days.filter(d => d.status === 'completed').length;
-    const total = days.length;
+    const modules = Object.values(progress.modules || {});
+    const completed = modules.filter(m => m.status === 'completed').length;
+    const total = modules.length;
     return {
       completed,
       total,
-      percent: Math.round((completed / total) * 100)
+      percent: total > 0 ? Math.round((completed / total) * 100) : 0
     };
   }
 
@@ -153,10 +159,10 @@
 
     // Update Weekly Nav items and Bottom Navigation
     document.querySelectorAll('.nav-module-item, .module-nav-btn--next').forEach(item => {
-      const moduleNum = parseInt(item.dataset.day, 10);
+      const moduleNum = parseInt(item.dataset.module, 10);
       if (isNaN(moduleNum)) return;
 
-      const status = progress.days[moduleNum]?.status || 'locked';
+      const status = progress.modules[moduleNum]?.status || 'locked';
       item.setAttribute('data-status', status);
       
       if (status === 'locked') {
@@ -172,7 +178,7 @@
         item._lockedHandler = function(e) {
           if (this.getAttribute('data-status') === 'locked') {
             e.preventDefault();
-            window.showToast?.('warning', 'Module Locked', 'Complete the current day (including the quiz) to unlock the next one.');
+            window.showToast?.('warning', 'Module Locked', 'Complete the current module (including the quiz) to unlock the next one.');
           }
         };
         
@@ -191,39 +197,39 @@
     // Update Week Progress Badges
     document.querySelectorAll('.week-group').forEach(group => {
       const weekId = group.dataset.week;
-      const daysInWeek = group.querySelectorAll('.nav-module-item');
-      const completedInWeek = Array.from(daysInWeek).filter(d => d.getAttribute('data-status') === 'completed').length;
-      const totalInWeek = daysInWeek.length;
+      const modulesInWeek = group.querySelectorAll('.nav-module-item');
+      const completedInWeek = Array.from(modulesInWeek).filter(m => m.getAttribute('data-status') === 'completed').length;
+      const totalInWeek = modulesInWeek.length;
       const badge = document.getElementById(`week-${weekId}-progress`);
       if (badge) badge.textContent = `${completedInWeek}/${totalInWeek}`;
     });
 
     // Update Course Overview page
-    const daysCompleted = document.getElementById('days-completed');
+    const modulesCompleted = document.getElementById('modules-completed');
     const completionPercent = document.getElementById('completion-percent');
     const courseProgressBar = document.getElementById('course-progress-bar');
     const resumeBtn = document.getElementById('resume-learning-btn');
 
-    if (daysCompleted) daysCompleted.textContent = stats.completed;
+    if (modulesCompleted) modulesCompleted.textContent = stats.completed;
     if (completionPercent) completionPercent.textContent = `${stats.percent}%`;
     if (courseProgressBar) courseProgressBar.style.width = `${stats.percent}%`;
 
     if (resumeBtn) {
-      const allDays = Object.keys(progress.days).map(Number).sort((a, b) => a - b);
-      let nextDayNum = 1;
+      const allModules = Object.keys(progress.modules).map(Number).sort((a, b) => a - b);
+      let nextModuleNum = 1;
       
-      // Find first incomplete day that is available
-      for (const d of allDays) {
-        if (progress.days[d].status !== 'completed') {
-          nextDayNum = d;
+      // Find first incomplete module that is available
+      for (const m of allModules) {
+        if (progress.modules[m].status !== 'completed') {
+          nextModuleNum = m;
           break;
         }
       }
       
       const isStarted = stats.completed > 0;
-      resumeBtn.querySelector('span').textContent = isStarted ? `Resume Module ${nextDayNum}` : `Start Module ${nextDayNum}`;
+      resumeBtn.querySelector('span').textContent = isStarted ? `Resume Module ${nextModuleNum}` : `Start Module ${nextModuleNum}`;
       
-      const moduleNumFormatted = nextDayNum.toString().padStart(2, '0');
+      const moduleNumFormatted = nextModuleNum.toString().padStart(2, '0');
       const baseUrl = getCourseBaseUrl();
       const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
       resumeBtn.href = `${normalizedBase}module-${moduleNumFormatted}/`;
@@ -237,7 +243,7 @@
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `in30days-${progress.courseId}-progress-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `learn-${progress.courseId}-progress-${new Date().toISOString().split('T')[0]}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -276,7 +282,7 @@
     const pathMatch = window.location.pathname.match(/module-(\d+)/);
     if (pathMatch) {
       const moduleNum = parseInt(pathMatch[1], 10);
-      if (getDayStatus(moduleNum) === 'available') startDay(moduleNum);
+      if (getModuleStatus(moduleNum) === 'available') startModule(moduleNum);
     }
     updateUI();
     window.addEventListener('progressUpdated', () => updateUI());
@@ -295,8 +301,8 @@
     });
   }
 
-  function getDayStatus(moduleNum) {
-    return loadProgress().days[moduleNum]?.status || 'locked';
+  function getModuleStatus(moduleNum) {
+    return loadProgress().modules[moduleNum]?.status || 'locked';
   }
 
   if (document.readyState !== 'loading') init();
@@ -305,9 +311,9 @@
   window.progressTracker = {
     load: loadProgress,
     save: saveProgress,
-    updateDay: updateDayStatus,
-    startDay,
-    completeDay,
+    updateModule: updateModuleStatus,
+    startModule,
+    completeModule,
     calculate: calculateProgress,
     export: exportProgress,
     import: importProgress,

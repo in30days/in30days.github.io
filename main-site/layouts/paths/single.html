@@ -23,12 +23,12 @@
 
         <div class="path-stats">
           <div class="path-stat">
-            <span class="path-stat-value">{{ $pathData.totalDays }} Days</span>
-            <span class="path-stat-label">Duration</span>
+            <span class="path-stat-value">{{ $pathData.totalModules }}</span>
+            <span class="path-stat-label">Modules</span>
           </div>
           <div class="path-stat">
             <span class="path-stat-value">{{ len $pathData.courses }}</span>
-            <span class="path-stat-label">Modules</span>
+            <span class="path-stat-label">Courses</span>
           </div>
           <div class="path-stat">
             {{ $totalReaders := 0 }}
@@ -58,7 +58,7 @@
             </div>
             <div class="roadmap-content">
               <div class="roadmap-meta">
-                <span class="roadmap-tag">30 Days</span>
+                <span class="roadmap-tag">{{ $course.totalModules }} Modules</span>
                 <span class="roadmap-difficulty difficulty--{{ $course.difficulty }}">{{ $course.difficulty }}</span>
               </div>
               <h3 class="roadmap-course-title">{{ $course.fullName }}</h3>

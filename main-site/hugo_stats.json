@@ -219,7 +219,7 @@
     ],
     "ids": [
       "1-data-collection",
-      "1-the-30-day-structure",
+      "1-modular-structure",
       "2-mastery-based-progression",
       "2-third-party-services",
       "3-cookies",
@@ -241,7 +241,7 @@
       "courses-pagination",
       "filter-difficulty",
       "filter-type",
-      "master-any-skill-in-30-days",
+      "master-any-technology",
       "mobile-menu-toggle",
       "mobile-nav-menu",
       "mobile-nav-overlay",

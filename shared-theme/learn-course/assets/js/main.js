@@ -75,8 +75,8 @@
       });
     });
 
-    // Auto-expand current day's week
-    const activeItem = weeklyNav.querySelector('.nav-day-item.active');
+    // Auto-expand current module's section
+    const activeItem = weeklyNav.querySelector('.nav-module-item.active');
     if (activeItem) {
       const parentHeader = activeItem.closest('.week-group')?.querySelector('.week-header');
       if (parentHeader) parentHeader.setAttribute('aria-expanded', 'true');
@@ -149,6 +149,6 @@
     initMobileProgressNav();
     initReadingProgress();
     initBackToTop();
-    console.log('in30days initialized');
+    console.log('Learn initialized');
   });
 })();

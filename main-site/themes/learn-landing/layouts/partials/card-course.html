@@ -26,7 +26,7 @@
     </div>
     <div class="course-meta">
       <span class="course-difficulty course-difficulty--{{ .difficulty }}">{{ .difficulty }}</span>
-      <span class="course-duration">{{ .totalDays }} days</span>
+      <span class="course-duration">{{ .totalModules }} Modules</span>
     </div>
   </div>
   
@@ -61,7 +61,7 @@
     {{ if .comingSoon }}
     <span class="course-status">Coming Soon</span>
     {{ else }}
-    <a href="{{ .url | relURL }}" class="course-start-btn">Start Learning</a>
+    <a href="{{ .url | relURL }}" class="course-start-btn">Start Module</a>
     {{ end }}
   </div>
 </article>

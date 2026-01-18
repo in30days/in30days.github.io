@@ -449,7 +449,7 @@
         </p>
         <div class="quiz-results-actions">
           ${!passed ? '<button class="retry-btn" id="retry-quiz-btn">Try Again</button>' : ''}
-          ${passed ? `<a href="../day-${String(this.moduleNum + 1).padStart(2, '0')}/" class="next-day-btn">Continue to Module ${this.moduleNum + 1}</a>` : ''}
+          ${passed ? `<a href="../module-${String(this.moduleNum + 1).padStart(2, '0')}/" class="next-day-btn">Continue to Module ${this.moduleNum + 1}</a>` : ''}
         </div>
       `;
 
