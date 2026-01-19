@@ -25,11 +25,11 @@ This course will take you from complete beginner to confident Python programmer.
 
 ### What You'll Learn
 
-- **Modules 1-7**: Python Basics - Setup, variables, data types, operators
-- **Modules 8-14**: Control Flow - Conditionals, loops, functions
-- **Modules 15-21**: Data Structures - Lists, dictionaries, tuples, sets
-- **Modules 22-28**: Advanced Topics - Files, exceptions, modules, OOP basics
-- **Modules 29-30**: Final Project - Build a complete application
+- **Modules 1-7: Introduction to Python** - Setup, Variables, Control Flow, and Lists
+- **Modules 8-14: Functions & Logic** - Scope, Lambda functions, Error Handling, and File I/O
+- **Modules 15-21: Object Oriented Programming** - Classes, Inheritance, and advanced data structures
+- **Modules 22-28: Power Features** - Math, OS, JSON, and Virtual Environments
+- **Modules 29-30: Final Portfolio** - Clean Code and Capstone Project
 
 ### How It Works
 

@@ -194,14 +194,14 @@
       }
     });
 
-    // Update Week Progress Badges
-    document.querySelectorAll('.week-group').forEach(group => {
-      const weekId = group.dataset.week;
-      const modulesInWeek = group.querySelectorAll('.nav-module-item');
-      const completedInWeek = Array.from(modulesInWeek).filter(m => m.getAttribute('data-status') === 'completed').length;
-      const totalInWeek = modulesInWeek.length;
-      const badge = document.getElementById(`week-${weekId}-progress`);
-      if (badge) badge.textContent = `${completedInWeek}/${totalInWeek}`;
+    // Update Section Progress Badges
+    document.querySelectorAll(' .section-group').forEach(group => {
+      const sectionId = group.dataset.section;
+      const modulesInSection = group.querySelectorAll('.nav-module-item');
+      const completedInSection = Array.from(modulesInSection).filter(m => m.getAttribute('data-status') === 'completed').length;
+      const totalInSection = modulesInSection.length;
+      const badge = document.getElementById(`section-${sectionId}-progress`);
+      if (badge) badge.textContent = `${completedInSection}/${totalInSection}`;
     });
 
     // Update Course Overview page

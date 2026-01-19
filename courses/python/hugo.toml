@@ -21,23 +21,23 @@ themesDir = "../../shared-theme"
     avatar = "https://ravichaganti.com/images/author/ravikanth.jpg"
     github = "rchaganti"
 
-  [[params.weeks]]
+  [[params.sections]]
     id = 1
     title = "Introduction to Python"
     modules = [1, 7]
-  [[params.weeks]]
+  [[params.sections]]
     id = 2
     title = "Functions & Logic"
     modules = [8, 14]
-  [[params.weeks]]
+  [[params.sections]]
     id = 3
     title = "Object Oriented Programming"
     modules = [15, 21]
-  [[params.weeks]]
+  [[params.sections]]
     id = 4
     title = "Power Features"
     modules = [22, 28]
-  [[params.weeks]]
+  [[params.sections]]
     id = 5
     title = "Final Portfolio"
     modules = [29, 30]

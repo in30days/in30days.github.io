@@ -63,11 +63,11 @@
     });
   }
 
-  function initWeeklyNav() {
-    const weeklyNav = document.getElementById('weekly-nav');
+  function initSectionNav() {
+    const weeklyNav = document.getElementById('section-nav');
     if (!weeklyNav) return;
 
-    const headers = weeklyNav.querySelectorAll('.week-header');
+    const headers = weeklyNav.querySelectorAll('.section-header');
     headers.forEach(header => {
       header.addEventListener('click', () => {
         const isExpanded = header.getAttribute('aria-expanded') === 'true';
@@ -78,7 +78,7 @@
     // Auto-expand current module's section
     const activeItem = weeklyNav.querySelector('.nav-module-item.active');
     if (activeItem) {
-      const parentHeader = activeItem.closest('.week-group')?.querySelector('.week-header');
+      const parentHeader = activeItem.closest('.section-group')?.querySelector('.section-header');
       if (parentHeader) parentHeader.setAttribute('aria-expanded', 'true');
     } else {
       headers[0]?.setAttribute('aria-expanded', 'true');
@@ -145,7 +145,7 @@
   ready(function() {
     initSidebar();
     initSettingsModal();
-    initWeeklyNav();
+    initSectionNav();
     initMobileProgressNav();
     initReadingProgress();
     initBackToTop();

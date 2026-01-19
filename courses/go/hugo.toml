@@ -21,23 +21,23 @@ themesDir = "../../shared-theme"
     avatar = "https://ravichaganti.com/images/author/ravikanth.jpg"
     github = "rchaganti"
 
-  [[params.weeks]]
+  [[params.sections]]
     id = 1
     title = "Go Fundamentals"
     modules = [1, 7]
-  [[params.weeks]]
+  [[params.sections]]
     id = 2
     title = "Data Structures"
     modules = [8, 14]
-  [[params.weeks]]
+  [[params.sections]]
     id = 3
     title = "Interfaces & Errors"
     modules = [15, 21]
-  [[params.weeks]]
+  [[params.sections]]
     id = 4
     title = "Packages & Concurrency"
     modules = [22, 28]
-  [[params.weeks]]
+  [[params.sections]]
     id = 5
     title = "Final Project"
     modules = [29, 30]

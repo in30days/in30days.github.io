@@ -19,20 +19,20 @@
   </div>
   
   <nav class="sidebar-nav">
-    <div class="weekly-nav" id="weekly-nav">
-      {{ range .Site.Params.weeks }}
-      <div class="week-group" data-week="{{ .id }}">
-        <button class="week-header" aria-expanded="false">
-          <span class="week-title-wrap">
-            <span class="week-label">Section {{ .id }}</span>
-            <span class="week-title">{{ .title }}</span>
+    <div class="weekly-nav" id="section-nav">
+      {{ range .Site.Params.sections }}
+      <div class="section-group" data-section="{{ .id }}">
+        <button class="section-header" aria-expanded="false">
+          <span class="section-title-wrap">
+            <span class="section-label">Section {{ .id }}</span>
+            <span class="section-title">{{ .title }}</span>
           </span>
-          <span class="week-progress-badge" id="week-{{ .id }}-progress">0/{{ sub (add (index .modules 1) 1) (index .modules 0) }}</span>
-          <svg class="week-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <span class="section-progress-badge" id="section-{{ .id }}-progress">0/{{ sub (add (index .modules 1) 1) (index .modules 0) }}</span>
+          <svg class="section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
         </button>
-        <div class="week-content">
+        <div class="section-content">
           {{ range $i := seq (index .modules 0) (index .modules 1) }}
           {{ $moduleNum := printf "%02d" $i }}
           {{ $modulePage := $.Site.GetPage (printf "/module-%s" $moduleNum) }}
