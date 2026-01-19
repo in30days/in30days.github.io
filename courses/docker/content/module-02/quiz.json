@@ -1,0 +1,58 @@
+{
+  "moduleId": 2,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 25,
+      "question": "What does the 'Matrix of Hell' refer to in software deployment?",
+      "options": [
+        { "id": "a", "text": "A complex programming language", "correct": false },
+        { "id": "b", "text": "The difficulty of managing many applications across many different environments", "correct": true },
+        { "id": "c", "text": "A bug in the Docker Daemon", "correct": false },
+        { "id": "d", "text": "The high cost of cloud computing", "correct": false }
+      ],
+      "explanation": "The 'Matrix of Hell' is the logistical challenge of ensuring every piece of software you build can run reliably across various servers, OS versions, and cloud providers."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 25,
+      "question": "Which component is the 'brain' of Docker that manages images and containers?",
+      "options": [
+        { "id": "a", "text": "The Docker Client (CLI)", "correct": false },
+        { "id": "b", "text": "The Docker Registry", "correct": false },
+        { "id": "c", "text": "The Docker Daemon (dockerd)", "correct": true },
+        { "id": "d", "text": "The Dockerfile", "correct": false }
+      ],
+      "explanation": "The Docker Daemon (dockerd) is the server-side component that listens for API requests and manages Docker objects like images, containers, networks, and volumes."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "points": 25,
+      "question": "What is the relationship between an Image and a Container?",
+      "options": [
+        { "id": "a", "text": "An image is a running instance of a container", "correct": false },
+        { "id": "b", "text": "A container is a read-only template for an image", "correct": false },
+        { "id": "c", "text": "A container is a running instance of an image", "correct": true },
+        { "id": "d", "text": "They are the same thing", "correct": false }
+      ],
+      "explanation": "Think of an Image as a blueprint or recipe, and a Container as the actual building or dish created from that blueprint."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 25,
+      "question": "Which command would you use to see containers that have finished running?",
+      "options": [
+        { "id": "a", "text": "docker ps", "correct": false },
+        { "id": "b", "text": "docker images", "correct": false },
+        { "id": "c", "text": "docker ps -a", "correct": true },
+        { "id": "d", "text": "docker run", "correct": false }
+      ],
+      "explanation": "The 'docker ps' command only shows running containers. Adding the '-a' (all) flag shows all containers, including those that are stopped or exited."
+    }
+  ]
+}

@@ -13,3 +13,18 @@
   featured: true
   comingSoon: false
   url: /paths/python/
+
+- id: cloud-native-mastery
+  name: Cloud Native Mastery
+  contributor: rchaganti
+  description: Master the foundations of cloud-native infrastructure, from containerizing applications with Docker to orchestrating them at scale with Kubernetes.
+  color: "#326ce5"
+  icon: kubernetes
+  totalModules: 45
+  difficulty: intermediate
+  courses:
+    - docker
+    - kubernetes
+  featured: true
+  comingSoon: false
+  url: /paths/cloud-native/

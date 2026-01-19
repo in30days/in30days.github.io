@@ -63,8 +63,8 @@
   tags: [programming, beginner]
 
 - id: rust
-  name: Rust Fundamentals
-  fullName: Rust Fundamentals
+  name: Rust Basics
+  fullName: Rust Basics
   contributor: rchaganti
   description: Systems programming with memory safety, speed, and concurrency.
   color: "#DEA584"
@@ -73,3 +73,15 @@
   totalModules: 30
   url: /rust/
   tags: [programming, beginner]
+
+- id: docker
+  name: Docker Fundamentals
+  fullName: Docker Fundamentals
+  contributor: rchaganti
+  description: Master containerization from history to intermediate multi-container orchestration with Compose.
+  color: "#2496ED"
+  icon: docker
+  difficulty: intermediate
+  totalModules: 15
+  url: /docker/
+  tags: [devops, containers, beginner]

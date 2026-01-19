@@ -1,0 +1,58 @@
+{
+  "moduleId": 3,
+  "passScore": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-select",
+      "points": 25,
+      "question": "Which component is responsible for storing and distributing Docker images?",
+      "options": [
+        { "id": "a", "text": "Docker Daemon", "correct": false },
+        { "id": "b", "text": "Docker Registry", "correct": true },
+        { "id": "c", "text": "Docker Client", "correct": false },
+        { "id": "d", "text": "Containerd", "correct": false }
+      ],
+      "explanation": "A Docker Registry (like Docker Hub) is a system for storing and sharing Docker images."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-select",
+      "points": 25,
+      "question": "On Windows and macOS, what does Docker Desktop use to provide a Linux kernel?",
+      "options": [
+        { "id": "a", "text": "It doesn't need one; it runs natively", "correct": false },
+        { "id": "b", "text": "A full instance of Windows Server", "correct": false },
+        { "id": "c", "text": "A lightweight Virtual Machine (VM)", "correct": true },
+        { "id": "d", "text": "A specialized web browser", "correct": false }
+      ],
+      "explanation": "Docker containers require a Linux kernel. Since Windows and macOS have different kernels, Docker Desktop runs a small, optimized Linux VM (often using WSL2 on Windows) to host the Docker Engine."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-select",
+      "points": 25,
+      "question": "Which command provides detailed information about your Docker installation, including number of images and containers?",
+      "options": [
+        { "id": "a", "text": "docker version", "correct": false },
+        { "id": "b", "text": "docker info", "correct": true },
+        { "id": "c", "text": "docker status", "correct": false },
+        { "id": "d", "text": "docker help", "correct": false }
+      ],
+      "explanation": "The 'docker info' command displays system-wide information regarding the Docker installation, including kernel version, storage driver, and counts for containers/images."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-select",
+      "points": 25,
+      "question": "What is the purpose of adding your user to the 'docker' group on Linux?",
+      "options": [
+        { "id": "a", "text": "To allow you to use Docker without typing 'sudo'", "correct": true },
+        { "id": "b", "text": "To increase the download speed of images", "correct": false },
+        { "id": "c", "text": "To share your images with other users", "correct": false },
+        { "id": "d", "text": "To enable Docker Compose", "correct": false }
+      ],
+      "explanation": "The Docker daemon binds to a Unix socket which is owned by 'root' and the 'docker' group. Adding your user to this group allows you to talk to the daemon without root privileges (sudo)."
+    }
+  ]
+}
