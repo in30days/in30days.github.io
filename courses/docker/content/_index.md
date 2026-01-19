@@ -6,7 +6,8 @@ courseName: "Docker"
 courseColor: "#2496ED"
 difficulty: "intermediate"
 duration: "15 Modules"
-totalModules: 15
+layout: "list"
+type: "course"
 objectives:
   - Understand the history and evolution of containerization
   - Master the Docker CLI and container lifecycle

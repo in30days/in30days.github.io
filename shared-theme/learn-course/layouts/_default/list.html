@@ -20,7 +20,11 @@
     {{ end }}
     
     <div class="course-hero-actions">
-      <a href="{{ ($.Site.GetPage "/day-01").RelPermalink }}" class="resume-btn" id="resume-learning-btn">
+      {{ $firstModule := $.Site.GetPage "/module-01" }}
+      {{ if not $firstModule }}
+        {{ $firstModule = $.Site.GetPage "/day-01" }}
+      {{ end }}
+      <a href="{{ if $firstModule }}{{ $firstModule.RelPermalink }}{{ else }}#{{ end }}" class="resume-btn" id="resume-learning-btn">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polygon points="5 3 19 12 5 21 5 3"></polygon>
         </svg>

@@ -316,7 +316,6 @@
       "sign-in-google-btn",
       "summary",
       "sync-status",
-      "the-container-lifecycle",
       "the-docker-architecture",
       "the-docker-engine-components",
       "the-evolution-of-isolation",
@@ -334,8 +333,7 @@
       "welcome-to-docker-fundamentals",
       "what-is-a-registry",
       "what-youll-learn",
-      "windows--macos",
-      "working-with-registries"
+      "windows--macos"
     ]
   }
 }
