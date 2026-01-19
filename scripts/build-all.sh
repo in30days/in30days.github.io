@@ -37,7 +37,8 @@ for course_dir in ./courses/*/; do
     fi
 done
 
-# Create .nojekyll to prevent GitHub from ignoring folders starting with underscore
+# Final cleanup and GitHub Pages specific files
+echo "learn.ravichaganti.com" > "$OUTPUT_DIR/CNAME"
 touch "$OUTPUT_DIR/.nojekyll"
 
 echo ""
