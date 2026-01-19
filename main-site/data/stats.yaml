@@ -2,6 +2,7 @@ python: 7
 kubernetes: 0
 javascript: 0
 rust: 1
+docker: 1
 python-advanced: 0
 python-web: 0
 mastering-python: 0

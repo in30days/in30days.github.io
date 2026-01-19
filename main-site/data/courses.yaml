@@ -84,4 +84,5 @@
   difficulty: intermediate
   totalModules: 15
   url: /docker/
+  featured: true
   tags: [devops, containers, beginner]
