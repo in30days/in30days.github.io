@@ -37,6 +37,9 @@ for course_dir in ./courses/*/; do
     fi
 done
 
+# Create .nojekyll to prevent GitHub from ignoring folders starting with underscore
+touch "$OUTPUT_DIR/.nojekyll"
+
 echo ""
 echo "Build complete!"
 echo "Output in: $OUTPUT_DIR/"

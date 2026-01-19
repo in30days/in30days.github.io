@@ -83,6 +83,6 @@
   icon: docker
   difficulty: intermediate
   totalModules: 15
-  url: /docker/
+  url: "/docker/"
   featured: true
   tags: [devops, containers, beginner]

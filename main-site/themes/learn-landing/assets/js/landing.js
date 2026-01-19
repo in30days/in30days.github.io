@@ -113,7 +113,7 @@
     const difficultyFilters = document.querySelectorAll('#filter-difficulty .filter-btn');
     const typeFilters = document.querySelectorAll('#filter-type .filter-btn');
     
-    let currentDifficulty = 'beginner'; // Default filter
+    let currentDifficulty = 'all'; // Default filter
     let currentType = 'all';
 
     function applyFilters() {
