@@ -39,7 +39,10 @@
     {{ $contributor := index site.Data.contributors 0 }}
     {{ range site.Data.contributors }}{{ if eq .id $targetId }}{{ $contributor = . }}{{ end }}{{ end }}
     <div class="course-contributor">
-      <img src="{{ $contributor.avatar }}" alt="{{ $contributor.name }}" class="contributor-avatar">
+      <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="contributor-avatar">
+        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"></circle>
+        <text x="20" y="26" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="currentColor">RC</text>
+      </svg>
       <span>by <span class="contributor-name">{{ $contributor.name }}</span></span>
     </div>
     {{ end }}
