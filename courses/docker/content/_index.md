@@ -6,6 +6,8 @@ courseName: "Docker"
 courseColor: "#2496ED"
 difficulty: "intermediate"
 duration: "15 Modules"
+draft: false
+publishDate: 2024-01-01
 layout: "list"
 type: "course"
 objectives:
