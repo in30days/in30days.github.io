@@ -1,7 +1,7 @@
-python: 15
+python: 21
 kubernetes: 0
 javascript: 0
-rust: 1
+rust: 2
 python-advanced: 0
 python-web: 0
 mastering-python: 0
