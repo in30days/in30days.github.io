@@ -1,4 +1,4 @@
-python: 29
+python: 30
 kubernetes: 0
 javascript: 0
 rust: 2
@@ -6,5 +6,5 @@ python-advanced: 0
 python-web: 0
 mastering-python: 0
 default: 1
-go: 6
+go: 7
 docker: 1
