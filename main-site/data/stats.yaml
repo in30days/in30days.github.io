@@ -8,3 +8,4 @@ mastering-python: 0
 default: 1
 go: 9
 docker: 1
+docker-video: 1
