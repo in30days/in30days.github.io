@@ -6,6 +6,6 @@ python-advanced: 0
 python-web: 0
 mastering-python: 0
 default: 1
-go: 12
+go: 13
 docker: 1
 docker-video: 1
